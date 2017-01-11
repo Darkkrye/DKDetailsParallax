@@ -10,7 +10,7 @@ lane :launchTest do
 
 end
 
-lane :deploy do
+lane :gitDeploy do
 
   if git_branch() == "master"
     version = get_version_number()
