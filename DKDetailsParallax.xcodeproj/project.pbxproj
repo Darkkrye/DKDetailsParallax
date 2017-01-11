@@ -402,6 +402,7 @@
 				8FEF7C011E269D08000412EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FEF7C021E269D08000412EB /* Build configuration list for PBXNativeTarget "DKDetailsParallaxTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +411,7 @@
 				8FEF7C041E269D08000412EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
