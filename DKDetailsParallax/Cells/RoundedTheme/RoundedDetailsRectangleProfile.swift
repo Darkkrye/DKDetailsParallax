@@ -1,6 +1,6 @@
 //
 //  RoundedDetailsRectangleProfileTableViewCell.swift
-//  iOSeries
+//  DKDetailsParallax
 //
 //  Created by Pierre on 11/01/2017.
 //  Copyright © 2017 Pierre Boudon. All rights reserved.
@@ -8,36 +8,36 @@
 
 import UIKit
 
-class RoundedDetailsRectangleProfile: UITableViewCell {
+open class RoundedDetailsRectangleProfile: UITableViewCell {
 
     // MARK: - Private Constants
-    static let defaultHeight: CGFloat = 105
+    public static let defaultHeight: CGFloat = 105
     
     
     // MARK: - Private Variables
-    var primaryColor = UIColor.black
-    var secondaryColor = UIColor.gray
+    public var primaryColor = UIColor.black
+    public var secondaryColor = UIColor.gray
     
     
     // MARK: - IBOutlets
-    @IBOutlet weak var rectangleImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var circleButton: UIButton!
-    @IBOutlet weak var outlinedButton: UIButton!
-    @IBOutlet weak var plainButton: UIButton!
+    @IBOutlet public weak var rectangleImageView: UIImageView!
+    @IBOutlet public weak var titleLabel: UILabel!
+    @IBOutlet public weak var subtitleLabel: UILabel!
+    @IBOutlet public weak var circleButton: UIButton!
+    @IBOutlet public weak var outlinedButton: UIButton!
+    @IBOutlet public weak var plainButton: UIButton!
     
     
     // MARK: - IBActions
     
     
     // MARK: - "Default" Methods
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -50,12 +50,12 @@ class RoundedDetailsRectangleProfile: UITableViewCell {
     
     
     // MARK: - Personnal Methods
-    internal static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsRectangleProfile {
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsRectangleProfile {
         return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptRectangleImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
     }
     
-    internal static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptRectangleImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsRectangleProfile {
-        let nibs = Bundle.main.loadNibNamed("RoundedDetailsRectangleProfile", owner: self, options: nil)
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptRectangleImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsRectangleProfile {
+        let nibs = DataBundle.bundle.loadNibNamed("RoundedDetailsRectangleProfile", owner: self, options: nil)
         let cell: RoundedDetailsRectangleProfile = nibs![0] as! RoundedDetailsRectangleProfile
         cell.selectionStyle = .none
         

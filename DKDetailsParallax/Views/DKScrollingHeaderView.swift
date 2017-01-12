@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
+open class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
     // Constants
     static let kDefaultImagePagerHeight: CGFloat = 375
     static let kDefaultTableViewHeaderMargin: CGFloat = 95
@@ -33,7 +33,7 @@ class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.initialize()
@@ -54,7 +54,7 @@ class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleLeftMargin, .flexibleTopMargin]
     }
     
-    public func reloadScrollingHeader() {
+    open func reloadScrollingHeader() {
         if let d = self.delegate {
             DispatchQueue.main.async {
                 d.detailsPage(scrollingHeaderView: self, headerImageView: self.imageView!)
@@ -67,7 +67,7 @@ class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
 
 // MARK: - Extension for view layout
 extension DKScrollingHeaderView {
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         
         self.navbarViewFadingOffset = self.headerImageViewHeight - (self.navBarView.frame.height + DKScrollingHeaderView.kDefaultTableViewHeaderMargin)
@@ -180,7 +180,7 @@ extension DKScrollingHeaderView {
 
 // MARK: - Extension for KVO methods
 extension DKScrollingHeaderView {
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if (object as! UITableView == self.tableView) && ((keyPath == "contentOffset") == true) {
             self.scrollViewDidScroll(withOffset: self.tableView.contentOffset.y)
             return
