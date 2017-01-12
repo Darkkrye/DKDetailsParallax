@@ -26,7 +26,7 @@ class DKDetailsParallaxViewController: UIViewController {
     var loadingView = UIView()
     
     var navbarTitle = "Title"
-    var headerImage = UIImage(named: "facebook-default-no-profile-pic-square")
+    var headerImage = UIImage(named: "defaultProfile")
     
     var idObject: Int?
     
