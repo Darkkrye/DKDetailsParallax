@@ -1,7 +1,5 @@
 lane :launchTest do
 
-  UI.success "Bravo !"
-
   scan(
     project: "DKDetailsParallax.xcodeproj",
     code_coverage: true
