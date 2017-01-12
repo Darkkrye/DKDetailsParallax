@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F39BB6E1E27F43B0096D869 /* DKScrollingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB6D1E27F43B0096D869 /* DKScrollingHeaderView.swift */; };
+		8F39BB701E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB6F1E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift */; };
 		8FEF7BF51E269D08000412EB /* DKDetailsParallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEF7BEB1E269D08000412EB /* DKDetailsParallax.framework */; };
 		8FEF7BFA1E269D08000412EB /* DKDetailsParallaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF7BF91E269D08000412EB /* DKDetailsParallaxTests.swift */; };
 		8FEF7BFC1E269D08000412EB /* DKDetailsParallax.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEF7BEE1E269D08000412EB /* DKDetailsParallax.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F39BB6D1E27F43B0096D869 /* DKScrollingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKScrollingHeaderView.swift; sourceTree = "<group>"; };
+		8F39BB6F1E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKScrollingHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		8FEF7BEB1E269D08000412EB /* DKDetailsParallax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKDetailsParallax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEF7BEE1E269D08000412EB /* DKDetailsParallax.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKDetailsParallax.h; sourceTree = "<group>"; };
 		8FEF7BEF1E269D08000412EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +54,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F39BB691E27F3400096D869 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8F39BB6A1E27F3600096D869 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8F39BB6B1E27F37A0096D869 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8F39BB6F1E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8F39BB6C1E27F3BC0096D869 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F39BB6D1E27F43B0096D869 /* DKScrollingHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8FEF7BE11E269D08000412EB = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +105,10 @@
 		8FEF7BED1E269D08000412EB /* DKDetailsParallax */ = {
 			isa = PBXGroup;
 			children = (
+				8F39BB6C1E27F3BC0096D869 /* Views */,
+				8F39BB6B1E27F37A0096D869 /* Protocols */,
+				8F39BB6A1E27F3600096D869 /* Cells */,
+				8F39BB691E27F3400096D869 /* ViewControllers */,
 				8FEF7BEE1E269D08000412EB /* DKDetailsParallax.h */,
 				8FEF7BEF1E269D08000412EB /* Info.plist */,
 			);
@@ -149,6 +187,7 @@
 					8FEF7BEA1E269D08000412EB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 63ZVUM2RC3;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					8FEF7BF31E269D08000412EB = {
@@ -198,6 +237,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F39BB6E1E27F43B0096D869 /* DKScrollingHeaderView.swift in Sources */,
+				8F39BB701E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +363,7 @@
 		8FEF7C001E269D08000412EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 63ZVUM2RC3;
@@ -335,6 +377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.boudonpierre.DKDetailsParallax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -342,6 +385,7 @@
 		8FEF7C011E269D08000412EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 63ZVUM2RC3;
@@ -362,6 +406,7 @@
 		8FEF7C031E269D08000412EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 63ZVUM2RC3;
 				INFOPLIST_FILE = DKDetailsParallaxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +419,7 @@
 		8FEF7C041E269D08000412EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 63ZVUM2RC3;
 				INFOPLIST_FILE = DKDetailsParallaxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
