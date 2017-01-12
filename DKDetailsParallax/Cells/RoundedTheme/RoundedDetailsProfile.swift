@@ -1,6 +1,6 @@
 //
 //  RoundedDetailsProfile.swift
-//  DetailsParallaxView
+//  DKDetailsParallax
 //
 //  Created by Pierre on 26/03/2016.
 //  Copyright © 2016 Pierre. All rights reserved.
@@ -8,31 +8,31 @@
 
 import UIKit
 
-class RoundedDetailsProfile: UITableViewCell {
+open class RoundedDetailsProfile: UITableViewCell {
     
     // MARK: - Private Constants
-    static let defaultHeight: CGFloat = 105
+    public static let defaultHeight: CGFloat = 105
     
     
     // MARK: - Private Variables
-    var primaryColor = UIColor.black
-    var secondaryColor = UIColor.gray
+    public var primaryColor = UIColor.black
+    public var secondaryColor = UIColor.gray
     
     
     // MARK: - IBOutlets
-    @IBOutlet weak var squareImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var circleButton: UIButton!
-    @IBOutlet weak var outlinedButton: UIButton!
-    @IBOutlet weak var plainButton: UIButton!
+    @IBOutlet public weak var squareImageView: UIImageView!
+    @IBOutlet public weak var titleLabel: UILabel!
+    @IBOutlet public weak var subtitleLabel: UILabel!
+    @IBOutlet public weak var circleButton: UIButton!
+    @IBOutlet public weak var outlinedButton: UIButton!
+    @IBOutlet public weak var plainButton: UIButton!
     
     
     // MARK: - IBActions
     
     
     // MARK: - "Default" Methods
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         
@@ -46,12 +46,12 @@ class RoundedDetailsProfile: UITableViewCell {
     
     
     // MARK: - Personnal Methods
-    internal static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsProfile {
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsProfile {
         return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptSquareImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
     }
     
-    internal static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsProfile {
-        let nibs = Bundle.main.loadNibNamed("RoundedDetailsProfile", owner: self, options: nil)
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsProfile {
+        let nibs = DataBundle.bundle.loadNibNamed("RoundedDetailsProfile", owner: self, options: nil)
         let cell: RoundedDetailsProfile = nibs![0] as! RoundedDetailsProfile
         cell.selectionStyle = .none
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc protocol DKScrollingHeaderViewDelegate: NSObjectProtocol {
+@objc public protocol DKScrollingHeaderViewDelegate: NSObjectProtocol {
     func detailsPage(scrollingHeaderView: DKScrollingHeaderView, headerImageView imageView: UIImageView)
     @objc optional func detailsPage(scrollingHeaderView: DKScrollingHeaderView, headerImageWasSelected imageView: UIImageView)
 }

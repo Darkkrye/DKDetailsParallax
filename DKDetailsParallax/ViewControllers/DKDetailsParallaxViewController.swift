@@ -1,6 +1,6 @@
 //
 //  DKDetailsParallaxViewController.swift
-//  iOSeries
+//  DKDetailsParallax
 //
 //  Created by Pierre on 11/01/2017.
 //  Copyright © 2017 Pierre Boudon. All rights reserved.
@@ -8,34 +8,34 @@
 
 import UIKit
 
-class DKDetailsParallaxViewController: UIViewController {
+open class DKDetailsParallaxViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet var scrollingHeaderView: DKScrollingHeaderView!
-    @IBOutlet weak var navBar: UIView!
-    @IBOutlet weak var navBarTitleLabel: UILabel!
+    @IBOutlet public weak var scrollingHeaderView: DKScrollingHeaderView!
+    @IBOutlet public weak var navBar: UIView!
+    @IBOutlet public weak var navBarTitleLabel: UILabel!
     
     // MARK: - Constants
-    let buttonBack = UIButton(type: .custom)
+    public let buttonBack = UIButton(type: .custom)
     
     // MARK: - Variables
-    var primaryColor = UIColor.black
-    var secondaryColor = UIColor.gray
+    public var primaryColor = UIColor.black
+    public var secondaryColor = UIColor.gray
     
-    var statusBarHidden = true
-    var loadingView = UIView()
+    public var statusBarHidden = true
+    public var loadingView = UIView()
     
-    var navbarTitle = "Title"
-    var headerImage = UIImage(named: "defaultProfile")
+    public var navbarTitle = "Title"
+    public var headerImage = UIImage(named: "defaultProfile")
     
-    var idObject: Int?
+    public var idObject: Int?
     
-    var object: Any?
+    public var object: Any?
     
-    var wantsConfettiDismiss: Bool!
+    public var wantsConfettiDismiss: Bool!
     
-    init(primaryColor: UIColor?, secondaryColor: UIColor?, title: String, headerImage: UIImage?, idObject: Int?, object: Any?, withConfettiDismiss: Bool) {
-        super.init(nibName: "DKDetailsParallaxViewController", bundle: Bundle.main)
+    public init(primaryColor: UIColor?, secondaryColor: UIColor?, title: String, headerImage: UIImage?, idObject: Int?, object: Any?, withConfettiDismiss: Bool) {
+        super.init(nibName: "DKDetailsParallaxViewController", bundle: DataBundle.bundle)
         
         if let p = primaryColor {
             self.primaryColor = p
@@ -53,18 +53,18 @@ class DKDetailsParallaxViewController: UIViewController {
         self.wantsConfettiDismiss = withConfettiDismiss
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.setupLoadingView()
     }
 
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -78,15 +78,15 @@ extension DKDetailsParallaxViewController: UITableViewDelegate {
 
 // MARK: - Extension for UITableViewDataSource
 extension DKDetailsParallaxViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
 }
@@ -94,7 +94,7 @@ extension DKDetailsParallaxViewController: UITableViewDataSource {
 
 // MARK: - Extension for DKScrollingHeaderViewDelegate
 extension DKDetailsParallaxViewController: DKScrollingHeaderViewDelegate {
-    func detailsPage(scrollingHeaderView: DKScrollingHeaderView, headerImageView imageView: UIImageView) {
+    open func detailsPage(scrollingHeaderView: DKScrollingHeaderView, headerImageView imageView: UIImageView) {
         imageView.image = self.headerImage
         imageView.contentMode = .scaleAspectFill
     }
@@ -107,7 +107,7 @@ extension DKDetailsParallaxViewController: DKScrollingHeaderViewDelegate {
 
 // MARK: - Extension for setup methods
 extension DKDetailsParallaxViewController {
-    func setupController() {
+    public func setupController() {
         self.setupDetailsPageView()
         self.setupNavbarButtons()
     }
@@ -185,7 +185,7 @@ extension DKDetailsParallaxViewController {
         return false
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if !isRowVisible() {
             UIView.animate(withDuration: 0.2, animations: {() -> Void in
                 self.navBar.alpha = 1
