@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class RoundedDetailsRectangleProfile: UITableViewCell {
+open class RoundedDetailsRectangleProfileCell: UITableViewCell {
 
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 105
@@ -17,6 +17,7 @@ open class RoundedDetailsRectangleProfile: UITableViewCell {
     // MARK: - Private Variables
     public var primaryColor = UIColor.black
     public var secondaryColor = UIColor.gray
+    public var delegate: DKDetailsParallaxCellDelegate?
     
     
     // MARK: - IBOutlets
@@ -29,6 +30,22 @@ open class RoundedDetailsRectangleProfile: UITableViewCell {
     
     
     // MARK: - IBActions
+    @IBAction func plainButtonTapped(_ sender: Any) {
+        if let d = self.delegate {
+            d.roundedDetailsRectangleProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
+        }
+    }
+    @IBAction func outlinedButtonTapped(_ sender: Any) {
+        if let d = self.delegate {
+            d.roundedDetailsRectangleProfileCellCallback!(cell: self, forOutlinedButton: self.plainButton)
+        }
+    }
+    @IBAction func circleButtonTapped(_ sender: Any) {
+        if let d = self.delegate {
+            d.roundedDetailsRectangleProfileCellCallback!(cell: self, forCircleButton: self.plainButton)
+        }
+    }
+    
     
     
     // MARK: - "Default" Methods
@@ -50,13 +67,13 @@ open class RoundedDetailsRectangleProfile: UITableViewCell {
     
     
     // MARK: - Personnal Methods
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsRectangleProfile {
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsRectangleProfileCell {
         return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptRectangleImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
     }
     
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptRectangleImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsRectangleProfile {
-        let nibs = DataBundle.bundle.loadNibNamed("RoundedDetailsRectangleProfile", owner: self, options: nil)
-        let cell: RoundedDetailsRectangleProfile = nibs![0] as! RoundedDetailsRectangleProfile
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptRectangleImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsRectangleProfileCell {
+        let nibs = DataBundle.bundle.loadNibNamed("RoundedDetailsRectangleProfileCell", owner: self, options: nil)
+        let cell: RoundedDetailsRectangleProfileCell = nibs![0] as! RoundedDetailsRectangleProfileCell
         cell.selectionStyle = .none
         
         if exceptRectangleImage {
@@ -96,13 +113,14 @@ open class RoundedDetailsRectangleProfile: UITableViewCell {
         return cell
     }
     
-    private static func initialize(cell: RoundedDetailsRectangleProfile) {
+    private static func initialize(cell: RoundedDetailsRectangleProfileCell) {
         cell.titleLabel.textColor = cell.primaryColor
         cell.subtitleLabel.textColor = cell.secondaryColor
         
         cell.plainButton.layer.borderColor = cell.primaryColor.cgColor
         cell.plainButton.backgroundColor = cell.primaryColor
         cell.plainButton.layer.cornerRadius = 15.0
+        cell.plainButton.setTitleColor(UIColor.white, for: .normal)
         
         cell.outlinedButton.layer.borderColor =  cell.primaryColor.cgColor
         cell.outlinedButton.setTitleColor(cell.primaryColor, for: .normal)

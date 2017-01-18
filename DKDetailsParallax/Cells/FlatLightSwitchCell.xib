@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GothaProReg.otf">
+            <string>GothamPro</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlatLightSwitchCell" id="KGk-i7-Jjw" customClass="FlatLightSwitchCell" customModule="DKDetailsParallax" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-HM-1CS" customClass="Switch" customModule="DKDetailsParallax" customModuleProvider="target">
+                        <rect key="frame" x="162" y="8" width="150" height="33"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="leftText" value="Left"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="rightText" value="Right"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMC-te-cJl">
+                        <rect key="frame" x="20" y="10" width="134" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="134" id="Xjj-Pn-yuV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GothamPro" family="Gotham Pro" pointSize="12"/>
+                        <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ehR-HM-1CS" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="2zL-S2-2Va"/>
+                    <constraint firstItem="JMC-te-cJl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BuR-CP-li4"/>
+                    <constraint firstItem="JMC-te-cJl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Tad-2W-Nz1"/>
+                    <constraint firstItem="ehR-HM-1CS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="XWN-Yz-GLv"/>
+                    <constraint firstItem="ehR-HM-1CS" firstAttribute="leading" secondItem="JMC-te-cJl" secondAttribute="trailing" constant="8" symbolic="YES" id="ayi-aJ-A89"/>
+                    <constraint firstItem="ehR-HM-1CS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bZz-t4-9R8"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="JMC-te-cJl" secondAttribute="bottom" constant="2" id="iOp-8g-l8W"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="switchView" destination="ehR-HM-1CS" id="Z22-wK-e3g"/>
+                <outlet property="titleLabel" destination="JMC-te-cJl" id="EZi-Md-yzC"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
