@@ -6,7 +6,7 @@ DKDetailsParallax is a framework available in Cocoapods.
 To install add this line to your Podfile :
 
 ```ruby
-pod 'RoundedSwitch'
+pod 'DKDetailsParallax'
 ```
 
 ## Version
