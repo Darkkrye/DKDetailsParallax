@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlatDarkSwitchCell: UITableViewCell {
+open class FlatDarkSwitchCell: UITableViewCell {
 
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 50
@@ -17,6 +17,7 @@ class FlatDarkSwitchCell: UITableViewCell {
     // MARK: - Private Variables
     public var primaryColor = UIColor.white
     public var secondaryColor = UIColor.gray
+    public var delegate: DKDetailsParallaxCellDelegate?
     
     
     // MARK: - IBOutlets
@@ -28,12 +29,12 @@ class FlatDarkSwitchCell: UITableViewCell {
     
     
     // MARK: - "Default" Methods
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -77,7 +78,9 @@ class FlatDarkSwitchCell: UITableViewCell {
     }
     
     @objc private func switchDidChangeValue(_ theSwitch: Switch) {
-        print("\"\(theSwitch.rightSelected ? theSwitch.rightText ?? "" : theSwitch.leftText ?? "")\" selected")
+        if let d = self.delegate {
+            d.flatDarkSwitchCellCallback!(cell: self, onSwitchUpdate: theSwitch, toTheValue: "\(theSwitch.rightSelected ? theSwitch.rightText ?? "" : theSwitch.leftText ?? "")")
+        }
     }
     
     private static func initialize(cell: FlatDarkSwitchCell) {

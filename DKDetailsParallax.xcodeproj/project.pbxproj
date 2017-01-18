@@ -22,14 +22,15 @@
 		8F2082BA1E2E90DF00738480 /* FlatDarkSimpleLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F2082B41E2E90DF00738480 /* FlatDarkSimpleLabelCell.xib */; };
 		8F2082BB1E2E90DF00738480 /* FlatDarkSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2082B51E2E90DF00738480 /* FlatDarkSwitchCell.swift */; };
 		8F2082BC1E2E90DF00738480 /* FlatDarkSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F2082B61E2E90DF00738480 /* FlatDarkSwitchCell.xib */; };
+		8F2082BE1E2E91A200738480 /* DKDetailsParallaxCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2082BD1E2E91A200738480 /* DKDetailsParallaxCellDelegate.swift */; };
 		8F39BB6E1E27F43B0096D869 /* DKScrollingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB6D1E27F43B0096D869 /* DKScrollingHeaderView.swift */; };
 		8F39BB701E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB6F1E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift */; };
 		8F39BB731E27F5850096D869 /* DKDetailsParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB711E27F5850096D869 /* DKDetailsParallaxViewController.swift */; };
 		8F39BB741E27F5850096D869 /* DKDetailsParallaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F39BB721E27F5850096D869 /* DKDetailsParallaxViewController.xib */; };
-		8F39BB7A1E27F6AB0096D869 /* RoundedDetailsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB761E27F6AB0096D869 /* RoundedDetailsProfile.swift */; };
-		8F39BB7B1E27F6AB0096D869 /* RoundedDetailsProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F39BB771E27F6AB0096D869 /* RoundedDetailsProfile.xib */; };
-		8F39BB7C1E27F6AB0096D869 /* RoundedDetailsRectangleProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB781E27F6AB0096D869 /* RoundedDetailsRectangleProfile.swift */; };
-		8F39BB7D1E27F6AB0096D869 /* RoundedDetailsRectangleProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfile.xib */; };
+		8F39BB7A1E27F6AB0096D869 /* RoundedDetailsProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB761E27F6AB0096D869 /* RoundedDetailsProfileCell.swift */; };
+		8F39BB7B1E27F6AB0096D869 /* RoundedDetailsProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F39BB771E27F6AB0096D869 /* RoundedDetailsProfileCell.xib */; };
+		8F39BB7C1E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BB781E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.swift */; };
+		8F39BB7D1E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib */; };
 		8F39BB891E27F9080096D869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F39BB881E27F9080096D869 /* Assets.xcassets */; };
 		8F39BBC11E280AAF0096D869 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BBC01E280AAF0096D869 /* Bundle.swift */; };
 		8FEF7BF51E269D08000412EB /* DKDetailsParallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEF7BEB1E269D08000412EB /* DKDetailsParallax.framework */; };
@@ -64,14 +65,15 @@
 		8F2082B41E2E90DF00738480 /* FlatDarkSimpleLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlatDarkSimpleLabelCell.xib; sourceTree = "<group>"; };
 		8F2082B51E2E90DF00738480 /* FlatDarkSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatDarkSwitchCell.swift; sourceTree = "<group>"; };
 		8F2082B61E2E90DF00738480 /* FlatDarkSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlatDarkSwitchCell.xib; sourceTree = "<group>"; };
+		8F2082BD1E2E91A200738480 /* DKDetailsParallaxCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKDetailsParallaxCellDelegate.swift; sourceTree = "<group>"; };
 		8F39BB6D1E27F43B0096D869 /* DKScrollingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKScrollingHeaderView.swift; sourceTree = "<group>"; };
 		8F39BB6F1E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKScrollingHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		8F39BB711E27F5850096D869 /* DKDetailsParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKDetailsParallaxViewController.swift; sourceTree = "<group>"; };
 		8F39BB721E27F5850096D869 /* DKDetailsParallaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKDetailsParallaxViewController.xib; sourceTree = "<group>"; };
-		8F39BB761E27F6AB0096D869 /* RoundedDetailsProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDetailsProfile.swift; sourceTree = "<group>"; };
-		8F39BB771E27F6AB0096D869 /* RoundedDetailsProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedDetailsProfile.xib; sourceTree = "<group>"; };
-		8F39BB781E27F6AB0096D869 /* RoundedDetailsRectangleProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDetailsRectangleProfile.swift; sourceTree = "<group>"; };
-		8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedDetailsRectangleProfile.xib; sourceTree = "<group>"; };
+		8F39BB761E27F6AB0096D869 /* RoundedDetailsProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDetailsProfileCell.swift; sourceTree = "<group>"; };
+		8F39BB771E27F6AB0096D869 /* RoundedDetailsProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedDetailsProfileCell.xib; sourceTree = "<group>"; };
+		8F39BB781E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDetailsRectangleProfileCell.swift; sourceTree = "<group>"; };
+		8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedDetailsRectangleProfileCell.xib; sourceTree = "<group>"; };
 		8F39BB881E27F9080096D869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F39BBC01E280AAF0096D869 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		8FEF7BEB1E269D08000412EB /* DKDetailsParallax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKDetailsParallax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,9 +149,9 @@
 		8F39BB6A1E27F3600096D869 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8F20829C1E2E8FC500738480 /* FlatDarkTheme */,
-				8F20829B1E2E8FBA00738480 /* FlatLightTheme */,
 				8F39BB751E27F6760096D869 /* RoundedTheme */,
+				8F20829B1E2E8FBA00738480 /* FlatLightTheme */,
+				8F20829C1E2E8FC500738480 /* FlatDarkTheme */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				8F39BB6F1E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift */,
+				8F2082BD1E2E91A200738480 /* DKDetailsParallaxCellDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -173,10 +176,10 @@
 		8F39BB751E27F6760096D869 /* RoundedTheme */ = {
 			isa = PBXGroup;
 			children = (
-				8F39BB761E27F6AB0096D869 /* RoundedDetailsProfile.swift */,
-				8F39BB771E27F6AB0096D869 /* RoundedDetailsProfile.xib */,
-				8F39BB781E27F6AB0096D869 /* RoundedDetailsRectangleProfile.swift */,
-				8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfile.xib */,
+				8F39BB761E27F6AB0096D869 /* RoundedDetailsProfileCell.swift */,
+				8F39BB771E27F6AB0096D869 /* RoundedDetailsProfileCell.xib */,
+				8F39BB781E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.swift */,
+				8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib */,
 				8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */,
 				8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */,
 			);
@@ -344,8 +347,8 @@
 				8F2082AA1E2E904700738480 /* FlatLightSimpleLabelCell.xib in Resources */,
 				8F2082A01E2E8FFD00738480 /* RoundedButtonCell.xib in Resources */,
 				8F2082B81E2E90DF00738480 /* FlatDarkSimpleDescriptionCell.xib in Resources */,
-				8F39BB7D1E27F6AB0096D869 /* RoundedDetailsRectangleProfile.xib in Resources */,
-				8F39BB7B1E27F6AB0096D869 /* RoundedDetailsProfile.xib in Resources */,
+				8F39BB7D1E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib in Resources */,
+				8F39BB7B1E27F6AB0096D869 /* RoundedDetailsProfileCell.xib in Resources */,
 				8F2082BA1E2E90DF00738480 /* FlatDarkSimpleLabelCell.xib in Resources */,
 				8F39BB741E27F5850096D869 /* DKDetailsParallaxViewController.xib in Resources */,
 				8F2082BC1E2E90DF00738480 /* FlatDarkSwitchCell.xib in Resources */,
@@ -367,7 +370,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F39BB7C1E27F6AB0096D869 /* RoundedDetailsRectangleProfile.swift in Sources */,
+				8F39BB7C1E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.swift in Sources */,
+				8F2082BE1E2E91A200738480 /* DKDetailsParallaxCellDelegate.swift in Sources */,
 				8F2082B71E2E90DF00738480 /* FlatDarkSimpleDescriptionCell.swift in Sources */,
 				8F39BBC11E280AAF0096D869 /* Bundle.swift in Sources */,
 				8F2082B91E2E90DF00738480 /* FlatDarkSimpleLabelCell.swift in Sources */,
@@ -379,7 +383,7 @@
 				8F2082AB1E2E904700738480 /* FlatLightSwitchCell.swift in Sources */,
 				8F39BB6E1E27F43B0096D869 /* DKScrollingHeaderView.swift in Sources */,
 				8F2082A91E2E904700738480 /* FlatLightSimpleLabelCell.swift in Sources */,
-				8F39BB7A1E27F6AB0096D869 /* RoundedDetailsProfile.swift in Sources */,
+				8F39BB7A1E27F6AB0096D869 /* RoundedDetailsProfileCell.swift in Sources */,
 				8F39BB701E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

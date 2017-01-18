@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlatLightSwitchCell: UITableViewCell {
+open class FlatLightSwitchCell: UITableViewCell {
 
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 50
@@ -17,6 +17,7 @@ class FlatLightSwitchCell: UITableViewCell {
     // MARK: - Private Variables
     public var primaryColor = UIColor.black
     public var secondaryColor = UIColor.gray
+    public var delegate: DKDetailsParallaxCellDelegate?
     
     
     // MARK: - IBOutlets
@@ -28,15 +29,9 @@ class FlatLightSwitchCell: UITableViewCell {
     
     
     // MARK: - "Default" Methods
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     open func setTitleText(text: String) {
@@ -77,7 +72,9 @@ class FlatLightSwitchCell: UITableViewCell {
     }
     
     @objc private func switchDidChangeValue(_ theSwitch: Switch) {
-        print("\"\(theSwitch.rightSelected ? theSwitch.rightText ?? "" : theSwitch.leftText ?? "")\" selected")
+        if let d = self.delegate {
+            d.flatLightSwitchCellCallback!(cell: self, onSwitchUpdate: theSwitch, toTheValue: "\(theSwitch.rightSelected ? theSwitch.rightText ?? "" : theSwitch.leftText ?? "")")
+        }
     }
     
     private static func initialize(cell: FlatLightSwitchCell) {

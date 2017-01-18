@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class RoundedDetailsProfile: UITableViewCell {
+open class RoundedDetailsProfileCell: UITableViewCell {
     
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 105
@@ -17,6 +17,7 @@ open class RoundedDetailsProfile: UITableViewCell {
     // MARK: - Private Variables
     public var primaryColor = UIColor.black
     public var secondaryColor = UIColor.gray
+    public var delegate: DKDetailsParallaxCellDelegate?
     
     
     // MARK: - IBOutlets
@@ -27,8 +28,22 @@ open class RoundedDetailsProfile: UITableViewCell {
     @IBOutlet public weak var outlinedButton: UIButton!
     @IBOutlet public weak var plainButton: UIButton!
     
-    
     // MARK: - IBActions
+    @IBAction func plainButtonTapped(_ sender: Any) {
+        if let d = self.delegate {
+            d.roundedDetailsProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
+        }
+    }
+    @IBAction func outlinedButtonTapped(_ sender: Any) {
+        if let d = self.delegate {
+            d.roundedDetailsProfileCellCallback!(cell: self, forOutlinedButton: self.outlinedButton)
+        }
+    }
+    @IBAction func circleButtonTapped(_ sender: Any) {
+        if let d = self.delegate {
+            d.roundedDetailsProfileCellCallback!(cell: self, forCircleButton: self.circleButton)
+        }
+    }
     
     
     // MARK: - "Default" Methods
@@ -46,13 +61,13 @@ open class RoundedDetailsProfile: UITableViewCell {
     
     
     // MARK: - Personnal Methods
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsProfile {
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsProfileCell {
         return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptSquareImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
     }
     
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsProfile {
-        let nibs = DataBundle.bundle.loadNibNamed("RoundedDetailsProfile", owner: self, options: nil)
-        let cell: RoundedDetailsProfile = nibs![0] as! RoundedDetailsProfile
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsProfileCell {
+        let nibs = DataBundle.bundle.loadNibNamed("RoundedDetailsProfileCell", owner: self, options: nil)
+        let cell: RoundedDetailsProfileCell = nibs![0] as! RoundedDetailsProfileCell
         cell.selectionStyle = .none
         
         if exceptSquareImage {
@@ -92,7 +107,7 @@ open class RoundedDetailsProfile: UITableViewCell {
         return cell
     }
     
-    private static func initialize(cell: RoundedDetailsProfile) {
+    private static func initialize(cell: RoundedDetailsProfileCell) {
         cell.titleLabel.textColor = cell.primaryColor
         cell.subtitleLabel.textColor = cell.secondaryColor
         
@@ -102,6 +117,7 @@ open class RoundedDetailsProfile: UITableViewCell {
         cell.plainButton.layer.borderColor = cell.primaryColor.cgColor
         cell.plainButton.backgroundColor = cell.primaryColor
         cell.plainButton.layer.cornerRadius = 15.0
+        cell.plainButton.setTitleColor(UIColor.white, for: .normal)
         
         cell.outlinedButton.layer.borderColor =  cell.primaryColor.cgColor
         cell.outlinedButton.setTitleColor(cell.primaryColor, for: .normal)

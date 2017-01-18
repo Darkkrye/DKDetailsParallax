@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoundedButtonCell: UITableViewCell {
+open class RoundedButtonCell: UITableViewCell {
     
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 62
@@ -17,6 +17,7 @@ class RoundedButtonCell: UITableViewCell {
     // MARK: - Private Variables
     public var primaryColor = UIColor.black
     public var secondaryColor = UIColor.white
+    public var delegate: DKDetailsParallaxCellDelegate?
     
     
     // MARK: - IBOutlets
@@ -25,12 +26,15 @@ class RoundedButtonCell: UITableViewCell {
     
     // MARK: - IBActions
     @IBAction func buttonTapped(_ sender: Any) {
+        if let d = self.delegate {
+            d.roundedButtonCellCallback!(cell: self, forButton: self.button)
+        }
     }
     
     
     
     // MARK: - "Default" Methods
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
     }
     
@@ -43,6 +47,10 @@ class RoundedButtonCell: UITableViewCell {
     
     // MARK: - Personnal Methods
     open static func buttonCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedButtonCell {
+        return buttonCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, withPlainButton: false)
+    }
+    
+    open static func buttonCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withPlainButton: Bool) -> RoundedButtonCell {
         let nibs = DataBundle.bundle.loadNibNamed("RoundedButtonCell", owner: self, options: nil)
         let cell: RoundedButtonCell = nibs![0] as! RoundedButtonCell
         cell.selectionStyle = .none
@@ -55,7 +63,13 @@ class RoundedButtonCell: UITableViewCell {
             cell.secondaryColor = s
         }
         
-        initialize(cell: cell)
+        if withPlainButton {
+            initializeForPlainButton(cell: cell)
+        } else {
+            initialize(cell: cell)
+        }
+        
+        
         
         return cell
     }
@@ -66,5 +80,11 @@ class RoundedButtonCell: UITableViewCell {
         cell.button.layer.cornerRadius = 15.0
         cell.button.backgroundColor = cell.secondaryColor
         cell.button.setTitleColor(cell.primaryColor, for: .normal)
+    }
+    
+    private static func initializeForPlainButton(cell: RoundedButtonCell) {
+        cell.button.layer.cornerRadius = 15.0
+        cell.button.backgroundColor = cell.primaryColor
+        cell.button.setTitleColor(UIColor.white, for: .normal)
     }
 }
