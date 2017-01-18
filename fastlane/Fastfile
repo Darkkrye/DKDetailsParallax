@@ -21,7 +21,6 @@ lane :gitDeploy do
       commitish: "master"
     )
 
-
     pod_push()
   end
 
