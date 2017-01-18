@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.license      = { :type => "BSD", :file => "LICENSE" }
 
-
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.author       = { "Darkkrye" => "pierre.boudon.27@gmail.com" }
 
@@ -16,14 +15,16 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "git@github.com:Darkkrye/DKDetailsParallax.git", :tag => "#{s.version}" }
+  s.source       = { :git => "git@github.com:Darkkrye/DKDetailsParallax.git", :tag => "v#{s.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source_files  = "DKDetailsParallax/*.{swift,h}"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
+
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.requires_arc = true
