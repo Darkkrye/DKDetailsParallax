@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/Darkkrye/DKDetailsParallax.git", :tag => "#{s.version}" }
+  s.source       = { :git => "git@github.com:Darkkrye/DKDetailsParallax.git", :tag => "#{s.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source_files  = "DKDetailsParallax/*.{swift,h}"
