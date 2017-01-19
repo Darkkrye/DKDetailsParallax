@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class RoundedDetailsProfileCell: UITableViewCell {
+public class RoundedDetailsProfileCell: UITableViewCell {
     
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 105

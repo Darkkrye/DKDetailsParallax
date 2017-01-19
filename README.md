@@ -284,7 +284,7 @@ Final Step: ENJOY !
 
 
 ## Version
-Current stable version `1.0.2`
+Current stable version `1.1.0`
 
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)

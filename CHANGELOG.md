@@ -1,3 +1,10 @@
+## 1.1.0 (January 19, 2017)
+
+Improvements:
+
+- Bug fixes
+
+
 ## 1.0.2 (January 19, 2017)
 
 Improvements:
