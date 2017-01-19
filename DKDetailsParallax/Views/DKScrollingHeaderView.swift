@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
+open class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
     // Constants
     static let kDefaultImagePagerHeight: CGFloat = 375
     static let kDefaultTableViewHeaderMargin: CGFloat = 95

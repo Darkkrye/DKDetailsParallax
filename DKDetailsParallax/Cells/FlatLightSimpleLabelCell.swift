@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class FlatLightSimpleLabelCell: UITableViewCell {
+open class FlatLightSimpleLabelCell: UITableViewCell {
     
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 44
