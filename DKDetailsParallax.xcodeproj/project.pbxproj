@@ -8,6 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		8F0A70C41E31388B006D2666 /* GothaProReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2082AD1E2E906200738480 /* GothaProReg.otf */; };
+		8F0A70E91E3143E0006D2666 /* Bundle.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BBC01E280AAF0096D869 /* Bundle.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70EA1E3143E0006D2666 /* DKScrollingHeaderView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB6D1E27F43B0096D869 /* DKScrollingHeaderView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70EB1E3143E0006D2666 /* DKScrollingHeaderViewDelegate.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB6F1E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70EC1E3143E0006D2666 /* DKDetailsParallaxCellDelegate.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082BD1E2E91A200738480 /* DKDetailsParallaxCellDelegate.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70ED1E3143E0006D2666 /* RoundedDetailsProfileCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB761E27F6AB0096D869 /* RoundedDetailsProfileCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70EE1E3143E0006D2666 /* RoundedDetailsProfileCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB771E27F6AB0096D869 /* RoundedDetailsProfileCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70EF1E3143E0006D2666 /* RoundedDetailsRectangleProfileCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB781E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F01E3143E0006D2666 /* RoundedDetailsRectangleProfileCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F11E3143E0006D2666 /* RoundedButtonCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F21E3143E0006D2666 /* RoundedButtonCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F31E3143E0006D2666 /* FlatLightSimpleDescriptionCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082A11E2E904700738480 /* FlatLightSimpleDescriptionCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F41E3143E0006D2666 /* FlatLightSimpleDescriptionCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082A21E2E904700738480 /* FlatLightSimpleDescriptionCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F51E3143E0006D2666 /* FlatLightSimpleLabelCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082A31E2E904700738480 /* FlatLightSimpleLabelCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F61E3143E0006D2666 /* FlatLightSimpleLabelCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082A41E2E904700738480 /* FlatLightSimpleLabelCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F71E3143E0006D2666 /* FlatLightSwitchCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082A51E2E904700738480 /* FlatLightSwitchCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F81E3143E0006D2666 /* FlatLightSwitchCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082A61E2E904700738480 /* FlatLightSwitchCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70F91E3143E0006D2666 /* FlatDarkSimpleDescriptionCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082B11E2E90DF00738480 /* FlatDarkSimpleDescriptionCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70FA1E3143E0006D2666 /* FlatDarkSimpleDescriptionCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082B21E2E90DF00738480 /* FlatDarkSimpleDescriptionCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70FB1E3143E0006D2666 /* FlatDarkSimpleLabelCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082B31E2E90DF00738480 /* FlatDarkSimpleLabelCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70FC1E3143E0006D2666 /* FlatDarkSimpleLabelCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082B41E2E90DF00738480 /* FlatDarkSimpleLabelCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70FD1E3143E0006D2666 /* FlatDarkSwitchCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082B51E2E90DF00738480 /* FlatDarkSwitchCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70FE1E3143E0006D2666 /* FlatDarkSwitchCell.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082B61E2E90DF00738480 /* FlatDarkSwitchCell.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A70FF1E3143E0006D2666 /* DKDetailsParallaxViewController.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB711E27F5850096D869 /* DKDetailsParallaxViewController.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A71001E3143E0006D2666 /* DKDetailsParallaxViewController.xib in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB721E27F5850096D869 /* DKDetailsParallaxViewController.xib */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A71011E3143E0006D2666 /* Switch.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082AF1E2E90AB00738480 /* Switch.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A71021E3143E0006D2666 /* GothaProReg.otf in Headers */ = {isa = PBXBuildFile; fileRef = 8F2082AD1E2E906200738480 /* GothaProReg.otf */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0A71031E3143E0006D2666 /* Assets.xcassets in Headers */ = {isa = PBXBuildFile; fileRef = 8F39BB881E27F9080096D869 /* Assets.xcassets */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F20829F1E2E8FFD00738480 /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */; };
 		8F2082A01E2E8FFD00738480 /* RoundedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */; };
 		8F2082A71E2E904700738480 /* FlatLightSimpleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2082A11E2E904700738480 /* FlatLightSimpleDescriptionCell.swift */; };
@@ -255,6 +282,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FEF7BFC1E269D08000412EB /* DKDetailsParallax.h in Headers */,
+				8F0A70E91E3143E0006D2666 /* Bundle.swift in Headers */,
+				8F0A70EA1E3143E0006D2666 /* DKScrollingHeaderView.swift in Headers */,
+				8F0A70EB1E3143E0006D2666 /* DKScrollingHeaderViewDelegate.swift in Headers */,
+				8F0A70EC1E3143E0006D2666 /* DKDetailsParallaxCellDelegate.swift in Headers */,
+				8F0A70ED1E3143E0006D2666 /* RoundedDetailsProfileCell.swift in Headers */,
+				8F0A70EE1E3143E0006D2666 /* RoundedDetailsProfileCell.xib in Headers */,
+				8F0A70EF1E3143E0006D2666 /* RoundedDetailsRectangleProfileCell.swift in Headers */,
+				8F0A70F01E3143E0006D2666 /* RoundedDetailsRectangleProfileCell.xib in Headers */,
+				8F0A70F11E3143E0006D2666 /* RoundedButtonCell.swift in Headers */,
+				8F0A70F21E3143E0006D2666 /* RoundedButtonCell.xib in Headers */,
+				8F0A70F31E3143E0006D2666 /* FlatLightSimpleDescriptionCell.swift in Headers */,
+				8F0A70F41E3143E0006D2666 /* FlatLightSimpleDescriptionCell.xib in Headers */,
+				8F0A70F51E3143E0006D2666 /* FlatLightSimpleLabelCell.swift in Headers */,
+				8F0A70F61E3143E0006D2666 /* FlatLightSimpleLabelCell.xib in Headers */,
+				8F0A70F71E3143E0006D2666 /* FlatLightSwitchCell.swift in Headers */,
+				8F0A70F81E3143E0006D2666 /* FlatLightSwitchCell.xib in Headers */,
+				8F0A70F91E3143E0006D2666 /* FlatDarkSimpleDescriptionCell.swift in Headers */,
+				8F0A70FA1E3143E0006D2666 /* FlatDarkSimpleDescriptionCell.xib in Headers */,
+				8F0A70FB1E3143E0006D2666 /* FlatDarkSimpleLabelCell.swift in Headers */,
+				8F0A70FC1E3143E0006D2666 /* FlatDarkSimpleLabelCell.xib in Headers */,
+				8F0A70FD1E3143E0006D2666 /* FlatDarkSwitchCell.swift in Headers */,
+				8F0A70FE1E3143E0006D2666 /* FlatDarkSwitchCell.xib in Headers */,
+				8F0A70FF1E3143E0006D2666 /* DKDetailsParallaxViewController.swift in Headers */,
+				8F0A71001E3143E0006D2666 /* DKDetailsParallaxViewController.xib in Headers */,
+				8F0A71011E3143E0006D2666 /* Switch.swift in Headers */,
+				8F0A71021E3143E0006D2666 /* GothaProReg.otf in Headers */,
+				8F0A71031E3143E0006D2666 /* Assets.xcassets in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

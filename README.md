@@ -284,11 +284,11 @@ Final Step: ENJOY !
 
 
 ## Version
-Current stable version `1.1.0`
+Current stable version `1.0.3`
 
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
 ### Develop [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=develop)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
 
 ## Thanks to
-I use T-Pham/Switch library for the Switch in the cell, so thanks yo him.
+I use T-Pham/Switch library for the Switch in the cell, so thanks to him.
