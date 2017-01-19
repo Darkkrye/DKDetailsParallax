@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0A70C41E31388B006D2666 /* GothaProReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2082AD1E2E906200738480 /* GothaProReg.otf */; };
 		8F20829F1E2E8FFD00738480 /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */; };
 		8F2082A01E2E8FFD00738480 /* RoundedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */; };
 		8F2082A71E2E904700738480 /* FlatLightSimpleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2082A11E2E904700738480 /* FlatLightSimpleDescriptionCell.swift */; };
@@ -342,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0A70C41E31388B006D2666 /* GothaProReg.otf in Resources */,
 				8F2082A81E2E904700738480 /* FlatLightSimpleDescriptionCell.xib in Resources */,
 				8F2082AC1E2E904700738480 /* FlatLightSwitchCell.xib in Resources */,
 				8F2082AA1E2E904700738480 /* FlatLightSimpleLabelCell.xib in Resources */,

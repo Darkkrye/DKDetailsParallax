@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct DataBundle {
+public struct DataBundle {
     static let bundle: Bundle = Bundle(identifier: "fr.boudonpierre.DKDetailsParallax")!
 }

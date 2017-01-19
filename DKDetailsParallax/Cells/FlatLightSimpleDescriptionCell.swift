@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlatLightSimpleDescriptionCell: UITableViewCell {
+public class FlatLightSimpleDescriptionCell: UITableViewCell {
 
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 50
@@ -28,7 +28,7 @@ class FlatLightSimpleDescriptionCell: UITableViewCell {
     
     
     // MARK: - "Default" Methods
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.titleLabel.text = self.titleLabel.text?.uppercased()
@@ -36,7 +36,7 @@ class FlatLightSimpleDescriptionCell: UITableViewCell {
         self.contentLabel.textColor = self.primaryColor
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

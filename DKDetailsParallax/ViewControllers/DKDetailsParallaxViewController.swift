@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class DKDetailsParallaxViewController: UIViewController {
+public class DKDetailsParallaxViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet public weak var scrollingHeaderView: DKScrollingHeaderView!
