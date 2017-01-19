@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlatDarkSimpleLabelCell: UITableViewCell {
+public class FlatDarkSimpleLabelCell: UITableViewCell {
 
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 44

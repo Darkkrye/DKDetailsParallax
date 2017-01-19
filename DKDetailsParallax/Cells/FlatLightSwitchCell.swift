@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class FlatLightSwitchCell: UITableViewCell {
+public class FlatLightSwitchCell: UITableViewCell {
 
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 50

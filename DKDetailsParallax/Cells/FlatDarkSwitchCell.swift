@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class FlatDarkSwitchCell: UITableViewCell {
+public class FlatDarkSwitchCell: UITableViewCell {
 
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 50
