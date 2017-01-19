@@ -1,8 +1,8 @@
-## 1.1.0 (January 19, 2017)
+## 1.0.3 (January 19, 2017)
 
 Improvements:
 
-- Bug fixes
+- Bug fixes for Cocoapods
 
 
 ## 1.0.2 (January 19, 2017)

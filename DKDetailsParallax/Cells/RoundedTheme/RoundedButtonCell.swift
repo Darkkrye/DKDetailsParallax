@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class RoundedButtonCell: UITableViewCell {
+open class RoundedButtonCell: UITableViewCell {
     
     // MARK: - Private Constants
     public static let defaultHeight: CGFloat = 62
