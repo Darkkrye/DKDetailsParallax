@@ -18,7 +18,7 @@ open class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
     var headerImageViewHeight: CGFloat = 0
     var headerImageViewScalingFactor: CGFloat = 0
     var navbarViewFadingOffset: CGFloat = 0
-    var tableView: UITableView!
+    public var tableView: UITableView!
     var navBarView: UIView = UIView()
     var headerImageViewContentMode: UIViewContentMode = .scaleAspectFit
     var delegate: DKScrollingHeaderViewDelegate?
