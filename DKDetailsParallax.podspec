@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DKDetailsParallax"
-  s.version      = "2.0.0"
+  s.version      = "2.0.1"
   s.summary      = "DKDetailsParallax is a framework which allows you to simply create details parallax controller."
 
   s.homepage     = "https://github.com/Darkkrye/DKDetailsParallax"
