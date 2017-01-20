@@ -50,7 +50,7 @@ open class FlatLightSwitchCell: UITableViewCell {
     }
     
     open static func switchCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withoutTitle: Bool) -> FlatLightSwitchCell {
-        let nibs = DataBundle.bundle.loadNibNamed("FlatLightSwitchCell", owner: self, options: nil)
+        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatLightSwitchCell", owner: self, options: nil)
         let cell: FlatLightSwitchCell = nibs![0] as! FlatLightSwitchCell
         cell.selectionStyle = .none
         

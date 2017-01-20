@@ -8,6 +8,15 @@
 
 import Foundation
 
-public struct DataBundle {
-    static let bundle: Bundle = Bundle(identifier: "fr.boudonpierre.DKDetailsParallax")!
+public class DKDetailsParallax {
+    public static func bundle() -> Bundle? {
+        let frameworkBundle = Bundle(for: DKDetailsParallax.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("DKDetailsParallax.bundle", isDirectory: true)
+        let resourceBundle = Bundle(url: bundleURL!)
+        return resourceBundle
+        
+        /*let podBundle = Bundle(for: DKDetailsParallax.self)
+         let bundleURL = podBundle.url(forResource: "DKDetailsParallax", withExtension: "bundle")
+         return Bundle(url: bundleURL!)!*/
+    }
 }
