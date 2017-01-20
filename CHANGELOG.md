@@ -1,8 +1,15 @@
+## 2.0.0 (January 20, 2017)
+
+Features:
+
+- Initial Stable Working Release for Cocoapods.
+
+
 ## 1.0.3 (January 19, 2017)
 
 Improvements:
 
-- Bug fixes for Cocoapods
+- Bug fixes for Cocoapods.
 
 
 ## 1.0.2 (January 19, 2017)
