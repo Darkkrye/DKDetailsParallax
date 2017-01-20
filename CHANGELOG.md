@@ -1,3 +1,10 @@
+## 2.0.1 (January 20, 2017)
+
+Improvements:
+
+- Update variables protection.
+
+
 ## 2.0.0 (January 20, 2017)
 
 Features:
