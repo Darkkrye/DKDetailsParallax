@@ -44,7 +44,7 @@ open class FlatLightSimpleLabelCell: UITableViewCell {
     }
     
     open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, wantsEmptyCell: Bool) -> FlatLightSimpleLabelCell {
-        let nibs = DataBundle.bundle.loadNibNamed("FlatLightSimpleLabelCell", owner: self, options: nil)
+        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatLightSimpleLabelCell", owner: self, options: nil)
         let cell: FlatLightSimpleLabelCell = nibs![0] as! FlatLightSimpleLabelCell
         cell.selectionStyle = .none
         

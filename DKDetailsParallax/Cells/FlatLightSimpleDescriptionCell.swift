@@ -58,7 +58,7 @@ open class FlatLightSimpleDescriptionCell: UITableViewCell {
     }
     
     open static func simpleDescriptionCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withoutTitle: Bool, withoutContent: Bool) -> FlatLightSimpleDescriptionCell {
-        let nibs = DataBundle.bundle.loadNibNamed("FlatLightSimpleDescriptionCell", owner: self, options: nil)
+        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatLightSimpleDescriptionCell", owner: self, options: nil)
         let cell: FlatLightSimpleDescriptionCell = nibs![0] as! FlatLightSimpleDescriptionCell
         cell.selectionStyle = .none
         

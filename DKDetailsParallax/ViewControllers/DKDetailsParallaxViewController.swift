@@ -35,7 +35,7 @@ open class DKDetailsParallaxViewController: UIViewController {
     public var wantsConfettiDismiss: Bool!
     
     public init(primaryColor: UIColor?, secondaryColor: UIColor?, title: String, headerImage: UIImage?, idObject: Int?, object: Any?, withConfettiDismiss: Bool) {
-        super.init(nibName: "DKDetailsParallaxViewController", bundle: DataBundle.bundle)
+        super.init(nibName: "DKDetailsParallaxViewController", bundle: DKDetailsParallax.bundle())
         
         if let p = primaryColor {
             self.primaryColor = p
@@ -83,7 +83,7 @@ extension DKDetailsParallaxViewController: UITableViewDataSource {
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 100
     }
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

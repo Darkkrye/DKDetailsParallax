@@ -18,7 +18,10 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Darkkrye/DKDetailsParallax.git", :tag => "v#{s.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source_files  = "DKDetailsParallax/*.{swift,h}"
+  s.source_files  = "DKDetailsParallax/**/*.{swift,h,otf}"
+  s.resource_bundles = {
+    'DKDetailsParallax' => ['DKDetailsParallax/**/*.{storyboard,xib,xcassets,json,imageset,png}']
+  }
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 

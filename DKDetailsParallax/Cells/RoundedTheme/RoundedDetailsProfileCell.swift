@@ -66,7 +66,7 @@ open class RoundedDetailsProfileCell: UITableViewCell {
     }
     
     open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsProfileCell {
-        let nibs = DataBundle.bundle.loadNibNamed("RoundedDetailsProfileCell", owner: self, options: nil)
+        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("RoundedDetailsProfileCell", owner: self, options: nil)
         let cell: RoundedDetailsProfileCell = nibs![0] as! RoundedDetailsProfileCell
         cell.selectionStyle = .none
         

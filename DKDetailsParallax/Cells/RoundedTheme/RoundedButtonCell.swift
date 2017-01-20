@@ -51,7 +51,7 @@ open class RoundedButtonCell: UITableViewCell {
     }
     
     open static func buttonCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withPlainButton: Bool) -> RoundedButtonCell {
-        let nibs = DataBundle.bundle.loadNibNamed("RoundedButtonCell", owner: self, options: nil)
+        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("RoundedButtonCell", owner: self, options: nil)
         let cell: RoundedButtonCell = nibs![0] as! RoundedButtonCell
         cell.selectionStyle = .none
         
