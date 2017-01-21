@@ -9,14 +9,16 @@
 import Foundation
 
 public class DKDetailsParallax {
+    // Return DKDetailsParallax Bundle
     public static func bundle() -> Bundle? {
+        // Retrieve Bundle for the current class
         let frameworkBundle = Bundle(for: DKDetailsParallax.self)
+        
+        // Retrieve Bundle URL
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("DKDetailsParallax.bundle", isDirectory: true)
+        
+        // Create Bundle for Bundle URL and return it
         let resourceBundle = Bundle(url: bundleURL!)
         return resourceBundle
-        
-        /*let podBundle = Bundle(for: DKDetailsParallax.self)
-         let bundleURL = podBundle.url(forResource: "DKDetailsParallax", withExtension: "bundle")
-         return Bundle(url: bundleURL!)!*/
     }
 }

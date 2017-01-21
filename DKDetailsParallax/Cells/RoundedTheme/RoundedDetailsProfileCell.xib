@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,7 +37,7 @@
                         <rect key="frame" x="164" y="63" width="148" height="32"/>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.70196078429999997" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <state key="normal" title="Plain Button">
+                        <state key="normal" title="Plain">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -50,7 +51,7 @@
                             <constraint firstAttribute="width" constant="148" id="cUq-89-MEi"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <state key="normal" title="Outlined Button">
+                        <state key="normal" title="Outlined">
                             <color key="titleColor" red="0.23529411759999999" green="0.70196078429999997" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
@@ -87,6 +88,8 @@
                     <constraint firstItem="vQb-jX-cTT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="EGp-4N-AzT"/>
                     <constraint firstItem="yA4-Ie-RDJ" firstAttribute="leading" secondItem="oJO-3T-iLJ" secondAttribute="trailing" constant="8" symbolic="YES" id="GQC-9g-bh7"/>
                     <constraint firstItem="Ddn-Dl-yjG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="HtJ-YX-x6Y"/>
+                    <constraint firstItem="FNS-jj-aRd" firstAttribute="firstBaseline" secondItem="vQb-jX-cTT" secondAttribute="firstBaseline" id="Int-50-vmK"/>
+                    <constraint firstItem="FNS-jj-aRd" firstAttribute="top" secondItem="vQb-jX-cTT" secondAttribute="top" id="KSH-qI-lP9"/>
                     <constraint firstItem="vQb-jX-cTT" firstAttribute="top" secondItem="oJO-3T-iLJ" secondAttribute="bottom" constant="21" id="KwL-68-ofh"/>
                     <constraint firstItem="oJO-3T-iLJ" firstAttribute="bottom" secondItem="yA4-Ie-RDJ" secondAttribute="bottom" id="PUU-yH-0zj"/>
                     <constraint firstItem="yA4-Ie-RDJ" firstAttribute="trailing" secondItem="FNS-jj-aRd" secondAttribute="trailing" id="RJV-bE-ACd"/>
@@ -97,6 +100,7 @@
                     <constraint firstItem="FNS-jj-aRd" firstAttribute="leading" secondItem="vQb-jX-cTT" secondAttribute="trailing" constant="8" symbolic="YES" id="k3c-PR-x9f"/>
                     <constraint firstItem="oJO-3T-iLJ" firstAttribute="leading" secondItem="Ddn-Dl-yjG" secondAttribute="trailing" constant="8" symbolic="YES" id="myj-Tx-fqC"/>
                     <constraint firstItem="oJO-3T-iLJ" firstAttribute="leading" secondItem="AZE-2p-gfZ" secondAttribute="leading" id="n2a-tv-0Wd"/>
+                    <constraint firstItem="FNS-jj-aRd" firstAttribute="baseline" secondItem="vQb-jX-cTT" secondAttribute="baseline" id="pWB-u3-nKI"/>
                     <constraint firstItem="Ddn-Dl-yjG" firstAttribute="top" secondItem="oJO-3T-iLJ" secondAttribute="top" id="saD-p2-jd1"/>
                     <constraint firstItem="vQb-jX-cTT" firstAttribute="top" secondItem="AZE-2p-gfZ" secondAttribute="bottom" constant="8" symbolic="YES" id="tX9-vg-DCW"/>
                     <constraint firstItem="vQb-jX-cTT" firstAttribute="top" secondItem="Ddn-Dl-yjG" secondAttribute="bottom" constant="8" symbolic="YES" id="v5K-3t-0vN"/>

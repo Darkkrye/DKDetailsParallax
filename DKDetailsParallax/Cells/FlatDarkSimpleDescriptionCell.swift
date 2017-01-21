@@ -54,14 +54,17 @@ open class FlatDarkSimpleDescriptionCell: UITableViewCell {
     
     // MARK: - Personnal Methods
     open static func simpleDescriptionCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatDarkSimpleDescriptionCell {
+        // Call other constructor with default value
         return simpleDescriptionCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, withoutTitle: false, withoutContent: false)
     }
     
     open static func simpleDescriptionCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withoutTitle: Bool, withoutContent: Bool) -> FlatDarkSimpleDescriptionCell {
+        // Retrieve cell
         let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatDarkSimpleDescriptionCell", owner: self, options: nil)
         let cell: FlatDarkSimpleDescriptionCell = nibs![0] as! FlatDarkSimpleDescriptionCell
         cell.selectionStyle = .none
         
+        // Set colors
         if let p = withPrimaryColor {
             cell.primaryColor = p
         }
@@ -71,10 +74,12 @@ open class FlatDarkSimpleDescriptionCell: UITableViewCell {
         }
         
         if withoutTitle {
+            // Hide title label
             cell.titleLabel.isHidden = true
         }
         
         if withoutContent {
+            // Hide content label
             cell.contentLabel.isHidden = true
         }
         

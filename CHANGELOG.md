@@ -1,3 +1,13 @@
+## 2.0.2 (January 21, 2017)
+
+Improvements:
+
+- Fix constraint errors for some cells,
+- Added more comments,
+- Added more documentation in README,
+- Bug fixes.
+
+
 ## 2.0.1 (January 20, 2017)
 
 Improvements:

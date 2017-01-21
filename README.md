@@ -283,8 +283,24 @@ extension MyViewController: DKDetailsParallaxCellDelegate {
 Final Step: ENJOY !
 
 
+## Assets
+By default, the framework comes with some assets like xib, jpg or png pictures and fonts etc...
+
+If you want to use it, you cannot use like you do by default because the framework is in another bundle.
+
+To have access to it you can call the DKDetailsParallax function to retrieve the good bundle :
+``` swift
+public static func bundle() -> Bundle?
+```
+
+And you can use it like that :
+``` swift
+UIImage(named: "defaultProfile", in: DKDetailsParallax.bundle(), compatibleWith: nil)
+```
+
+
 ## Version
-Current stable version `2.0.1`
+Current stable version `2.0.2`
 
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)

@@ -40,14 +40,17 @@ open class FlatLightSimpleLabelCell: UITableViewCell {
     
     // MARK: - Personnal Methods
     open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatLightSimpleLabelCell {
+        // Call other constructor with default value
         return simpleCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, wantsEmptyCell: false)
     }
     
     open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, wantsEmptyCell: Bool) -> FlatLightSimpleLabelCell {
+        // Retrieve cell
         let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatLightSimpleLabelCell", owner: self, options: nil)
         let cell: FlatLightSimpleLabelCell = nibs![0] as! FlatLightSimpleLabelCell
         cell.selectionStyle = .none
         
+        // Set colors
         if let p = withPrimaryColor {
             cell.primaryColor = p
         }
@@ -57,6 +60,7 @@ open class FlatLightSimpleLabelCell: UITableViewCell {
         }
         
         if wantsEmptyCell {
+            // Hide content label
             cell.contentLabel.isHidden = true
         }
         
