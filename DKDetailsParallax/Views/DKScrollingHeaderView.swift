@@ -8,7 +8,9 @@
 
 import UIKit
 
+// Scrolling HeaderView
 open class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
+    
     // Constants
     static let kDefaultImagePagerHeight: CGFloat = 375
     static let kDefaultTableViewHeaderMargin: CGFloat = 95
@@ -18,45 +20,50 @@ open class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
     var headerImageViewHeight: CGFloat = 0
     var headerImageViewScalingFactor: CGFloat = 0
     var navbarViewFadingOffset: CGFloat = 0
-    var tableView: UITableView!
+    public var tableView: UITableView!
     var navBarView: UIView = UIView()
     var headerImageViewContentMode: UIViewContentMode = .scaleAspectFit
-    var delegate: DKScrollingHeaderViewDelegate?
+    public var delegate: DKScrollingHeaderViewDelegate?
     
     var imageView: UIImageView?
     var imageButton: UIButton?
     
+    // Constructors
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        // Call initialize function
         self.initialize()
         
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+        // Call initialize function
         self.initialize()
         
     }
     
     func initialize() {
+        // Set headerImageView
         self.headerImageViewHeight = DKScrollingHeaderView.kDefaultImagePagerHeight
         self.headerImageViewScalingFactor = DKScrollingHeaderView.kDefaultImageScalingFactor;
         self.headerImageViewContentMode = .scaleAspectFit
         
+        // Call all the setup functions
         self.setupTableView()
-        self.setupTableViewHeader()
+        self.setupTableHeaderView()
         self.setupImageView()
         
+        // Add some properties to the variables
         self.autoresizesSubviews = true
         self.tableView?.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleLeftMargin, .flexibleTopMargin]
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleLeftMargin, .flexibleTopMargin]
     }
     
     open func reloadScrollingHeader() {
+        // Reload scrolling header and tableview
         if let d = self.delegate {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { // Need to execute in main thread
                 d.detailsPage(scrollingHeaderView: self, headerImageView: self.imageView!)
             }
         }
@@ -70,18 +77,21 @@ extension DKScrollingHeaderView {
     override open func layoutSubviews() {
         super.layoutSubviews()
         
+        // Set properties for the headerView
         self.navbarViewFadingOffset = self.headerImageViewHeight - (self.navBarView.frame.height + DKScrollingHeaderView.kDefaultTableViewHeaderMargin)
         
+        // Check for tableView and imageView and set up
         if self.tableView == nil {
             self.setupTableView()
         }
         if self.tableView?.tableHeaderView == nil {
-            self.setupTableViewHeader()
+            self.setupTableHeaderView()
         }
         if self.imageView == nil {
             self.setupImageView()
         }
         
+        // Call other setup functions
         self.setupBackgroundColor()
         self.setupImageButton()
     }
@@ -90,6 +100,7 @@ extension DKScrollingHeaderView {
 // MARK: - Extension for setup methods
 extension DKScrollingHeaderView {
     func setupTableView() {
+        // Setup properties for the tableView
         self.tableView = UITableView(frame: self.bounds)
         
         self.tableView?.backgroundColor = UIColor.clear
@@ -100,7 +111,8 @@ extension DKScrollingHeaderView {
         self.addSubview(self.tableView!)
     }
     
-    func setupTableViewHeader() {
+    func setupTableHeaderView() {
+        // Setup properties for the tableHeaderView
         let tableHeaderViewFrame = CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: self.headerImageViewHeight - DKScrollingHeaderView.kDefaultTableViewHeaderMargin)
         let tableHeaderView = UIView(frame: tableHeaderViewFrame)
         tableHeaderView.backgroundColor = UIColor.clear
@@ -108,6 +120,7 @@ extension DKScrollingHeaderView {
     }
     
     func setupImageButton() {
+        // Setup Image Button
         if self.imageButton == nil {
             self.imageButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: self.headerImageViewHeight))
         }
@@ -116,6 +129,7 @@ extension DKScrollingHeaderView {
     }
     
     func setupImageView() {
+        // Setup properties for ImageView
         self.imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: self.headerImageViewHeight))
         self.imageView?.backgroundColor = UIColor.black
         self.imageView?.autoresizingMask = .flexibleWidth
@@ -130,11 +144,13 @@ extension DKScrollingHeaderView {
     }
     
     func setupBackgroundColor() {
+        // Setup the backgrounds colors
         self.backgroundColor = UIColor.clear
         self.tableView?.backgroundColor = UIColor.clear
     }
     
     func setupImageViewGradient() {
+        // Setup the image view gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.imageView!.bounds
         gradientLayer.colors = [(UIColor(red: CGFloat(0), green: CGFloat(0), blue: CGFloat(0), alpha: CGFloat(1)).cgColor as Any), (UIColor(red: CGFloat(0), green: CGFloat(0), blue: CGFloat(0), alpha: CGFloat(0)) as Any)]
@@ -149,6 +165,7 @@ extension DKScrollingHeaderView {
 // MARK: - Extension for personal methods
 extension DKScrollingHeaderView {
     func imageButtonPressed(button: UIButton) {
+        // Delegate for header image view tapped
         if let d = self.delegate {
             d.detailsPage!(scrollingHeaderView: self, headerImageWasSelected: self.imageView!)
         }
@@ -158,6 +175,7 @@ extension DKScrollingHeaderView {
 // MARK: - Extension for setters
 extension DKScrollingHeaderView {
     func setNavbarView(navbarView: UIView) {
+        // Setup properties for navBarView
         if self.navBarView == navbarView {
             return
         }
@@ -169,6 +187,7 @@ extension DKScrollingHeaderView {
     }
     
     func setHeaderImageViewContentMode(headerImageViewContentMode: UIViewContentMode) {
+        // Set header image view content mode
         if self.headerImageViewContentMode == headerImageViewContentMode {
             return
         }
@@ -181,6 +200,7 @@ extension DKScrollingHeaderView {
 // MARK: - Extension for KVO methods
 extension DKScrollingHeaderView {
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        // Observe value for scrolling
         if (object as! UITableView == self.tableView) && ((keyPath == "contentOffset") == true) {
             self.scrollViewDidScroll(withOffset: self.tableView.contentOffset.y)
             return
@@ -191,6 +211,7 @@ extension DKScrollingHeaderView {
 // MARK: - Extension for ScrollView methods
 extension DKScrollingHeaderView {
     func scrollViewDidScroll(withOffset scrollOffset: CGFloat) {
+        // Execute when scrolling
         let scrollViewDragPoint = self.tableView?.contentOffset
         if scrollOffset < 0 {
             self.imageView!.transform = CGAffineTransform(scaleX: 1 - (scrollOffset / self.headerImageViewScalingFactor), y: 1 - (scrollOffset / self.headerImageViewScalingFactor))
@@ -198,11 +219,15 @@ extension DKScrollingHeaderView {
         else {
             self.imageView?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
+        
+        // Call animateNavigation to Show / Hide navbar
         self.animateNavigationBar(scrollOffset, dragging: scrollViewDragPoint!)
     }
     
     func animateNavigationBar(_ scrollOffset: CGFloat, dragging scrollViewDragPoint: CGPoint) {
+        // Hide / Show navigation bar when scrolling
         if scrollOffset > navbarViewFadingOffset && self.navBarView.alpha == 0.0 {
+            // Show the navbar
             self.navBarView.alpha = 0
             self.navBarView.isHidden = false
             UIView.animate(withDuration: 0.3, animations: {() -> Void in
@@ -210,6 +235,7 @@ extension DKScrollingHeaderView {
             })
         }
         else if scrollOffset < navbarViewFadingOffset && self.navBarView.alpha == 1.0 {
+            // Hide the navbar
             UIView.animate(withDuration: 0.3, animations: {() -> Void in
                 self.navBarView.alpha = 0
             }, completion: {(_ finished: Bool) -> Void in

@@ -26,6 +26,7 @@ open class RoundedButtonCell: UITableViewCell {
     
     // MARK: - IBActions
     @IBAction func buttonTapped(_ sender: Any) {
+        // Execute when button is tapped
         if let d = self.delegate {
             d.roundedButtonCellCallback!(cell: self, forButton: self.button)
         }
@@ -47,14 +48,17 @@ open class RoundedButtonCell: UITableViewCell {
     
     // MARK: - Personnal Methods
     open static func buttonCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedButtonCell {
+        // Call other constructor with default value
         return buttonCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, withPlainButton: false)
     }
     
     open static func buttonCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withPlainButton: Bool) -> RoundedButtonCell {
+        // Retrieve cell
         let nibs = DKDetailsParallax.bundle()?.loadNibNamed("RoundedButtonCell", owner: self, options: nil)
         let cell: RoundedButtonCell = nibs![0] as! RoundedButtonCell
         cell.selectionStyle = .none
         
+        // Set colors
         if let p = withPrimaryColor {
             cell.primaryColor = p
         }
@@ -63,18 +67,18 @@ open class RoundedButtonCell: UITableViewCell {
             cell.secondaryColor = s
         }
         
+        // Call intialize function
         if withPlainButton {
             initializeForPlainButton(cell: cell)
         } else {
             initialize(cell: cell)
         }
         
-        
-        
         return cell
     }
     
     private static func initialize(cell: RoundedButtonCell) {
+        // Setup outlined button
         cell.button.layer.borderColor = cell.primaryColor.cgColor
         cell.button.layer.borderWidth = 1.0
         cell.button.layer.cornerRadius = 15.0
@@ -83,6 +87,7 @@ open class RoundedButtonCell: UITableViewCell {
     }
     
     private static func initializeForPlainButton(cell: RoundedButtonCell) {
+        // Setup plain button
         cell.button.layer.cornerRadius = 15.0
         cell.button.backgroundColor = cell.primaryColor
         cell.button.setTitleColor(UIColor.white, for: .normal)
