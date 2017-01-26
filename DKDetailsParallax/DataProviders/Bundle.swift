@@ -8,16 +8,19 @@
 
 import Foundation
 
+/// DKDetailsParallax class
 public class DKDetailsParallax {
-    // Return DKDetailsParallax Bundle
+    /// A function to retrieve the Framework Bundle
+    ///
+    /// - Returns: Optional Bundle
     public static func bundle() -> Bundle? {
-        // Retrieve Bundle for the current class
+        /* Retrieve Bundle for the current class */
         let frameworkBundle = Bundle(for: DKDetailsParallax.self)
         
-        // Retrieve Bundle URL
+        /* Retrieve Bundle URL */
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("DKDetailsParallax.bundle", isDirectory: true)
         
-        // Create Bundle for Bundle URL and return it
+        /* Create Bundle for Bundle URL and return it */
         let resourceBundle = Bundle(url: bundleURL!)
         return resourceBundle
     }

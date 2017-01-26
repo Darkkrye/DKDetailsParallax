@@ -1,4 +1,16 @@
 # DKDetailsParallax [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
+[![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
+[![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=darkkrye/dkdetailsparallax)](http://clayallsopp.github.io/readme-score?url=darkkrye/dkdetailsparallax)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/DKDetailsParallax.svg)](https://img.shields.io/cocoapods/v/DKDetailsParallax.svg)
+[![Platform](https://img.shields.io/cocoapods/p/DKDetailsParallax.svg?style=flat)](http://cocoadocs.org/docsets/DKDetailsParallax)
+
+[![Codecov](https://img.shields.io/codecov/c/github/Darkkrye/DKDetailsParallax.svg?style=flat)](https://codecov.io/gh/Darkkrye/DKDetailsParallax)
+[![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/DKDetailsParallax.svg?style=flat)](http://cocoadocs.org/docsets/DKDetailsParallax)
+[![GitHub release](https://img.shields.io/github/tag/Darkkrye/DKDetailsParallax.svg?style=flat&label=release)](https://github.com/Darkkrye/DKDetailsParallax/releases)
+[![License](https://img.shields.io/cocoapods/l/DKDetailsParallax.svg?style=flat)](LICENSE)
+
+[![CocoaPods](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org/pods/DKDetailsParallax)
+[![CocoaPods downloads](https://img.shields.io/cocoapods/dt/DKDetailsParallax.svg?style=flat)](https://cocoapods.org/pods/DKDetailsParallax)
 
 ## Installation
 DKDetailsParallax is a framework available in Cocoapods.
@@ -40,8 +52,6 @@ import DKDetailsParallax
 class MyViewController: DKDetailsParallaxViewController {
 
     var myObject: MyObject
-    var primaryColor: UIColor
-    var secondaryColor: UIColor
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -300,11 +310,12 @@ UIImage(named: "defaultProfile", in: DKDetailsParallax.bundle(), compatibleWith:
 
 
 ## Version
-Current stable version `2.0.2`
+Current stable version `2.0.3`
 
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
 ### Develop [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=develop)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
+### README [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=darkkrye/dkdetailsparallax)](http://clayallsopp.github.io/readme-score?url=darkkrye/dkdetailsparallax)
 
 ## Thanks to
 I use T-Pham/Switch library for the Switch in the cell, so thanks to him.

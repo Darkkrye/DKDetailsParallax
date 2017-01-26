@@ -8,19 +8,20 @@
 
 import UIKit
 
+/// RoundedDetailsProfileCell class
 open class RoundedDetailsProfileCell: UITableViewCell {
     
-    // MARK: - Private Constants
+    /* MARK: - Private Constants */
     public static let defaultHeight: CGFloat = 105
     
     
-    // MARK: - Private Variables
+    /* MARK: - Private Variables */
     public var primaryColor = UIColor.black
     public var secondaryColor = UIColor.gray
     public var delegate: DKDetailsParallaxCellDelegate?
     
     
-    // MARK: - IBOutlets
+    /* MARK: - IBOutlets */
     @IBOutlet public weak var squareImageView: UIImageView!
     @IBOutlet public weak var titleLabel: UILabel!
     @IBOutlet public weak var subtitleLabel: UILabel!
@@ -28,28 +29,38 @@ open class RoundedDetailsProfileCell: UITableViewCell {
     @IBOutlet public weak var outlinedButton: UIButton!
     @IBOutlet public weak var plainButton: UIButton!
     
-    // MARK: - IBActions
+    /* MARK: - IBActions */
+    /// IBAction for plain button
+    ///
+    /// - Parameter sender: Any - The button
     @IBAction func plainButtonTapped(_ sender: Any) {
-        // Execute when plain button is tapped
+        /* Execute when plain button is tapped */
         if let d = self.delegate {
             d.roundedDetailsProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
         }
     }
+    /// IBAction for outlined button
+    ///
+    /// - Parameter sender: Any - The button
     @IBAction func outlinedButtonTapped(_ sender: Any) {
-        // Execute when outlined button is tapped
+        /* Execute when outlined button is tapped */
         if let d = self.delegate {
             d.roundedDetailsProfileCellCallback!(cell: self, forOutlinedButton: self.outlinedButton)
         }
     }
+    /// IBAction for circle button
+    ///
+    /// - Parameter sender: Any - The button
     @IBAction func circleButtonTapped(_ sender: Any) {
-        // Execute when circle button is tapped
+        /* Execute when circle button is tapped */
         if let d = self.delegate {
             d.roundedDetailsProfileCellCallback!(cell: self, forCircleButton: self.circleButton)
         }
     }
     
     
-    // MARK: - "Default" Methods
+    /* MARK: - "Default" Methods */
+    /// Override function awakeFromNib
     override open func awakeFromNib() {
         super.awakeFromNib()
         
@@ -57,55 +68,73 @@ open class RoundedDetailsProfileCell: UITableViewCell {
     }
     
     
-    // MARK: - Delegates
+    /* MARK: - Delegates */
     
     
-    // MARK: - Personnal Delegates
+    /* MARK: - Personnal Delegates */
     
     
-    // MARK: - Personnal Methods
+    /* MARK: - Personnal Methods */
+    /// Default constructor for the cell
+    ///
+    /// - Parameters:
+    ///   - withPrimaryColor: UIColor? - The primary color
+    ///   - andSecondaryColor: UIColor ? - The secondary color
+    /// - Returns: RoundedDetailsProfileCell - The created cell
     open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsProfileCell {
-        // Call other constructor with default value
+        /* Call other constructor with default value */
         return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptSquareImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
     }
     
+    /// Complex constructor for the cell
+    ///
+    /// - Parameters:
+    ///   - withPrimaryColor: UIColor? - The primary color
+    ///   - andSecondaryColor: UIColor? - The secondary color
+    ///   - exceptSquareImage: Bool - If you don't want this item
+    ///   - exceptTitleLabel: Bool - If you don't want this item
+    ///   - exceptSubtitleLabel: Bool - If you don't want this item
+    ///   - exceptCircleButton: Bool - If you don't want this item
+    ///   - exceptOutlinedButton: Bool - If you don't want this item
+    ///   - exceptPlainButton: Bool - If you don't want this item
+    /// - Returns: RoundedDetailsProfileCell - The created cell
     open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsProfileCell {
-        // Retrieve cell
+        /* Retrieve cell */
         let nibs = DKDetailsParallax.bundle()?.loadNibNamed("RoundedDetailsProfileCell", owner: self, options: nil)
         let cell: RoundedDetailsProfileCell = nibs![0] as! RoundedDetailsProfileCell
         cell.selectionStyle = .none
         
         if exceptSquareImage {
-            // Hide square image
+            /* Hide square image */
             cell.squareImageView.isHidden = true
         }
         
         if exceptTitleLabel {
-            // Hide title label
+            /* Hide title label */
             cell.titleLabel.isHidden = true
         }
         
         if exceptSubtitleLabel {
-            // Hide subtitle label
+            /* Hide subtitle label */
             cell.subtitleLabel.isHidden = true
         }
         
         if exceptCircleButton {
-            // Hide circle button
+            /* Hide circle button */
             cell.circleButton.isHidden = true
         }
         
         if exceptOutlinedButton {
-            // Hide outlined button
+            /* Hide outlined button */
             cell.outlinedButton.isHidden = true
         }
         
         if exceptPlainButton {
-            // Hide plain button
+            /* Hide plain button */
             cell.plainButton.isHidden = true
         }
         
-        // Set colors
+        /* Set colors */
         if let p = withPrimaryColor {
             cell.primaryColor = p
         }
@@ -114,28 +143,31 @@ open class RoundedDetailsProfileCell: UITableViewCell {
             cell.secondaryColor = s
         }
         
-        // Call initialize function
+        /* Call initialize function */
         initialize(cell: cell)
         
         return cell
     }
     
+    /// Initialize function
+    ///
+    /// - Parameter cell: RoundedDetailsProfileCell - The cell
     private static func initialize(cell: RoundedDetailsProfileCell) {
-        // Set cell properties for variables
+        /* Set cell properties for variables */
         cell.titleLabel.textColor = cell.primaryColor
         cell.subtitleLabel.textColor = cell.secondaryColor
         
-        // Set cell square image properties
+        /* Set cell square image properties */
         cell.squareImageView.layer.cornerRadius = cell.squareImageView.frame.size.width/2
         cell.squareImageView.layer.masksToBounds = true
         
-        // Set plain button properties
+        /* Set plain button properties */
         cell.plainButton.layer.borderColor = cell.primaryColor.cgColor
         cell.plainButton.backgroundColor = cell.primaryColor
         cell.plainButton.layer.cornerRadius = 15.0
         cell.plainButton.setTitleColor(UIColor.white, for: .normal)
         
-        // Set outlined button properties
+        /* Set outlined button properties */
         cell.outlinedButton.layer.borderColor =  cell.primaryColor.cgColor
         cell.outlinedButton.setTitleColor(cell.primaryColor, for: .normal)
         cell.outlinedButton.layer.borderWidth = 1.0
