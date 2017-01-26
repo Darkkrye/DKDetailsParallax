@@ -8,49 +8,64 @@
 
 import UIKit
 
+/// FlatDarkSimpleLabelCell class
 open class FlatDarkSimpleLabelCell: UITableViewCell {
 
-    // MARK: - Private Constants
+    /* MARK: - Private Constants */
     public static let defaultHeight: CGFloat = 44
     
     
-    // MARK: - Private Variables
+    /* MARK: - Private Variables */
     public var primaryColor = UIColor.white
     public var secondaryColor = UIColor.gray
     
     
-    // MARK: - IBOutlets
+    /* MARK: - IBOutlets */
     @IBOutlet public weak var contentLabel: UILabel!
     
     
-    // MARK: - IBActions
+    /* MARK: - IBActions */
     
     
-    // MARK: - "Default" Methods
+    /* MARK: - "Default" Methods */
+    /// Override function awakeFromNib
     override open func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        /* Initialization code */
     }
     
-    // MARK: - Delegates
+    /* MARK: - Delegates */
     
     
-    // MARK: - Personnal Delegates
+    /* MARK: - Personnal Delegates */
     
     
-    // MARK: - Personnal Methods
+    /* MARK: - Personnal Methods */
+    /// Default constructor for the cell
+    ///
+    /// - Parameters:
+    ///   - withPrimaryColor: UIColor? - The primary color
+    ///   - andSecondaryColor: UIColor? - The secondary color
+    /// - Returns: FlatDarkSimpleLabelCell - The created cell
     open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatDarkSimpleLabelCell {
-        // Call other constructor with default value
+        /* Call other constructor with default value */
         return simpleCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, wantsEmptyCell: false)
     }
     
+    /// Complex constructor for the cell
+    ///
+    /// - Parameters:
+    ///   - withPrimaryColor: UIColor? - The primary color
+    ///   - andSecondaryColor: UIColor? - The secondary color
+    ///   - wantsEmptyCell: Bool - If you want this item
+    /// - Returns: FlatDarkSimpleLabelCell
     open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, wantsEmptyCell: Bool) -> FlatDarkSimpleLabelCell {
-        // Retrieve cell
+        /* Retrieve cell */
         let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatDarkSimpleLabelCell", owner: self, options: nil)
         let cell: FlatDarkSimpleLabelCell = nibs![0] as! FlatDarkSimpleLabelCell
         cell.selectionStyle = .none
         
-        // Set colors
+        /* Set colors */
         if let p = withPrimaryColor {
             cell.primaryColor = p
         }
@@ -60,7 +75,7 @@ open class FlatDarkSimpleLabelCell: UITableViewCell {
         }
         
         if wantsEmptyCell {
-            // Hide content label
+            /* Hide content label */
             cell.contentLabel.isHidden = true
         }
         

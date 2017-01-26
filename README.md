@@ -40,8 +40,6 @@ import DKDetailsParallax
 class MyViewController: DKDetailsParallaxViewController {
 
     var myObject: MyObject
-    var primaryColor: UIColor
-    var secondaryColor: UIColor
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -305,6 +303,7 @@ Current stable version `2.0.2`
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
 ### Develop [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=develop)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
+### README [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=darkkrye/dkdetailsparallax)](http://clayallsopp.github.io/readme-score?url=darkkrye/dkdetailsparallax)
 
 ## Thanks to
 I use T-Pham/Switch library for the Switch in the cell, so thanks to him.

@@ -10,6 +10,11 @@ sudo gem install fastlane
 fastlane launchTest
 ```
 
+### gitDeploy
+```
+fastlane gitDeploy
+```
+
 
 ----
 
