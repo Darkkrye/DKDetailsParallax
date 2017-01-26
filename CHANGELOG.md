@@ -1,3 +1,14 @@
+## 2.0.3 (January 26, 2017)
+
+Features :
+
+- Added blur effect when scroll down the table view.
+
+Improvements:
+
+- The whole documentation.
+
+
 ## 2.0.2 (January 21, 2017)
 
 Improvements:
