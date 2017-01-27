@@ -11,21 +11,26 @@ import UIKit
 /// RoundedButtonCell class
 open class RoundedButtonCell: UITableViewCell {
     
-    /* MARK: - Private Constants */
+    /// MARK: - Private Constants
+    /// Cell default height
     public static let defaultHeight: CGFloat = 62
     
     
-    /* MARK: - Private Variables */
+    /// MARK: - Private Variables
+    /// Cell primary color
     public var primaryColor = UIColor.black
+    /// Cell secondary color
     public var secondaryColor = UIColor.white
+    /// Cell delegate
     public var delegate: DKDetailsParallaxCellDelegate?
     
     
-    /* MARK: - IBOutlets */
+    /// MARK: - IBOutlets
+    /// Button
     @IBOutlet weak public var button: UIButton!
     
     
-    /* MARK: - IBActions */
+    /// MARK: - IBActions
     /// IBAction for button tapped
     ///
     /// - Parameter sender: Any - The button
@@ -38,20 +43,20 @@ open class RoundedButtonCell: UITableViewCell {
     
     
     
-    /* MARK: - "Default" Methods */
+    /// MARK: - "Default" Methods
     /// Override function awakeFromNib
     override open func awakeFromNib() {
         super.awakeFromNib()
     }
     
     
-    /* MARK: - Delegates */
+    /// MARK: - Delegates
     
     
-    /* MARK: - Personnal Delegates */
+    /// MARK: - Personnal Delegates
     
     
-    /* MARK: - Personnal Methods */
+    /// MARK: - Personnal Methods
     /// Default constructor for the cell
     ///
     /// - Parameters:

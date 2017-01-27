@@ -11,36 +11,40 @@ import UIKit
 /// FlatDarkSimpleLabelCell class
 open class FlatDarkSimpleLabelCell: UITableViewCell {
 
-    /* MARK: - Private Constants */
+    /// MARK: - Private Constants
+    /// Cell default height
     public static let defaultHeight: CGFloat = 44
     
     
-    /* MARK: - Private Variables */
+    /// MARK: - Private Variables
+    /// Cell primary color
     public var primaryColor = UIColor.white
+    /// Cell secondary color
     public var secondaryColor = UIColor.gray
     
     
-    /* MARK: - IBOutlets */
+    /// MARK: - IBOutlets
+    /// Content Label
     @IBOutlet public weak var contentLabel: UILabel!
     
     
-    /* MARK: - IBActions */
+    /// MARK: - IBActions
     
     
-    /* MARK: - "Default" Methods */
+    /// MARK: - "Default" Methods
     /// Override function awakeFromNib
     override open func awakeFromNib() {
         super.awakeFromNib()
         /* Initialization code */
     }
     
-    /* MARK: - Delegates */
+    /// MARK: - Delegates
     
     
-    /* MARK: - Personnal Delegates */
+    /// MARK: - Personnal Delegates
     
     
-    /* MARK: - Personnal Methods */
+    /// MARK: - Personnal Methods
     /// Default constructor for the cell
     ///
     /// - Parameters:

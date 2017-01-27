@@ -1,3 +1,14 @@
+## 2.0.4 (January 27, 2017)
+
+Features :
+
+- Added a new blurred navbar system.
+
+Improvements:
+
+- The documentation.
+
+
 ## 2.0.3 (January 26, 2017)
 
 Features :

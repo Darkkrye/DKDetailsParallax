@@ -12,7 +12,7 @@ import Foundation
 @objc public protocol DKDetailsParallaxCellDelegate: NSObjectProtocol {
     
     /* MARK: - Rounded Theme */
-    /* MARK: RoundedDetailsProfileCell */
+    /// MARK: RoundedDetailsProfileCell
     /// Callback when circle button is selected
     ///
     /// - Parameters:
@@ -32,7 +32,7 @@ import Foundation
     ///   - forPlainButton: UIButton - The button
     @objc optional func roundedDetailsProfileCellCallback(cell: RoundedDetailsProfileCell, forPlainButton: UIButton)
     
-    /* MARK: RoundedDetailsRectangleProfileCell */
+    /// MARK: RoundedDetailsRectangleProfileCell
     /// Callback when circle button is selected
     ///
     /// - Parameters:
@@ -52,7 +52,7 @@ import Foundation
     ///   - forPlainButton: UIButton - The button
     @objc optional func roundedDetailsRectangleProfileCellCallback(cell: RoundedDetailsRectangleProfileCell, forPlainButton: UIButton)
     
-    /* MARK: RoundedButtonCell */
+    /// MARK: RoundedButtonCell
     /// Callback when the button is selected
     ///
     /// - Parameters:
@@ -63,7 +63,7 @@ import Foundation
     /* ------------------------------------------------------------------------------------------------------------------------------------------ */
     
     /* MARK: - Flat Light Theme */
-    /* FlatLightSwitchCell */
+    /// FlatLightSwitchCell
     /// Callback when the switch value changed
     ///
     /// - Parameters:
@@ -75,7 +75,7 @@ import Foundation
     /* ------------------------------------------------------------------------------------------------------------------------------------------ */
     
     /* MARK: - Flat Light Theme */
-    /* FlatDarkSwitchCell */
+    /// FlatDarkSwitchCell
     /// Callback when the switch value changed
     ///
     /// - Parameters:
