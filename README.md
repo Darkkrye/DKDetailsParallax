@@ -62,10 +62,17 @@ class MyViewController: DKDetailsParallaxViewController {
         // ...
 
         // Don't forget to set headerImage and call setupController function at the end of the viewDidLoad. If you are making web calls then add these two lines in the main Thread
-        self.headerImage = myObject.imageBanner
+        self.setHeaderImage(image: myObject.imageBanner)
         self.setupController()
     }
 }
+```
+
+You can now create a new instance of your controller to show it
+```swift
+let myObject = self.myobjects[indexPath.row]
+let vc = MyViewController(primaryColor: self.primaryColor, secondaryColor: nil, title: myObject.title, headerImage: nil, idObject: nil, object: myObject, withBlurredNavbar: true)    
+self.present(vc, animated: true, completion: nil)
 ```
 
 Next step is to create a new extension to override `UITableView` methods. Inside it you can use the cells as you want it.
@@ -310,7 +317,7 @@ UIImage(named: "defaultProfile", in: DKDetailsParallax.bundle(), compatibleWith:
 
 
 ## Version
-Current stable version `2.0.3`
+Current stable version `2.0.4`
 
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
