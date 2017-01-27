@@ -11,31 +11,48 @@ import UIKit
 /// DKDetailsParallaxViewController class
 open class DKDetailsParallaxViewController: UIViewController {
     
-    /* MARK: - IBOutlets */
+    /// MARK: - IBOutlets
+    /// Scrolling header view
     @IBOutlet public weak var scrollingHeaderView: DKScrollingHeaderView!
+    /// Navbar
     @IBOutlet public weak var navBar: UIView!
+    /// Navbar title Label
     @IBOutlet public weak var navBarTitleLabel: UILabel!
     
-    /* MARK: - Constants */
+    /// MARK: - Constants
+    /// Back button
     public let buttonBack = UIButton(type: .custom)
     
-    /* MARK: - Variables */
+    /// MARK: - Variables
+    /// Controller primary color
     public var primaryColor = UIColor.black
+    /// Controller secondary color
     public var secondaryColor = UIColor.gray
     
+    /// Status of status bar
     public var statusBarHidden = true
+    /// Controller loading view
     public var loadingView = UIView()
     
+    /// Navbar title with default value
     public var navbarTitle = "Title"
+    /// Header image with default value
     public var headerImage = UIImage(named: "defaultProfile")
+    /// Blurred header image with default value
+    public var blurredHeaderImage = UIImageView(image: UIImage(named: "defaultProfile"))
     
+    /// Id of the object - you can use it for some reason
     public var idObject: Int?
     
+    /// Object - you can use it for some reasons
     public var object: Any?
     
-    public var wantsConfettiDismiss: Bool!
+    /// Wants a blur navbar option
+    public var wantsBlurredNavbar: Bool?
+    /// For the controller to know if it needs to set the blur header image
+    var needsToSetBlurredImage: Bool = false
     
-    /* MARK: - Constructors */
+    /// MARK: - Constructors
     /// Constructor for the controller
     ///
     /// - Parameters:
@@ -46,7 +63,7 @@ open class DKDetailsParallaxViewController: UIViewController {
     ///   - idObject: Int? - The id of the object (You could need it for some reasons)
     ///   - object: Any? - The object you want to details in case you already have it. You have to cast it in your subclass
     ///   - withConfettiDismiss: Bool - If you want the confetti dismiss
-    public init(primaryColor: UIColor?, secondaryColor: UIColor?, title: String, headerImage: UIImage?, idObject: Int?, object: Any?, withConfettiDismiss: Bool) {
+    public init(primaryColor: UIColor?, secondaryColor: UIColor?, title: String, headerImage: UIImage?, idObject: Int?, object: Any?, withBlurredNavbar: Bool) {
         /* Super init with the DKDetailsParallaxViewController xib */
         super.init(nibName: "DKDetailsParallaxViewController", bundle: DKDetailsParallax.bundle())
         
@@ -66,7 +83,11 @@ open class DKDetailsParallaxViewController: UIViewController {
         self.navbarTitle = title
         self.idObject = idObject
         self.object = object
-        self.wantsConfettiDismiss = withConfettiDismiss
+        self.wantsBlurredNavbar = withBlurredNavbar
+        
+        if headerImage != nil && withBlurredNavbar == true {
+            self.needsToSetBlurredImage = true
+        }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -89,13 +110,13 @@ open class DKDetailsParallaxViewController: UIViewController {
     }
 }
 
-/* MARK: - Extension for UITableViewDelegate */
+/// MARK: - Extension for UITableViewDelegate
 extension DKDetailsParallaxViewController: UITableViewDelegate {
     
 }
 
 
-/* MARK: - Extension for UITableViewDataSource */
+/// MARK: - Extension for UITableViewDataSource
 extension DKDetailsParallaxViewController: UITableViewDataSource {
     /// Number of sections for UITableViewDataSource
     /// You don't need to override it.
@@ -134,7 +155,7 @@ extension DKDetailsParallaxViewController: UITableViewDataSource {
 }
 
 
-/* MARK: - Extension for DKScrollingHeaderViewDelegate  */
+/// MARK: - Extension for DKScrollingHeaderViewDelegate
 extension DKDetailsParallaxViewController: DKScrollingHeaderViewDelegate {
     /// Details page for DKScrollingHeaderView Delegate
     ///
@@ -152,15 +173,45 @@ extension DKDetailsParallaxViewController: DKScrollingHeaderViewDelegate {
 }
 
 
-/* MARK: - Extension for DKDetailsParallaxCellsDelegate */
+/// MARK: - Extension for DKDetailsParallaxCellsDelegate
 
 
 
-/* MARK: - Extension for setup methods */
+/// MARK: - Extension for setup methods
 extension DKDetailsParallaxViewController {
+    /// Function to set the header image
+    ///
+    /// - Parameter image: UIImage? - The image you want
+    public func setHeaderImage(image: UIImage?) {
+        self.headerImage = image
+        
+        if self.wantsBlurredNavbar! {
+            self.blurredHeaderImage = UIImageView(image: image)
+            self.blurredHeaderImage.frame = self.navBar.frame
+            self.blurredHeaderImage.frame.size.width += 50
+            
+            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            let blurView = UIVisualEffectView(effect: darkBlur)
+            blurView.frame = self.blurredHeaderImage.bounds
+            blurView.alpha = 0.75
+            self.blurredHeaderImage.addSubview(blurView)
+            
+            self.navBar.insertSubview(self.blurredHeaderImage, belowSubview: self.navBarTitleLabel)
+        } else {
+            self.blurredHeaderImage = UIImageView(image: image)
+            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            let blurView = UIVisualEffectView(effect: darkBlur)
+            blurView.frame = self.blurredHeaderImage.bounds
+            self.blurredHeaderImage.addSubview(blurView)
+        }
+    }
+    
     /// Function for setup the Controller
     public func setupController() {
         /* Call other setup functions that are privates. Allows to have only this function to public. */
+        if self.needsToSetBlurredImage {
+            self.setHeaderImage(image: self.headerImage)
+        }
         self.setupDetailsPageView()
         self.setupNavbarButtons()
     }
@@ -229,7 +280,7 @@ extension DKDetailsParallaxViewController {
     }
 }
 
-/* MARK: - Extension for personal methods */
+/// MARK: - Extension for personal methods
 extension DKDetailsParallaxViewController {
     /// Function for dismiss the Controller
     func backButton() {

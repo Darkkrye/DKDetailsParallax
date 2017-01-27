@@ -11,24 +11,29 @@ import UIKit
 /// FlatLightSimpleDescriptionCell class
 open class FlatLightSimpleDescriptionCell: UITableViewCell {
 
-    /* MARK: - Private Constants */
+    /// MARK: - Private Constants
+    /// Cell default height
     public static let defaultHeight: CGFloat = 50
     
     
-    /* MARK: - Private Variables */
+    /// MARK: - Private Variables
+    /// Cell primary color
     public var primaryColor = UIColor.black
+    /// Cell secondary color
     public var secondaryColor = UIColor.gray
     
     
-    /* MARK: - IBOutlets */
+    /// MARK: - IBOutlets
+    /// Title Label
     @IBOutlet public weak var titleLabel: UILabel!
+    /// Content Label
     @IBOutlet public weak var contentLabel: UILabel!
     
     
-    /* MARK: - IBActions */
+    /// MARK: - IBActions
     
     
-    /* MARK: - "Default" Methods */
+    /// MARK: - "Default" Methods
     /// Override function awakeFromNib
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -57,13 +62,13 @@ open class FlatLightSimpleDescriptionCell: UITableViewCell {
         self.titleLabel.text = text.uppercased()
     }
     
-    /* MARK: - Delegates */
+    /// MARK: - Delegates
     
     
-    /* MARK: - Personnal Delegates */
+    /// MARK: - Personnal Delegates
     
     
-    /* MARK: - Personnal Methods */
+    /// MARK: - Personnal Methods
     /// Default constructor for the cell
     ///
     /// - Parameters:

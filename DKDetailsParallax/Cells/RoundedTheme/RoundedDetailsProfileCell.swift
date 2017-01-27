@@ -11,25 +11,35 @@ import UIKit
 /// RoundedDetailsProfileCell class
 open class RoundedDetailsProfileCell: UITableViewCell {
     
-    /* MARK: - Private Constants */
+    /// MARK: - Private Constants
+    /// Cell default height
     public static let defaultHeight: CGFloat = 105
     
     
-    /* MARK: - Private Variables */
+    /// MARK: - Private Variables
+    /// Cell primary color
     public var primaryColor = UIColor.black
+    /// Cell secondary color
     public var secondaryColor = UIColor.gray
+    /// Cell delegate
     public var delegate: DKDetailsParallaxCellDelegate?
     
     
-    /* MARK: - IBOutlets */
+    /// MARK: - IBOutlets
+    /// Square ImageView
     @IBOutlet public weak var squareImageView: UIImageView!
+    /// Title Label
     @IBOutlet public weak var titleLabel: UILabel!
+    /// Subtitle Label
     @IBOutlet public weak var subtitleLabel: UILabel!
+    /// Circle Button
     @IBOutlet public weak var circleButton: UIButton!
+    /// Outlined Button
     @IBOutlet public weak var outlinedButton: UIButton!
+    /// Plain Button
     @IBOutlet public weak var plainButton: UIButton!
     
-    /* MARK: - IBActions */
+    /// MARK: - IBActions
     /// IBAction for plain button
     ///
     /// - Parameter sender: Any - The button
@@ -59,7 +69,7 @@ open class RoundedDetailsProfileCell: UITableViewCell {
     }
     
     
-    /* MARK: - "Default" Methods */
+    /// MARK: - "Default" Methods
     /// Override function awakeFromNib
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -68,13 +78,13 @@ open class RoundedDetailsProfileCell: UITableViewCell {
     }
     
     
-    /* MARK: - Delegates */
+    /// MARK: - Delegates
     
     
-    /* MARK: - Personnal Delegates */
+    /// MARK: - Personnal Delegates
     
     
-    /* MARK: - Personnal Methods */
+    /// MARK: - Personnal Methods
     /// Default constructor for the cell
     ///
     /// - Parameters:

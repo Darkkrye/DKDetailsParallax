@@ -12,21 +12,34 @@ import UIKit
 open class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
     
     /* Constants */
+    /// Static constant for image pager height
     static let kDefaultImagePagerHeight: CGFloat = 375
+    /// Static constant for table view header margin
     static let kDefaultTableViewHeaderMargin: CGFloat = 95
+    /// Static constant for image scaling factor
     static let kDefaultImageScalingFactor: CGFloat = 450
     
     /* Variables */
+    /// Height for the header image view
     var headerImageViewHeight: CGFloat = 0
+    /// Scaling factor for image view
     var headerImageViewScalingFactor: CGFloat = 0
+    /// Fading offset for navbar
     var navbarViewFadingOffset: CGFloat = 0
+    /// Public table view to be custom
     public var tableView: UITableView!
+    /// The navbar
     var navBarView: UIView = UIView()
+    /// Content mode for the header image view
     var headerImageViewContentMode: UIViewContentMode = .scaleAspectFit
+    /// Delegate for the header view
     public var delegate: DKScrollingHeaderViewDelegate?
     
+    /// Image view for the header
     var imageView: UIImageView?
+    /// Same image view with blur effect
     var blurredImageView: UIImageView?
+    /// Image button
     var imageButton: UIButton?
     
     /* Constructors */
