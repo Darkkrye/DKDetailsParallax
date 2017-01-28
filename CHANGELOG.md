@@ -1,3 +1,10 @@
+## 2.0.5 (January 28, 2017)
+
+Features :
+
+- Added first unit tests.
+
+
 ## 2.0.4 (January 27, 2017)
 
 Features :
