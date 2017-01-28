@@ -320,7 +320,7 @@ UIImage(named: "defaultProfile", in: DKDetailsParallax.bundle(), compatibleWith:
 
 
 ## Version
-Current stable version `2.0.5`
+Current stable version `2.0.6`
 
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)

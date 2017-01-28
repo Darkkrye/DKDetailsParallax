@@ -16,3 +16,4 @@ script:
   - bundle exec fastlane launchTest
 after_success:
   - bundle exec fastlane gitDeploy
+  - bash <(curl -s https://codecov.io/bash) -J 'DKDetailsParallax' -t 2d709153-bb76-49d0-b1e3-7885111baa9a

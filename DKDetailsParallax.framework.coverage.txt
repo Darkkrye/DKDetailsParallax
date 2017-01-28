@@ -1,0 +1,2116 @@
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/FlatDarkSimpleDescriptionCell.swift:
+       |    1|//
+       |    2|//  FlatDarkSimpleDescriptionCell.swift
+       |    3|//  iOSeries
+       |    4|//
+       |    5|//  Created by Pierre on 15/01/2017.
+       |    6|//  Copyright © 2017 Pierre Boudon. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// FlatDarkSimpleDescriptionCell class
+       |   12|open class FlatDarkSimpleDescriptionCell: UITableViewCell {
+       |   13|
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 50
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.white
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.gray
+       |   24|    
+       |   25|    
+       |   26|    /// MARK: - IBOutlets
+       |   27|    /// Title Label
+       |   28|    @IBOutlet public weak var titleLabel: UILabel!
+       |   29|    /// Content Label
+       |   30|    @IBOutlet public weak var contentLabel: UILabel!
+       |   31|    
+       |   32|    
+       |   33|    /// MARK: - IBActions
+       |   34|    
+       |   35|    
+       |   36|    /// MARK: - "Default" Methods
+       |   37|    /// Override function awakeFromNib
+      0|   38|    override open func awakeFromNib() {
+      0|   39|        super.awakeFromNib()
+      0|   40|        /* Initialization code */
+      0|   41|        self.titleLabel.text = self.titleLabel.text?.uppercased()
+      0|   42|        self.titleLabel.textColor = self.secondaryColor
+      0|   43|        self.contentLabel.textColor = self.primaryColor
+      0|   44|    }
+       |   45|    
+       |   46|    /// Override function setSelected
+       |   47|    ///
+       |   48|    /// - Parameters:
+       |   49|    ///   - selected: Bool - Selected value
+       |   50|    ///   - animated: Bool - Animated value
+      0|   51|    override open func setSelected(_ selected: Bool, animated: Bool) {
+      0|   52|        super.setSelected(selected, animated: animated)
+      0|   53|        
+      0|   54|        /* Configure the view for the selected state */
+      0|   55|    }
+       |   56|    
+       |   57|    /* Use this function instead of property */
+       |   58|    /// Set the title. Use this function instead of property
+       |   59|    ///
+       |   60|    /// - Parameter text: String - The text for the title
+      0|   61|    open func setTitleText(text: String) {
+      0|   62|        self.titleLabel.text = text.uppercased()
+      0|   63|    }
+       |   64|    
+       |   65|    /// MARK: - Delegates
+       |   66|    
+       |   67|    
+       |   68|    /// MARK: - Personnal Delegates
+       |   69|    
+       |   70|    
+       |   71|    /// MARK: - Personnal Methods
+       |   72|    /// Default constructor for the cell
+       |   73|    ///
+       |   74|    /// - Parameters:
+       |   75|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   76|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   77|    /// - Returns: FlatDarkSimpleDescriptionCell - The created cell
+      0|   78|    open static func simpleDescriptionCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatDarkSimpleDescriptionCell {
+      0|   79|        /* Call other constructor with default value */
+      0|   80|        return simpleDescriptionCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, withoutTitle: false, withoutContent: false)
+      0|   81|    }
+       |   82|    
+       |   83|    /// Complex constructor for the cell
+       |   84|    ///
+       |   85|    /// - Parameters:
+       |   86|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   87|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   88|    ///   - withoutTitle: Bool - If you don't want this item
+       |   89|    ///   - withoutContent: Bool - If you don't want this item
+       |   90|    /// - Returns: FlatLightSimpleDescriptionCell
+      0|   91|    open static func simpleDescriptionCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withoutTitle: Bool, withoutContent: Bool) -> FlatDarkSimpleDescriptionCell {
+      0|   92|        /* Retrieve cell */
+      0|   93|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatDarkSimpleDescriptionCell", owner: self, options: nil)
+      0|   94|        let cell: FlatDarkSimpleDescriptionCell = nibs![0] as! FlatDarkSimpleDescriptionCell
+      0|   95|        cell.selectionStyle = .none
+      0|   96|        
+      0|   97|        /* Set colors */
+      0|   98|        if let p = withPrimaryColor {
+      0|   99|            cell.primaryColor = p
+      0|  100|        }
+      0|  101|        
+      0|  102|        if let s = andSecondaryColor {
+      0|  103|            cell.secondaryColor = s
+      0|  104|        }
+      0|  105|        
+      0|  106|        if withoutTitle {
+      0|  107|            /* Hide title label */
+      0|  108|            cell.titleLabel.isHidden = true
+      0|  109|        }
+      0|  110|        
+      0|  111|        if withoutContent {
+      0|  112|            /* Hide content label */
+      0|  113|            cell.contentLabel.isHidden = true
+      0|  114|        }
+      0|  115|        
+      0|  116|        return cell
+      0|  117|    }
+       |  118|    
+       |  119|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/FlatDarkSimpleLabelCell.swift:
+       |    1|//
+       |    2|//  FlatDarkSimpleLabelCell.swift
+       |    3|//  iOSeries
+       |    4|//
+       |    5|//  Created by Pierre on 15/01/2017.
+       |    6|//  Copyright © 2017 Pierre Boudon. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// FlatDarkSimpleLabelCell class
+       |   12|open class FlatDarkSimpleLabelCell: UITableViewCell {
+       |   13|
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 44
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.white
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.gray
+       |   24|    
+       |   25|    
+       |   26|    /// MARK: - IBOutlets
+       |   27|    /// Content Label
+       |   28|    @IBOutlet public weak var contentLabel: UILabel!
+       |   29|    
+       |   30|    
+       |   31|    /// MARK: - IBActions
+       |   32|    
+       |   33|    
+       |   34|    /// MARK: - "Default" Methods
+       |   35|    /// Override function awakeFromNib
+      0|   36|    override open func awakeFromNib() {
+      0|   37|        super.awakeFromNib()
+      0|   38|        /* Initialization code */
+      0|   39|    }
+       |   40|    
+       |   41|    /// MARK: - Delegates
+       |   42|    
+       |   43|    
+       |   44|    /// MARK: - Personnal Delegates
+       |   45|    
+       |   46|    
+       |   47|    /// MARK: - Personnal Methods
+       |   48|    /// Default constructor for the cell
+       |   49|    ///
+       |   50|    /// - Parameters:
+       |   51|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   52|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   53|    /// - Returns: FlatDarkSimpleLabelCell - The created cell
+      0|   54|    open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatDarkSimpleLabelCell {
+      0|   55|        /* Call other constructor with default value */
+      0|   56|        return simpleCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, wantsEmptyCell: false)
+      0|   57|    }
+       |   58|    
+       |   59|    /// Complex constructor for the cell
+       |   60|    ///
+       |   61|    /// - Parameters:
+       |   62|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   63|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   64|    ///   - wantsEmptyCell: Bool - If you want this item
+       |   65|    /// - Returns: FlatDarkSimpleLabelCell
+      0|   66|    open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, wantsEmptyCell: Bool) -> FlatDarkSimpleLabelCell {
+      0|   67|        /* Retrieve cell */
+      0|   68|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatDarkSimpleLabelCell", owner: self, options: nil)
+      0|   69|        let cell: FlatDarkSimpleLabelCell = nibs![0] as! FlatDarkSimpleLabelCell
+      0|   70|        cell.selectionStyle = .none
+      0|   71|        
+      0|   72|        /* Set colors */
+      0|   73|        if let p = withPrimaryColor {
+      0|   74|            cell.primaryColor = p
+      0|   75|        }
+      0|   76|        
+      0|   77|        if let s = andSecondaryColor {
+      0|   78|            cell.secondaryColor = s
+      0|   79|        }
+      0|   80|        
+      0|   81|        if wantsEmptyCell {
+      0|   82|            /* Hide content label */
+      0|   83|            cell.contentLabel.isHidden = true
+      0|   84|        }
+      0|   85|        
+      0|   86|        return cell
+      0|   87|    }
+       |   88|    
+       |   89|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/FlatDarkSwitchCell.swift:
+       |    1|//
+       |    2|//  FlatDarkSwitchCell.swift
+       |    3|//  iOSeries
+       |    4|//
+       |    5|//  Created by Pierre on 17/01/2017.
+       |    6|//  Copyright © 2017 Pierre Boudon. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// FlatDarkSwitchCell class
+       |   12|open class FlatDarkSwitchCell: UITableViewCell {
+       |   13|
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 50
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.white
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.gray
+       |   24|    /// Cell delegate
+       |   25|    public var delegate: DKDetailsParallaxCellDelegate?
+       |   26|    
+       |   27|    
+       |   28|    /// MARK: - IBOutlets
+       |   29|    /// Title Label
+       |   30|    @IBOutlet public weak var titleLabel: UILabel!
+       |   31|    /// Switch
+       |   32|    @IBOutlet public weak var switchView: Switch!
+       |   33|    
+       |   34|    
+       |   35|    /// MARK: - IBActions
+       |   36|    
+       |   37|    
+       |   38|    /// MARK: - "Default" Methods
+       |   39|    /// Override function awakeFromNib
+      0|   40|    override open func awakeFromNib() {
+      0|   41|        super.awakeFromNib()
+      0|   42|        /* Initialization code */
+      0|   43|    }
+       |   44|
+       |   45|    /// Override function setSelected
+       |   46|    ///
+       |   47|    /// - Parameters:
+       |   48|    ///   - selected: Bool - Selected value
+       |   49|    ///   - animated: Bool - AnimatedValue
+      0|   50|    override open func setSelected(_ selected: Bool, animated: Bool) {
+      0|   51|        super.setSelected(selected, animated: animated)
+      0|   52|
+      0|   53|        /* Configure the view for the selected state */
+      0|   54|    }
+       |   55|    
+       |   56|    /// Set title text. Use this function instead of the property
+       |   57|    ///
+       |   58|    /// - Parameter text: String - The wanted text
+      0|   59|    open func setTitleText(text: String) {
+      0|   60|        self.titleLabel.text = text.uppercased()
+      0|   61|    }
+       |   62|    
+       |   63|    /// MARK: - Delegates
+       |   64|    
+       |   65|    
+       |   66|    /// MARK: - Personnal Delegates
+       |   67|    
+       |   68|    
+       |   69|    /// MARK: - Personnal Methods
+       |   70|    /// Default constructor for the cell
+       |   71|    ///
+       |   72|    /// - Parameters:
+       |   73|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   74|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   75|    /// - Returns: FlatDarkSwitchCell - The created cell
+      0|   76|    open static func switchCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatDarkSwitchCell {
+      0|   77|        /* Call other constructor with default value */
+      0|   78|        return switchCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, withoutTitle: false)
+      0|   79|    }
+       |   80|    
+       |   81|    /// Complex constructor for the cell
+       |   82|    ///
+       |   83|    /// - Parameters:
+       |   84|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   85|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   86|    ///   - withoutTitle: Bool - If you don't want this item
+       |   87|    /// - Returns: FlatLightSwitchCell - The created cell
+      0|   88|    open static func switchCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withoutTitle: Bool) -> FlatDarkSwitchCell {
+      0|   89|        /* Retrieve cell */
+      0|   90|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatDarkSwitchCell", owner: self, options: nil)
+      0|   91|        let cell: FlatDarkSwitchCell = nibs![0] as! FlatDarkSwitchCell
+      0|   92|        cell.selectionStyle = .none
+      0|   93|        
+      0|   94|        /* Set colors */
+      0|   95|        if let p = withPrimaryColor {
+      0|   96|            cell.primaryColor = p
+      0|   97|        }
+      0|   98|        
+      0|   99|        if let s = andSecondaryColor {
+      0|  100|            cell.secondaryColor = s
+      0|  101|        }
+      0|  102|        
+      0|  103|        if withoutTitle {
+      0|  104|            /* Hide title label */
+      0|  105|            cell.titleLabel.isHidden = true
+      0|  106|        }
+      0|  107|        
+      0|  108|        /* Call intialize function */
+      0|  109|        initialize(cell: cell)
+      0|  110|        
+      0|  111|        return cell
+      0|  112|    }
+       |  113|    
+      0|  114|    @objc private func switchDidChangeValue(_ theSwitch: Switch) {
+      0|  115|        /* Execute when user change the switch value */
+      0|  116|        if let d = self.delegate {
+      0|  117|            d.flatDarkSwitchCellCallback!(cell: self, onSwitchUpdate: theSwitch, toTheValue: "\(theSwitch.rightSelected ? theSwitch.rightText ?? "" : theSwitch.leftText ?? "")")
+      0|  118|        }
+      0|  119|    }
+       |  120|    
+      0|  121|    private static func initialize(cell: FlatDarkSwitchCell) {
+      0|  122|        /* Initialize the switch view */
+      0|  123|        cell.switchView.tintColor = cell.primaryColor
+      0|  124|        cell.switchView.disabledColor = cell.switchView.tintColor.withAlphaComponent(0.4)
+      0|  125|        cell.switchView.sizeToFit()
+      0|  126|        cell.switchView.addTarget(cell, action: #selector(FlatDarkSwitchCell.switchDidChangeValue(_:)), for: .valueChanged)
+      0|  127|    }
+       |  128|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/FlatLightSimpleDescriptionCell.swift:
+       |    1|//
+       |    2|//  FlatLightSimpleDescriptionCell.swift
+       |    3|//  iOSeries
+       |    4|//
+       |    5|//  Created by Pierre on 13/01/2017.
+       |    6|//  Copyright © 2017 Pierre Boudon. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// FlatLightSimpleDescriptionCell class
+       |   12|open class FlatLightSimpleDescriptionCell: UITableViewCell {
+       |   13|
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 50
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.black
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.gray
+       |   24|    
+       |   25|    
+       |   26|    /// MARK: - IBOutlets
+       |   27|    /// Title Label
+       |   28|    @IBOutlet public weak var titleLabel: UILabel!
+       |   29|    /// Content Label
+       |   30|    @IBOutlet public weak var contentLabel: UILabel!
+       |   31|    
+       |   32|    
+       |   33|    /// MARK: - IBActions
+       |   34|    
+       |   35|    
+       |   36|    /// MARK: - "Default" Methods
+       |   37|    /// Override function awakeFromNib
+      0|   38|    override open func awakeFromNib() {
+      0|   39|        super.awakeFromNib()
+      0|   40|        /* Initialization code */
+      0|   41|        self.titleLabel.text = self.titleLabel.text?.uppercased()
+      0|   42|        self.titleLabel.textColor = self.secondaryColor
+      0|   43|        self.contentLabel.textColor = self.primaryColor
+      0|   44|    }
+       |   45|
+       |   46|    /// Override function setSelected
+       |   47|    ///
+       |   48|    /// - Parameters:
+       |   49|    ///   - selected: Bool - Selected value
+       |   50|    ///   - animated: Bool - AnimatedValue
+      0|   51|    override open func setSelected(_ selected: Bool, animated: Bool) {
+      0|   52|        super.setSelected(selected, animated: animated)
+      0|   53|
+      0|   54|        /* Configure the view for the selected state */
+      0|   55|    }
+       |   56|    
+       |   57|    /* Use this function instead of property */
+       |   58|    /// Set the title. Use this function instead of property
+       |   59|    ///
+       |   60|    /// - Parameter text: String - The text for the title
+      0|   61|    open func setTitleText(text: String) {
+      0|   62|        self.titleLabel.text = text.uppercased()
+      0|   63|    }
+       |   64|    
+       |   65|    /// MARK: - Delegates
+       |   66|    
+       |   67|    
+       |   68|    /// MARK: - Personnal Delegates
+       |   69|    
+       |   70|    
+       |   71|    /// MARK: - Personnal Methods
+       |   72|    /// Default constructor for the cell
+       |   73|    ///
+       |   74|    /// - Parameters:
+       |   75|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   76|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   77|    /// - Returns: FlatLightSimpleDescriptionCell - The created cell
+      0|   78|    open static func simpleDescriptionCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatLightSimpleDescriptionCell {
+      0|   79|        /* Call other constructor with default value */
+      0|   80|        return simpleDescriptionCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, withoutTitle: false, withoutContent: false)
+      0|   81|    }
+       |   82|    
+       |   83|    /// Complex constructor for the cell
+       |   84|    ///
+       |   85|    /// - Parameters:
+       |   86|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   87|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   88|    ///   - withoutTitle: Bool - If you don't want this item
+       |   89|    ///   - withoutContent: Bool - If you don't want this item
+       |   90|    /// - Returns: FlatLightSimpleDescriptionCell
+      0|   91|    open static func simpleDescriptionCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withoutTitle: Bool, withoutContent: Bool) -> FlatLightSimpleDescriptionCell {
+      0|   92|        /* Retrieve cell */
+      0|   93|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatLightSimpleDescriptionCell", owner: self, options: nil)
+      0|   94|        let cell: FlatLightSimpleDescriptionCell = nibs![0] as! FlatLightSimpleDescriptionCell
+      0|   95|        cell.selectionStyle = .none
+      0|   96|        
+      0|   97|        /* Set colors */
+      0|   98|        if let p = withPrimaryColor {
+      0|   99|            cell.primaryColor = p
+      0|  100|        }
+      0|  101|        
+      0|  102|        if let s = andSecondaryColor {
+      0|  103|            cell.secondaryColor = s
+      0|  104|        }
+      0|  105|        
+      0|  106|        if withoutTitle {
+      0|  107|            /* Hide title label */
+      0|  108|            cell.titleLabel.isHidden = true
+      0|  109|        }
+      0|  110|        
+      0|  111|        if withoutContent {
+      0|  112|            /* Hide content label */
+      0|  113|            cell.contentLabel.isHidden = true
+      0|  114|        }
+      0|  115|        
+      0|  116|        return cell
+      0|  117|    }
+       |  118|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/FlatLightSimpleLabelCell.swift:
+       |    1|//
+       |    2|//  FlatLightSimpleLabelCell.swift
+       |    3|//  iOSeries
+       |    4|//
+       |    5|//  Created by Pierre on 13/01/2017.
+       |    6|//  Copyright © 2017 Pierre Boudon. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// FlatLightSimpleLabelCell class
+       |   12|open class FlatLightSimpleLabelCell: UITableViewCell {
+       |   13|    
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 44
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.black
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.gray
+       |   24|    
+       |   25|    
+       |   26|    /// MARK: - IBOutlets
+       |   27|    /// Content Label
+       |   28|    @IBOutlet public weak var contentLabel: UILabel!
+       |   29|    
+       |   30|    
+       |   31|    /// MARK: - IBActions
+       |   32|    
+       |   33|    
+       |   34|    /// MARK: - "Default" Methods
+       |   35|    /// Override function awakeFromNib
+      0|   36|    override open func awakeFromNib() {
+      0|   37|        super.awakeFromNib()
+      0|   38|        /* Initialization code */
+      0|   39|    }
+       |   40|    
+       |   41|    /// MARK: - Delegates
+       |   42|    
+       |   43|    
+       |   44|    /// MARK: - Personnal Delegates
+       |   45|    
+       |   46|    
+       |   47|    /// MARK: - Personnal Methods
+       |   48|    /// Default constructor for the cell
+       |   49|    ///
+       |   50|    /// - Parameters:
+       |   51|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   52|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   53|    /// - Returns: FlatLightSimpleLabelCell - The created cell
+      0|   54|    open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatLightSimpleLabelCell {
+      0|   55|        /* Call other constructor with default value */
+      0|   56|        return simpleCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, wantsEmptyCell: false)
+      0|   57|    }
+       |   58|    
+       |   59|    /// Complex constructor for the cell
+       |   60|    ///
+       |   61|    /// - Parameters:
+       |   62|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   63|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   64|    ///   - wantsEmptyCell: Bool - If you want this item
+       |   65|    /// - Returns: FlatLightSimpleLabelCell
+      0|   66|    open static func simpleCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, wantsEmptyCell: Bool) -> FlatLightSimpleLabelCell {
+      0|   67|        /* Retrieve cell */
+      0|   68|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatLightSimpleLabelCell", owner: self, options: nil)
+      0|   69|        let cell: FlatLightSimpleLabelCell = nibs![0] as! FlatLightSimpleLabelCell
+      0|   70|        cell.selectionStyle = .none
+      0|   71|        
+      0|   72|        /* Set colors */
+      0|   73|        if let p = withPrimaryColor {
+      0|   74|            cell.primaryColor = p
+      0|   75|        }
+      0|   76|        
+      0|   77|        if let s = andSecondaryColor {
+      0|   78|            cell.secondaryColor = s
+      0|   79|        }
+      0|   80|        
+      0|   81|        if wantsEmptyCell {
+      0|   82|            /* Hide content label */
+      0|   83|            cell.contentLabel.isHidden = true
+      0|   84|        }
+      0|   85|        
+      0|   86|        return cell
+      0|   87|    }
+       |   88|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/FlatLightSwitchCell.swift:
+       |    1|//
+       |    2|//  FlatLightSwitchCell.swift
+       |    3|//  iOSeries
+       |    4|//
+       |    5|//  Created by Pierre on 17/01/2017.
+       |    6|//  Copyright © 2017 Pierre Boudon. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// FlatLightSwitchCell class
+       |   12|open class FlatLightSwitchCell: UITableViewCell {
+       |   13|
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 50
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.black
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.gray
+       |   24|    /// Cell delegate
+       |   25|    public var delegate: DKDetailsParallaxCellDelegate?
+       |   26|    
+       |   27|    
+       |   28|    /// MARK: - IBOutlets
+       |   29|    /// Title Label
+       |   30|    @IBOutlet public weak var titleLabel: UILabel!
+       |   31|    /// Switch
+       |   32|    @IBOutlet public weak var switchView: Switch!
+       |   33|    
+       |   34|    
+       |   35|    /// MARK: - IBActions
+       |   36|    
+       |   37|    
+       |   38|    /// MARK: - "Default" Methods
+       |   39|    /// Override function awakeFromNib
+      0|   40|    override open func awakeFromNib() {
+      0|   41|        super.awakeFromNib()
+      0|   42|        /* Initialization code */
+      0|   43|    }
+       |   44|    
+       |   45|    /// Set title text. Use this function instead of the property
+       |   46|    ///
+       |   47|    /// - Parameter text: String - The wanted text
+      0|   48|    open func setTitleText(text: String) {
+      0|   49|        self.titleLabel.text = text.uppercased()
+      0|   50|    }
+       |   51|    
+       |   52|    /// MARK: - Delegates
+       |   53|    
+       |   54|    
+       |   55|    /// MARK: - Personnal Delegates
+       |   56|    
+       |   57|    
+       |   58|    /// MARK: - Personnal Methods
+       |   59|    /// Default constructor for the cell
+       |   60|    ///
+       |   61|    /// - Parameters:
+       |   62|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   63|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   64|    /// - Returns: FlatLightSwitchCell - The created cell
+      0|   65|    open static func switchCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> FlatLightSwitchCell {
+      0|   66|        /* Call other constructor with default value */
+      0|   67|        return switchCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, withoutTitle: false)
+      0|   68|    }
+       |   69|    
+       |   70|    /// Complex constructor for the cell
+       |   71|    ///
+       |   72|    /// - Parameters:
+       |   73|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   74|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   75|    ///   - withoutTitle: Bool - If you don't want this item
+       |   76|    /// - Returns: FlatLightSwitchCell - The created cell
+      0|   77|    open static func switchCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withoutTitle: Bool) -> FlatLightSwitchCell {
+      0|   78|        /* Retrieve cell */
+      0|   79|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("FlatLightSwitchCell", owner: self, options: nil)
+      0|   80|        let cell: FlatLightSwitchCell = nibs![0] as! FlatLightSwitchCell
+      0|   81|        cell.selectionStyle = .none
+      0|   82|        
+      0|   83|        /* Set colors */
+      0|   84|        if let p = withPrimaryColor {
+      0|   85|            cell.primaryColor = p
+      0|   86|        }
+      0|   87|        
+      0|   88|        if let s = andSecondaryColor {
+      0|   89|            cell.secondaryColor = s
+      0|   90|        }
+      0|   91|        
+      0|   92|        if withoutTitle {
+      0|   93|            /* Hide title label */
+      0|   94|            cell.titleLabel.isHidden = true
+      0|   95|        }
+      0|   96|        
+      0|   97|        /* Call intialize function */
+      0|   98|        initialize(cell: cell)
+      0|   99|        
+      0|  100|        return cell
+      0|  101|    }
+       |  102|    
+       |  103|    /// Action when the value of the switch has been changed
+       |  104|    ///
+       |  105|    /// - Parameter theSwitch: Switch - The switch
+      0|  106|    @objc private func switchDidChangeValue(_ theSwitch: Switch) {
+      0|  107|        /* Execute when user change the switch value */
+      0|  108|        if let d = self.delegate {
+      0|  109|            d.flatLightSwitchCellCallback!(cell: self, onSwitchUpdate: theSwitch, toTheValue: "\(theSwitch.rightSelected ? theSwitch.rightText ?? "" : theSwitch.leftText ?? "")")
+      0|  110|        }
+      0|  111|    }
+       |  112|    
+       |  113|    /// Initialize function
+       |  114|    ///
+       |  115|    /// - Parameter cell: FlatLightSwitchCell - The cell
+      0|  116|    private static func initialize(cell: FlatLightSwitchCell) {
+      0|  117|        /* Initialize the switch view */
+      0|  118|        cell.switchView.tintColor = cell.primaryColor
+      0|  119|        cell.switchView.disabledColor = cell.switchView.tintColor.withAlphaComponent(0.4)
+      0|  120|        cell.switchView.sizeToFit()
+      0|  121|        cell.switchView.addTarget(cell, action: #selector(FlatLightSwitchCell.switchDidChangeValue(_:)), for: .valueChanged)
+      0|  122|    }
+       |  123|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/RoundedTheme/RoundedButtonCell.swift:
+       |    1|//
+       |    2|//  MoreTableViewCell.swift
+       |    3|//  DetailsParallaxView
+       |    4|//
+       |    5|//  Created by Pierre on 27/03/2016.
+       |    6|//  Copyright © 2016 Pierre. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// RoundedButtonCell class
+       |   12|open class RoundedButtonCell: UITableViewCell {
+       |   13|    
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 62
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.black
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.white
+       |   24|    /// Cell delegate
+       |   25|    public var delegate: DKDetailsParallaxCellDelegate?
+       |   26|    
+       |   27|    
+       |   28|    /// MARK: - IBOutlets
+       |   29|    /// Button
+       |   30|    @IBOutlet weak public var button: UIButton!
+       |   31|    
+       |   32|    
+       |   33|    /// MARK: - IBActions
+       |   34|    /// IBAction for button tapped
+       |   35|    ///
+       |   36|    /// - Parameter sender: Any - The button
+      0|   37|    @IBAction func buttonTapped(_ sender: Any) {
+      0|   38|        /* Execute when button is tapped */
+      0|   39|        if let d = self.delegate {
+      0|   40|            d.roundedButtonCellCallback!(cell: self, forButton: self.button)
+      0|   41|        }
+      0|   42|    }
+       |   43|    
+       |   44|    
+       |   45|    
+       |   46|    /// MARK: - "Default" Methods
+       |   47|    /// Override function awakeFromNib
+      0|   48|    override open func awakeFromNib() {
+      0|   49|        super.awakeFromNib()
+      0|   50|    }
+       |   51|    
+       |   52|    
+       |   53|    /// MARK: - Delegates
+       |   54|    
+       |   55|    
+       |   56|    /// MARK: - Personnal Delegates
+       |   57|    
+       |   58|    
+       |   59|    /// MARK: - Personnal Methods
+       |   60|    /// Default constructor for the cell
+       |   61|    ///
+       |   62|    /// - Parameters:
+       |   63|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   64|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   65|    /// - Returns: RoundedButtonCell - The created cell
+      0|   66|    open static func buttonCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedButtonCell {
+      0|   67|        /* Call other constructor with default value */
+      0|   68|        return buttonCell(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, withPlainButton: false)
+      0|   69|    }
+       |   70|    
+       |   71|    /// Complex constructor for the cell
+       |   72|    ///
+       |   73|    /// - Parameters:
+       |   74|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   75|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |   76|    ///   - withPlainButton: Bool - If you want this item
+       |   77|    /// - Returns: RoundedButtonCell - The created cell
+      0|   78|    open static func buttonCell(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, withPlainButton: Bool) -> RoundedButtonCell {
+      0|   79|        /* Retrieve cell */
+      0|   80|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("RoundedButtonCell", owner: self, options: nil)
+      0|   81|        let cell: RoundedButtonCell = nibs![0] as! RoundedButtonCell
+      0|   82|        cell.selectionStyle = .none
+      0|   83|        
+      0|   84|        /* Set colors */
+      0|   85|        if let p = withPrimaryColor {
+      0|   86|            cell.primaryColor = p
+      0|   87|        }
+      0|   88|        
+      0|   89|        if let s = andSecondaryColor {
+      0|   90|            cell.secondaryColor = s
+      0|   91|        }
+      0|   92|        
+      0|   93|        /* Call intialize function */
+      0|   94|        if withPlainButton {
+      0|   95|            initializeForPlainButton(cell: cell)
+      0|   96|        } else {
+      0|   97|            initialize(cell: cell)
+      0|   98|        }
+      0|   99|        
+      0|  100|        return cell
+      0|  101|    }
+       |  102|    
+       |  103|    /// Default initialize function
+       |  104|    ///
+       |  105|    /// - Parameter cell: RoundedButtonCell - The cell
+      0|  106|    private static func initialize(cell: RoundedButtonCell) {
+      0|  107|        /* Setup outlined button */
+      0|  108|        cell.button.layer.borderColor = cell.primaryColor.cgColor
+      0|  109|        cell.button.layer.borderWidth = 1.0
+      0|  110|        cell.button.layer.cornerRadius = 15.0
+      0|  111|        cell.button.backgroundColor = cell.secondaryColor
+      0|  112|        cell.button.setTitleColor(cell.primaryColor, for: .normal)
+      0|  113|    }
+       |  114|    
+       |  115|    /// Initialize function for plain button
+       |  116|    ///
+       |  117|    /// - Parameter cell: RoundedButtonCell - The cell
+      0|  118|    private static func initializeForPlainButton(cell: RoundedButtonCell) {
+      0|  119|        /* Setup plain button */
+      0|  120|        cell.button.layer.cornerRadius = 15.0
+      0|  121|        cell.button.backgroundColor = cell.primaryColor
+      0|  122|        cell.button.setTitleColor(UIColor.white, for: .normal)
+      0|  123|    }
+       |  124|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/RoundedTheme/RoundedDetailsProfileCell.swift:
+       |    1|//
+       |    2|//  RoundedDetailsProfile.swift
+       |    3|//  DKDetailsParallax
+       |    4|//
+       |    5|//  Created by Pierre on 26/03/2016.
+       |    6|//  Copyright © 2016 Pierre. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// RoundedDetailsProfileCell class
+       |   12|open class RoundedDetailsProfileCell: UITableViewCell {
+       |   13|    
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 105
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.black
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.gray
+       |   24|    /// Cell delegate
+       |   25|    public var delegate: DKDetailsParallaxCellDelegate?
+       |   26|    
+       |   27|    
+       |   28|    /// MARK: - IBOutlets
+       |   29|    /// Square ImageView
+       |   30|    @IBOutlet public weak var squareImageView: UIImageView!
+       |   31|    /// Title Label
+       |   32|    @IBOutlet public weak var titleLabel: UILabel!
+       |   33|    /// Subtitle Label
+       |   34|    @IBOutlet public weak var subtitleLabel: UILabel!
+       |   35|    /// Circle Button
+       |   36|    @IBOutlet public weak var circleButton: UIButton!
+       |   37|    /// Outlined Button
+       |   38|    @IBOutlet public weak var outlinedButton: UIButton!
+       |   39|    /// Plain Button
+       |   40|    @IBOutlet public weak var plainButton: UIButton!
+       |   41|    
+       |   42|    /// MARK: - IBActions
+       |   43|    /// IBAction for plain button
+       |   44|    ///
+       |   45|    /// - Parameter sender: Any - The button
+      0|   46|    @IBAction func plainButtonTapped(_ sender: Any) {
+      0|   47|        /* Execute when plain button is tapped */
+      0|   48|        if let d = self.delegate {
+      0|   49|            d.roundedDetailsProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
+      0|   50|        }
+      0|   51|    }
+       |   52|    /// IBAction for outlined button
+       |   53|    ///
+       |   54|    /// - Parameter sender: Any - The button
+      0|   55|    @IBAction func outlinedButtonTapped(_ sender: Any) {
+      0|   56|        /* Execute when outlined button is tapped */
+      0|   57|        if let d = self.delegate {
+      0|   58|            d.roundedDetailsProfileCellCallback!(cell: self, forOutlinedButton: self.outlinedButton)
+      0|   59|        }
+      0|   60|    }
+       |   61|    /// IBAction for circle button
+       |   62|    ///
+       |   63|    /// - Parameter sender: Any - The button
+      0|   64|    @IBAction func circleButtonTapped(_ sender: Any) {
+      0|   65|        /* Execute when circle button is tapped */
+      0|   66|        if let d = self.delegate {
+      0|   67|            d.roundedDetailsProfileCellCallback!(cell: self, forCircleButton: self.circleButton)
+      0|   68|        }
+      0|   69|    }
+       |   70|    
+       |   71|    
+       |   72|    /// MARK: - "Default" Methods
+       |   73|    /// Override function awakeFromNib
+      0|   74|    override open func awakeFromNib() {
+      0|   75|        super.awakeFromNib()
+      0|   76|        
+      0|   77|        
+      0|   78|    }
+       |   79|    
+       |   80|    
+       |   81|    /// MARK: - Delegates
+       |   82|    
+       |   83|    
+       |   84|    /// MARK: - Personnal Delegates
+       |   85|    
+       |   86|    
+       |   87|    /// MARK: - Personnal Methods
+       |   88|    /// Default constructor for the cell
+       |   89|    ///
+       |   90|    /// - Parameters:
+       |   91|    ///   - withPrimaryColor: UIColor? - The primary color
+       |   92|    ///   - andSecondaryColor: UIColor ? - The secondary color
+       |   93|    /// - Returns: RoundedDetailsProfileCell - The created cell
+      0|   94|    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsProfileCell {
+      0|   95|        /* Call other constructor with default value */
+      0|   96|        return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptSquareImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
+      0|   97|    }
+       |   98|    
+       |   99|    /// Complex constructor for the cell
+       |  100|    ///
+       |  101|    /// - Parameters:
+       |  102|    ///   - withPrimaryColor: UIColor? - The primary color
+       |  103|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |  104|    ///   - exceptSquareImage: Bool - If you don't want this item
+       |  105|    ///   - exceptTitleLabel: Bool - If you don't want this item
+       |  106|    ///   - exceptSubtitleLabel: Bool - If you don't want this item
+       |  107|    ///   - exceptCircleButton: Bool - If you don't want this item
+       |  108|    ///   - exceptOutlinedButton: Bool - If you don't want this item
+       |  109|    ///   - exceptPlainButton: Bool - If you don't want this item
+       |  110|    /// - Returns: RoundedDetailsProfileCell - The created cell
+      0|  111|    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsProfileCell {
+      0|  112|        /* Retrieve cell */
+      0|  113|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("RoundedDetailsProfileCell", owner: self, options: nil)
+      0|  114|        let cell: RoundedDetailsProfileCell = nibs![0] as! RoundedDetailsProfileCell
+      0|  115|        cell.selectionStyle = .none
+      0|  116|        
+      0|  117|        if exceptSquareImage {
+      0|  118|            /* Hide square image */
+      0|  119|            cell.squareImageView.isHidden = true
+      0|  120|        }
+      0|  121|        
+      0|  122|        if exceptTitleLabel {
+      0|  123|            /* Hide title label */
+      0|  124|            cell.titleLabel.isHidden = true
+      0|  125|        }
+      0|  126|        
+      0|  127|        if exceptSubtitleLabel {
+      0|  128|            /* Hide subtitle label */
+      0|  129|            cell.subtitleLabel.isHidden = true
+      0|  130|        }
+      0|  131|        
+      0|  132|        if exceptCircleButton {
+      0|  133|            /* Hide circle button */
+      0|  134|            cell.circleButton.isHidden = true
+      0|  135|        }
+      0|  136|        
+      0|  137|        if exceptOutlinedButton {
+      0|  138|            /* Hide outlined button */
+      0|  139|            cell.outlinedButton.isHidden = true
+      0|  140|        }
+      0|  141|        
+      0|  142|        if exceptPlainButton {
+      0|  143|            /* Hide plain button */
+      0|  144|            cell.plainButton.isHidden = true
+      0|  145|        }
+      0|  146|        
+      0|  147|        /* Set colors */
+      0|  148|        if let p = withPrimaryColor {
+      0|  149|            cell.primaryColor = p
+      0|  150|        }
+      0|  151|        
+      0|  152|        if let s = andSecondaryColor {
+      0|  153|            cell.secondaryColor = s
+      0|  154|        }
+      0|  155|        
+      0|  156|        /* Call initialize function */
+      0|  157|        initialize(cell: cell)
+      0|  158|        
+      0|  159|        return cell
+      0|  160|    }
+       |  161|    
+       |  162|    /// Initialize function
+       |  163|    ///
+       |  164|    /// - Parameter cell: RoundedDetailsProfileCell - The cell
+      0|  165|    private static func initialize(cell: RoundedDetailsProfileCell) {
+      0|  166|        /* Set cell properties for variables */
+      0|  167|        cell.titleLabel.textColor = cell.primaryColor
+      0|  168|        cell.subtitleLabel.textColor = cell.secondaryColor
+      0|  169|        
+      0|  170|        /* Set cell square image properties */
+      0|  171|        cell.squareImageView.layer.cornerRadius = cell.squareImageView.frame.size.width/2
+      0|  172|        cell.squareImageView.layer.masksToBounds = true
+      0|  173|        
+      0|  174|        /* Set plain button properties */
+      0|  175|        cell.plainButton.layer.borderColor = cell.primaryColor.cgColor
+      0|  176|        cell.plainButton.backgroundColor = cell.primaryColor
+      0|  177|        cell.plainButton.layer.cornerRadius = 15.0
+      0|  178|        cell.plainButton.setTitleColor(UIColor.white, for: .normal)
+      0|  179|        
+      0|  180|        /* Set outlined button properties */
+      0|  181|        cell.outlinedButton.layer.borderColor =  cell.primaryColor.cgColor
+      0|  182|        cell.outlinedButton.setTitleColor(cell.primaryColor, for: .normal)
+      0|  183|        cell.outlinedButton.layer.borderWidth = 1.0
+      0|  184|        cell.outlinedButton.layer.cornerRadius = 15.0
+      0|  185|    }
+       |  186|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Cells/RoundedTheme/RoundedDetailsRectangleProfileCell.swift:
+       |    1|//
+       |    2|//  RoundedDetailsRectangleProfileTableViewCell.swift
+       |    3|//  DKDetailsParallax
+       |    4|//
+       |    5|//  Created by Pierre on 11/01/2017.
+       |    6|//  Copyright © 2017 Pierre Boudon. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// RoundedDetailsRectangleProfileCell class
+       |   12|open class RoundedDetailsRectangleProfileCell: UITableViewCell {
+       |   13|
+       |   14|    /// MARK: - Private Constants
+       |   15|    /// Cell default height
+       |   16|    public static let defaultHeight: CGFloat = 105
+       |   17|    
+       |   18|    
+       |   19|    /// MARK: - Private Variables
+       |   20|    /// Cell primary color
+       |   21|    public var primaryColor = UIColor.black
+       |   22|    /// Cell secondary color
+       |   23|    public var secondaryColor = UIColor.gray
+       |   24|    /// Cell delegate
+       |   25|    public var delegate: DKDetailsParallaxCellDelegate?
+       |   26|    
+       |   27|    
+       |   28|    /// MARK: - IBOutlets
+       |   29|    /// Rectangle ImageView
+       |   30|    @IBOutlet public weak var rectangleImageView: UIImageView!
+       |   31|    /// Title Label
+       |   32|    @IBOutlet public weak var titleLabel: UILabel!
+       |   33|    /// Subtitle Label
+       |   34|    @IBOutlet public weak var subtitleLabel: UILabel!
+       |   35|    /// Circle Button
+       |   36|    @IBOutlet public weak var circleButton: UIButton!
+       |   37|    /// Outlined Button
+       |   38|    @IBOutlet public weak var outlinedButton: UIButton!
+       |   39|    /// Plain Button
+       |   40|    @IBOutlet public weak var plainButton: UIButton!
+       |   41|    
+       |   42|    
+       |   43|    /// MARK: - IBActions
+       |   44|    /// IBAction for plain button
+       |   45|    ///
+       |   46|    /// - Parameter sender: Any - The button
+      0|   47|    @IBAction func plainButtonTapped(_ sender: Any) {
+      0|   48|        /* Execute when plain button is tapped */
+      0|   49|        if let d = self.delegate {
+      0|   50|            d.roundedDetailsRectangleProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
+      0|   51|        }
+      0|   52|    }
+       |   53|    /// IBAction for outlined button
+       |   54|    ///
+       |   55|    /// - Parameter sender: Any - The button
+      0|   56|    @IBAction func outlinedButtonTapped(_ sender: Any) {
+      0|   57|        /* Execute when outlined button is tapped */
+      0|   58|        if let d = self.delegate {
+      0|   59|            d.roundedDetailsRectangleProfileCellCallback!(cell: self, forOutlinedButton: self.plainButton)
+      0|   60|        }
+      0|   61|    }
+       |   62|    /// IBAction for circle button
+       |   63|    ///
+       |   64|    /// - Parameter sender: Any - The button
+      0|   65|    @IBAction func circleButtonTapped(_ sender: Any) {
+      0|   66|        /* Execute when circle button is tapped */
+      0|   67|        if let d = self.delegate {
+      0|   68|            d.roundedDetailsRectangleProfileCellCallback!(cell: self, forCircleButton: self.plainButton)
+      0|   69|        }
+      0|   70|    }
+       |   71|    
+       |   72|    
+       |   73|    
+       |   74|    /// MARK: - "Default" Methods
+       |   75|    /// Override function awakeFromNib
+      0|   76|    override open func awakeFromNib() {
+      0|   77|        super.awakeFromNib()
+      0|   78|        /* Initialization code */
+      0|   79|        self.rectangleImageView.layer.cornerRadius = 2
+      0|   80|        self.rectangleImageView.layer.masksToBounds = true
+      0|   81|    }
+       |   82|
+       |   83|    /// Override function setSelected
+       |   84|    ///
+       |   85|    /// - Parameters:
+       |   86|    ///   - selected: Bool - Selected value
+       |   87|    ///   - animated: Bool - Animated value
+      0|   88|    override open func setSelected(_ selected: Bool, animated: Bool) {
+      0|   89|        super.setSelected(selected, animated: animated)
+      0|   90|
+      0|   91|        /* Configure the view for the selected state */
+      0|   92|    }
+       |   93|
+       |   94|    /// MARK: - Delegates
+       |   95|    
+       |   96|    
+       |   97|    /// MARK: - Personnal Delegates
+       |   98|    
+       |   99|    
+       |  100|    /// MARK: - Personnal Methods
+       |  101|    /// Default constructor for the cell
+       |  102|    ///
+       |  103|    /// - Parameters:
+       |  104|    ///   - withPrimaryColor: UIColor? - The primary color
+       |  105|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |  106|    /// - Returns: RoundedDetailsRectangleProfileCell - The created cell
+      0|  107|    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> RoundedDetailsRectangleProfileCell {
+      0|  108|        /* Call other constructor with default value */
+      0|  109|        return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptRectangleImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
+      0|  110|    }
+       |  111|    
+       |  112|    /// Complex constructor for the cell
+       |  113|    ///
+       |  114|    /// - Parameters:
+       |  115|    ///   - withPrimaryColor: UIColor? - The primary color
+       |  116|    ///   - andSecondaryColor: UIColor? - The secondary color
+       |  117|    ///   - exceptRectangleImage: Bool - If you don't want this item
+       |  118|    ///   - exceptTitleLabel: Bool - If you don't want this item
+       |  119|    ///   - exceptSubtitleLabel: Bool - If you don't want this item
+       |  120|    ///   - exceptCircleButton: Bool - If you don't want this item
+       |  121|    ///   - exceptOutlinedButton: Bool - If you don't want this item
+       |  122|    ///   - exceptPlainButton: Bool - If you don't want this item
+       |  123|    /// - Returns: RoundedDetailsRectangleProfileCell - The created cell
+      0|  124|    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptRectangleImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> RoundedDetailsRectangleProfileCell {
+      0|  125|        /* Retrieve cell */
+      0|  126|        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("RoundedDetailsRectangleProfileCell", owner: self, options: nil)
+      0|  127|        let cell: RoundedDetailsRectangleProfileCell = nibs![0] as! RoundedDetailsRectangleProfileCell
+      0|  128|        cell.selectionStyle = .none
+      0|  129|        
+      0|  130|        if exceptRectangleImage {
+      0|  131|            /* Hide rectangle image */
+      0|  132|            cell.rectangleImageView.isHidden = true
+      0|  133|        }
+      0|  134|        
+      0|  135|        if exceptTitleLabel {
+      0|  136|            /* Hide title label */
+      0|  137|            cell.titleLabel.isHidden = true
+      0|  138|        }
+      0|  139|        
+      0|  140|        if exceptSubtitleLabel {
+      0|  141|            /* Hide subtitle label */
+      0|  142|            cell.subtitleLabel.removeFromSuperview()
+      0|  143|        }
+      0|  144|        
+      0|  145|        if exceptCircleButton {
+      0|  146|            /* Hide circle button */
+      0|  147|            cell.circleButton.isHidden = true
+      0|  148|        }
+      0|  149|        
+      0|  150|        if exceptOutlinedButton {
+      0|  151|            /* Hide outlined button */
+      0|  152|            cell.outlinedButton.isHidden = true
+      0|  153|        }
+      0|  154|        
+      0|  155|        if exceptPlainButton {
+      0|  156|            /* Hide plain button */
+      0|  157|            cell.plainButton.isHidden = true
+      0|  158|        }
+      0|  159|        
+      0|  160|        /* Set colors */
+      0|  161|        if let p = withPrimaryColor {
+      0|  162|            cell.primaryColor = p
+      0|  163|        }
+      0|  164|        
+      0|  165|        if let s = andSecondaryColor {
+      0|  166|            cell.secondaryColor = s
+      0|  167|        }
+      0|  168|        
+      0|  169|        /* Call initialize function */
+      0|  170|        initialize(cell: cell)
+      0|  171|        
+      0|  172|        return cell
+      0|  173|    }
+       |  174|    
+       |  175|    /// Initialize function
+       |  176|    ///
+       |  177|    /// - Parameter cell: RoundedDetailsRectangleProfileCell - The cell
+      0|  178|    private static func initialize(cell: RoundedDetailsRectangleProfileCell) {
+      0|  179|        /* Set cell properties for variables */
+      0|  180|        cell.titleLabel.textColor = cell.primaryColor
+      0|  181|        cell.subtitleLabel.textColor = cell.secondaryColor
+      0|  182|        
+      0|  183|        /* Set plain button properties */
+      0|  184|        cell.plainButton.layer.borderColor = cell.primaryColor.cgColor
+      0|  185|        cell.plainButton.backgroundColor = cell.primaryColor
+      0|  186|        cell.plainButton.layer.cornerRadius = 15.0
+      0|  187|        cell.plainButton.setTitleColor(UIColor.white, for: .normal)
+      0|  188|        
+      0|  189|        /* Set outlined button properties */
+      0|  190|        cell.outlinedButton.layer.borderColor =  cell.primaryColor.cgColor
+      0|  191|        cell.outlinedButton.setTitleColor(cell.primaryColor, for: .normal)
+      0|  192|        cell.outlinedButton.layer.borderWidth = 1.0
+      0|  193|        cell.outlinedButton.layer.cornerRadius = 15.0
+      0|  194|    }
+       |  195|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/DataProviders/Bundle.swift:
+       |    1|//
+       |    2|//  Bundle.swift
+       |    3|//  DKDetailsParallax
+       |    4|//
+       |    5|//  Created by Pierre on 12/01/2017.
+       |    6|//  Copyright © 2017 Pierre BOUDON. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import Foundation
+       |   10|
+       |   11|/// DKDetailsParallax class
+       |   12|public class DKDetailsParallax {
+       |   13|    /// A function to retrieve the Framework Bundle
+       |   14|    ///
+       |   15|    /// - Returns: Optional Bundle
+      6|   16|    public static func bundle() -> Bundle? {
+      6|   17|        /* Retrieve Bundle for the current class */
+      6|   18|        let frameworkBundle = Bundle(for: DKDetailsParallax.self)
+      6|   19|        
+      6|   20|        /* Retrieve Bundle URL */
+      6|   21|        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("DKDetailsParallax.bundle", isDirectory: true)
+      6|   22|        
+      6|   23|        /* Create Bundle for Bundle URL and return it */
+      6|   24|        let resourceBundle = Bundle(url: bundleURL!)
+      6|   25|        return resourceBundle
+      6|   26|    }
+       |   27|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Libraries/Switch.swift:
+       |    1|//
+       |    2|//  Switch.swift
+       |    3|//
+       |    4|//  Created by Thanh Pham on 8/24/16.
+       |    5|//
+       |    6|
+       |    7|import UIKit
+       |    8|
+       |    9|/// A switch control
+       |   10|@IBDesignable open class Switch: UIControl {
+       |   11|
+       |   12|    /// Background layer
+       |   13|    let backgroundLayer = RoundLayer()
+       |   14|    /// Switch layer
+       |   15|    let switchLayer = RoundLayer()
+       |   16|
+       |   17|    /// The previous point
+       |   18|    var previousPoint: CGPoint?
+       |   19|    /// The switch layer left position
+       |   20|    var switchLayerLeftPosition: CGPoint?
+       |   21|    /// The switch layer right position
+       |   22|    var switchLayerRightPosition: CGPoint?
+       |   23|
+       |   24|    /// The label factory
+       |   25|    static let labelFactory: () -> UILabel = {
+       |   26|        let label = UILabel()
+       |   27|        label.textAlignment = .center
+       |   28|        return label
+       |   29|    }
+       |   30|
+       |   31|    /// The label on the left. Don't set the `textColor` and `text` properties on this label. Set them on the `leftText`, `tintColor` and `disabledColor` properties of the switch instead.
+       |   32|    open let leftLabel = labelFactory()
+       |   33|
+       |   34|    /// The label on the right. Don't set the `textColor` and `text` properties on this label. Set them on the `rightText`, `tintColor` and `disabledColor` properties of the switch instead.
+       |   35|    open let rightLabel = labelFactory()
+       |   36|
+       |   37|    /// Text for the label on the left. Setting this property instead of the `text` property of the `leftLabel` to trigger Auto Layout automatically.
+       |   38|    @IBInspectable open var leftText: String? {
+      1|   39|        get {
+      1|   40|            return leftLabel.text
+      1|   41|        }
+      1|   42|        set {
+      1|   43|            leftLabel.text = newValue
+      1|   44|            invalidateIntrinsicContentSize()
+      1|   45|        }
+       |   46|    }
+       |   47|
+       |   48|    /// Text for the label on the right. Setting this property instead of the `text` property of the `rightLabel` to trigger Auto Layout automatically.
+       |   49|    @IBInspectable open var rightText: String? {
+      1|   50|        get {
+      1|   51|            return rightLabel.text
+      1|   52|        }
+      1|   53|        set {
+      1|   54|            rightLabel.text = newValue
+      1|   55|            invalidateIntrinsicContentSize()
+      1|   56|        }
+       |   57|    }
+       |   58|
+       |   59|    /// True when the right value is selected, false when the left value is selected. When this property is changed, the UIControlEvents.ValueChanged is fired.
+       |   60|    @IBInspectable open var rightSelected: Bool = false {
+      1|   61|        didSet {
+      1|   62|            reloadSwitchLayerPosition()
+      1|   63|            reloadLabelsTextColor()
+      1|   64|            sendActions(for: .valueChanged)
+      1|   65|        }
+       |   66|    }
+       |   67|
+       |   68|    /// The color used for the unselected text and the background border.
+       |   69|    @IBInspectable open var disabledColor: UIColor = UIColor.lightGray {
+      1|   70|        didSet {
+      1|   71|            backgroundLayer.borderColor = disabledColor.cgColor
+      1|   72|            reloadLabelsTextColor()
+      1|   73|        }
+       |   74|    }
+       |   75|    
+       |   76|    /// The color used for switch background color. Transparent by default
+       |   77|    @IBInspectable open var backColor: UIColor = UIColor.clear {
+      1|   78|        didSet {
+      1|   79|            backgroundLayer.backgroundColor = backColor.cgColor
+      1|   80|        }
+       |   81|    }
+       |   82|
+       |   83|    /// The color used for the selected text and the switch border.
+       |   84|    override open var tintColor: UIColor! {
+      1|   85|        didSet {
+      1|   86|            switchLayer.borderColor = tintColor.cgColor
+      1|   87|            reloadLabelsTextColor()
+      1|   88|        }
+       |   89|    }
+       |   90|
+       |   91|    /// If touches began property
+       |   92|    var touchBegan = false
+       |   93|    /// If touches began in the switch layer property
+       |   94|    var touchBeganInSwitchLayer = false
+       |   95|    /// If the touch moved property
+       |   96|    var touchMoved = false
+       |   97|
+       |   98|    /// Init with coder.
+      0|   99|    required public init?(coder aDecoder: NSCoder) {
+      0|  100|        super.init(coder: aDecoder)
+      0|  101|        setup()
+      0|  102|    }
+       |  103|
+       |  104|    /// Override constructor with frame
+       |  105|    ///
+       |  106|    /// - Parameter frame: CGRect - The frame
+      6|  107|    override init(frame: CGRect) {
+      6|  108|        super.init(frame: frame)
+      6|  109|        setup()
+      6|  110|    }
+       |  111|
+       |  112|    /// Setup function
+      6|  113|    func setup() {
+      6|  114|        backgroundLayer.backgroundColor = UIColor.white.cgColor
+      6|  115|        backgroundLayer.borderColor = disabledColor.cgColor
+      6|  116|        backgroundLayer.borderWidth = 1
+      6|  117|        layer.addSublayer(backgroundLayer)
+      6|  118|
+      6|  119|        switchLayer.borderColor = tintColor.cgColor
+      6|  120|        switchLayer.borderWidth = 1
+      6|  121|        layer.addSublayer(switchLayer)
+      6|  122|
+      6|  123|        addSubview(leftLabel)
+      6|  124|        addSubview(rightLabel)
+      6|  125|        reloadLabelsTextColor()
+      6|  126|    }
+       |  127|
+       |  128|    /// Layouts subviews. Should not be called directly.
+      0|  129|    override open func layoutSubviews() {
+      0|  130|        super.layoutSubviews()
+      0|  131|        leftLabel.frame = CGRect(x: 0, y: 0, width: bounds.size.width / 2, height: bounds.size.height)
+      0|  132|        rightLabel.frame = CGRect(x: bounds.size.width / 2, y: 0, width: bounds.size.width / 2, height: bounds.size.height)
+      0|  133|    }
+       |  134|
+       |  135|    /// Layouts sublayers of a layer. Should not be called directly.
+      0|  136|    override open func layoutSublayers(of layer: CALayer) {
+      0|  137|        super.layoutSublayers(of: layer)
+      0|  138|        guard layer == self.layer else {
+      0|  139|            return
+      0|  140|        }
+      0|  141|        backgroundLayer.frame = layer.bounds
+      0|  142|        switchLayer.bounds = CGRect(x: 0, y: 0, width: layer.bounds.size.width / 2, height: layer.bounds.size.height)
+      0|  143|        switchLayerLeftPosition = layer.convert(layer.position, from: layer.superlayer).applying(CGAffineTransform(translationX: -switchLayer.bounds.size.width / 2, y: 0))
+      0|  144|        switchLayerRightPosition = switchLayerLeftPosition!.applying(CGAffineTransform(translationX: switchLayer.bounds.size.width, y: 0))
+      0|  145|        touchBegan = false
+      0|  146|        touchBeganInSwitchLayer = false
+      0|  147|        touchMoved = false
+      0|  148|        previousPoint = nil
+      0|  149|        reloadSwitchLayerPosition()
+      0|  150|    }
+       |  151|
+       |  152|    /// Touches began event handler. Should not be called directly.
+      0|  153|    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      0|  154|        super.touchesBegan(touches, with: event)
+      0|  155|        touchBegan = true
+      0|  156|        previousPoint = touches.first!.location(in: self)
+      0|  157|        touchBeganInSwitchLayer = switchLayer.contains(switchLayer.convert(previousPoint!, from: layer))
+      0|  158|    }
+       |  159|
+       |  160|    /// Touches moved event handler. Should not be called directly.
+      0|  161|    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+      0|  162|        super.touchesMoved(touches, with: event)
+      0|  163|        touchMoved = true
+      0|  164|        guard touchBeganInSwitchLayer else {
+      0|  165|            return
+      0|  166|        }
+      0|  167|        let point = touches.first!.location(in: self)
+      0|  168|        var position = switchLayer.position.applying(CGAffineTransform(translationX: point.x - previousPoint!.x, y: 0))
+      0|  169|        position.x = max(switchLayer.bounds.size.width / 2, min(layer.bounds.size.width - switchLayer.bounds.size.width / 2, position.x))
+      0|  170|        switchLayer.position = position
+      0|  171|        previousPoint = point
+      0|  172|    }
+       |  173|
+       |  174|    /// Touches ended event handler. Should not be called directly.
+      0|  175|    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+      0|  176|        super.touchesEnded(touches, with: event)
+      0|  177|        guard touchBegan else {
+      0|  178|            return
+      0|  179|        }
+      0|  180|        previousPoint = nil
+      0|  181|        if touchMoved && touchBeganInSwitchLayer {
+      0|  182|            rightSelected = abs(switchLayerLeftPosition!.x - switchLayer.position.x) > abs(switchLayerRightPosition!.x - switchLayer.position.x)
+      0|  183|        } else if !touchMoved && !touchBeganInSwitchLayer {
+      0|  184|            rightSelected = !rightSelected
+      0|  185|        }
+      0|  186|        touchBegan = false
+      0|  187|        touchBeganInSwitchLayer = false
+      0|  188|        touchMoved = false
+      0|  189|    }
+       |  190|
+       |  191|    /// Touches cancelled event handler. Should not be called directly.
+      0|  192|    override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+      0|  193|        super.touchesCancelled(touches, with: event)
+      0|  194|        previousPoint = nil
+      0|  195|        reloadSwitchLayerPosition()
+      0|  196|        touchBegan = false
+      0|  197|        touchBeganInSwitchLayer = false
+      0|  198|        touchMoved = false
+      0|  199|    }
+       |  200|
+       |  201|    /// Returns the minimum size that fits a given size.
+      0|  202|    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+      0|  203|        let labelSize = CGSize(width: (size.width - 3 * size.height / 2) / 2, height: size.height)
+      0|  204|        return desiredSizeForLeftSize(leftLabel.sizeThatFits(labelSize), rightSize: rightLabel.sizeThatFits(labelSize))
+      0|  205|    }
+       |  206|
+       |  207|    /// The minimum size used for Auto Layout.
+      0|  208|    override open var intrinsicContentSize : CGSize {
+      0|  209|        return desiredSizeForLeftSize(leftLabel.intrinsicContentSize, rightSize: rightLabel.intrinsicContentSize)
+      0|  210|    }
+       |  211|
+       |  212|    /// Function for desired CGSize for left size
+       |  213|    ///
+       |  214|    /// - Parameters:
+       |  215|    ///   - leftSize: CGSize - The left size
+       |  216|    ///   - rightSize: CGSize - The right size
+       |  217|    /// - Returns: CGSize - The desired size for the left size
+      0|  218|    func desiredSizeForLeftSize(_ leftSize: CGSize, rightSize: CGSize) -> CGSize {
+      0|  219|        let height = max(leftSize.height, rightSize.height)
+      0|  220|        return CGSize(width: max(leftSize.width, rightSize.width) * 2 + 3 * height / 2, height: height)
+      0|  221|    }
+       |  222|
+       |  223|    /// Function to reload labels text color
+      9|  224|    func reloadLabelsTextColor() {
+      8|  225|        leftLabel.textColor = rightSelected ? disabledColor : tintColor
+      8|  226|        rightLabel.textColor = rightSelected ? tintColor : disabledColor
+      9|  227|    }
+       |  228|
+       |  229|    /// Function to reload switch layer position
+      1|  230|    func reloadSwitchLayerPosition() {
+      1|  231|        guard let switchLayerLeftPosition = switchLayerLeftPosition, let switchLayerRightPosition = switchLayerRightPosition else {
+      1|  232|            return
+      0|  233|        }
+      0|  234|        switchLayer.position = rightSelected ? switchLayerRightPosition : switchLayerLeftPosition
+      0|  235|    }
+       |  236|}
+       |  237|
+       |  238|class RoundLayer: CALayer {
+       |  239|
+       |  240|    /// Override function layoutSublayers
+      0|  241|    override func layoutSublayers() {
+      0|  242|        super.layoutSublayers()
+      0|  243|        cornerRadius = bounds.size.height / 2
+      0|  244|    }
+       |  245|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/ViewControllers/DKDetailsParallaxViewController.swift:
+       |    1|//
+       |    2|//  DKDetailsParallaxViewController.swift
+       |    3|//  DKDetailsParallax
+       |    4|//
+       |    5|//  Created by Pierre on 11/01/2017.
+       |    6|//  Copyright © 2017 Pierre Boudon. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// DKDetailsParallaxViewController class
+       |   12|open class DKDetailsParallaxViewController: UIViewController {
+       |   13|    
+       |   14|    /// MARK: - IBOutlets
+       |   15|    /// Scrolling header view
+       |   16|    @IBOutlet public weak var scrollingHeaderView: DKScrollingHeaderView!
+       |   17|    /// Navbar
+       |   18|    @IBOutlet public weak var navBar: UIView!
+       |   19|    /// Navbar title Label
+       |   20|    @IBOutlet public weak var navBarTitleLabel: UILabel!
+       |   21|    
+       |   22|    /// MARK: - Constants
+       |   23|    /// Back button
+       |   24|    public let buttonBack = UIButton(type: .custom)
+       |   25|    
+       |   26|    /// MARK: - Variables
+       |   27|    /// Controller primary color
+       |   28|    public var primaryColor = UIColor.black
+       |   29|    /// Controller secondary color
+       |   30|    public var secondaryColor = UIColor.gray
+       |   31|    
+       |   32|    /// Status of status bar
+       |   33|    public var statusBarHidden = true
+       |   34|    /// Controller loading view
+       |   35|    public var loadingView = UIView()
+       |   36|    
+       |   37|    /// Navbar title with default value
+       |   38|    public var navbarTitle = "Title"
+       |   39|    /// Header image with default value
+       |   40|    public var headerImage = UIImage(named: "defaultProfile")
+       |   41|    /// Blurred header image with default value
+       |   42|    public var blurredHeaderImage = UIImageView(image: UIImage(named: "defaultProfile"))
+       |   43|    
+       |   44|    /// Id of the object - you can use it for some reason
+       |   45|    public var idObject: Int?
+       |   46|    
+       |   47|    /// Object - you can use it for some reasons
+       |   48|    public var object: Any?
+       |   49|    
+       |   50|    /// Wants a blur navbar option
+       |   51|    public var wantsBlurredNavbar: Bool?
+       |   52|    /// For the controller to know if it needs to set the blur header image
+       |   53|    var needsToSetBlurredImage: Bool = false
+       |   54|    
+       |   55|    /// MARK: - Constructors
+       |   56|    /// Constructor for the controller
+       |   57|    ///
+       |   58|    /// - Parameters:
+       |   59|    ///   - primaryColor: UIColor? - The primary color
+       |   60|    ///   - secondaryColor: UIColor? - The secondary color
+       |   61|    ///   - title: String - The title of the controller
+       |   62|    ///   - headerImage: UIImage? - The header image
+       |   63|    ///   - idObject: Int? - The id of the object (You could need it for some reasons)
+       |   64|    ///   - object: Any? - The object you want to details in case you already have it. You have to cast it in your subclass
+       |   65|    ///   - withConfettiDismiss: Bool - If you want the confetti dismiss
+      4|   66|    public init(primaryColor: UIColor?, secondaryColor: UIColor?, title: String, headerImage: UIImage?, idObject: Int?, object: Any?, withBlurredNavbar: Bool) {
+      4|   67|        /* Super init with the DKDetailsParallaxViewController xib */
+      4|   68|        super.init(nibName: "DKDetailsParallaxViewController", bundle: DKDetailsParallax.bundle())
+      4|   69|        
+      4|   70|        /* Set colors */
+      4|   71|        if let p = primaryColor {
+      4|   72|            self.primaryColor = p
+      4|   73|        }
+      4|   74|        if let s = secondaryColor {
+      4|   75|            self.secondaryColor = s
+      4|   76|        }
+      4|   77|        /* Set header image view */
+      0|   78|        if let h = headerImage {
+      0|   79|            self.headerImage = h
+      4|   80|        }
+      4|   81|        
+      4|   82|        /* Set other properties */
+      4|   83|        self.navbarTitle = title
+      4|   84|        self.idObject = idObject
+      4|   85|        self.object = object
+      4|   86|        self.wantsBlurredNavbar = withBlurredNavbar
+      4|   87|        
+      0|   88|        if headerImage != nil && withBlurredNavbar == true {
+      0|   89|            self.needsToSetBlurredImage = true
+      4|   90|        }
+      4|   91|    }
+       |   92|    
+       |   93|    /// Constructor from NSCoder
+      0|   94|    required public init?(coder aDecoder: NSCoder) {
+      0|   95|        super.init(coder: aDecoder)
+      0|   96|        /* Init coder */
+      0|   97|    }
+       |   98|
+       |   99|    /// Override function viewDidLoad
+      0|  100|    override open func viewDidLoad() {
+      0|  101|        super.viewDidLoad()
+      0|  102|
+      0|  103|        /* Do any additional setup after loading the view. */
+      0|  104|        self.setupLoadingView()
+      0|  105|    }
+       |  106|
+       |  107|    /// Override function didReceiveMemoryWarning
+      0|  108|    override open func didReceiveMemoryWarning() {
+      0|  109|        super.didReceiveMemoryWarning()
+      0|  110|        /* Dispose of any resources that can be recreated. */
+      0|  111|    }
+       |  112|}
+       |  113|
+       |  114|/// MARK: - Extension for UITableViewDelegate
+       |  115|extension DKDetailsParallaxViewController: UITableViewDelegate {
+       |  116|    
+       |  117|}
+       |  118|
+       |  119|
+       |  120|/// MARK: - Extension for UITableViewDataSource
+       |  121|extension DKDetailsParallaxViewController: UITableViewDataSource {
+       |  122|    /// Number of sections for UITableViewDataSource
+       |  123|    /// You don't need to override it.
+       |  124|    ///
+       |  125|    /// - Parameter tableView: UITableView - The table view
+       |  126|    /// - Returns: Int - Number of section you want
+      0|  127|    open func numberOfSections(in tableView: UITableView) -> Int {
+      0|  128|        /* Return default section number - Not need to be overriden */
+      0|  129|        return 1
+      0|  130|    }
+       |  131|    
+       |  132|    /// Number of rows in section for UITableViewDataSource
+       |  133|    /// You NEED to override this function
+       |  134|    ///
+       |  135|    /// - Parameters:
+       |  136|    ///   - tableView: UITableView - The table view
+       |  137|    ///   - section: Int - The section
+       |  138|    /// - Returns: Int - Number of rows you want
+      0|  139|    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      0|  140|        /* Return 100 cells by default - Needs to be overriden */
+      0|  141|        return 100
+      0|  142|    }
+       |  143|    
+       |  144|    /// Cell for row for UITableViewDataSource
+       |  145|    /// You NEED to override it
+       |  146|    /// You have to setup all of the cells you want in it
+       |  147|    ///
+       |  148|    /// - Parameters:
+       |  149|    ///   - tableView: UITableView - The table view
+       |  150|    ///   - indexPath: IndexPath - The current index path
+       |  151|    /// - Returns: UITableViewCell - The cell you've just created
+      0|  152|    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      0|  153|        /* Return empty cell by default - Need to be overriden */
+      0|  154|        return UITableViewCell()
+      0|  155|    }
+       |  156|}
+       |  157|
+       |  158|
+       |  159|/// MARK: - Extension for DKScrollingHeaderViewDelegate
+       |  160|extension DKDetailsParallaxViewController: DKScrollingHeaderViewDelegate {
+       |  161|    /// Details page for DKScrollingHeaderView Delegate
+       |  162|    ///
+       |  163|    /// - Parameters:
+       |  164|    ///   - scrollingHeaderView: DKScrollingHeaderView - The scrolling header
+       |  165|    ///   - imageView: UIImageView - The header image
+       |  166|    ///   - blurredImageView: UIImageView - The blurred image
+      0|  167|    public func detailsPage(scrollingHeaderView: DKScrollingHeaderView, headerImageView imageView: UIImageView, blurredImageView: UIImageView) {
+      0|  168|        /* Delegate to set header image view - (Datasource) */
+      0|  169|        imageView.image = self.headerImage
+      0|  170|        imageView.contentMode = .scaleAspectFill
+      0|  171|        blurredImageView.image = self.headerImage
+      0|  172|        blurredImageView.contentMode = .scaleAspectFill
+      0|  173|    }
+       |  174|}
+       |  175|
+       |  176|
+       |  177|/// MARK: - Extension for DKDetailsParallaxCellsDelegate
+       |  178|
+       |  179|
+       |  180|
+       |  181|/// MARK: - Extension for setup methods
+       |  182|extension DKDetailsParallaxViewController {
+       |  183|    /// Function to set the header image
+       |  184|    ///
+       |  185|    /// - Parameter image: UIImage? - The image you want
+      0|  186|    public func setHeaderImage(image: UIImage?) {
+      0|  187|        self.headerImage = image
+      0|  188|        
+      0|  189|        if self.wantsBlurredNavbar! {
+      0|  190|            self.blurredHeaderImage = UIImageView(image: image)
+      0|  191|            self.blurredHeaderImage.frame = self.navBar.frame
+      0|  192|            self.blurredHeaderImage.frame.size.width += 50
+      0|  193|            
+      0|  194|            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+      0|  195|            let blurView = UIVisualEffectView(effect: darkBlur)
+      0|  196|            blurView.frame = self.blurredHeaderImage.bounds
+      0|  197|            blurView.alpha = 0.75
+      0|  198|            self.blurredHeaderImage.addSubview(blurView)
+      0|  199|            
+      0|  200|            self.navBar.insertSubview(self.blurredHeaderImage, belowSubview: self.navBarTitleLabel)
+      0|  201|        } else {
+      0|  202|            self.blurredHeaderImage = UIImageView(image: image)
+      0|  203|            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+      0|  204|            let blurView = UIVisualEffectView(effect: darkBlur)
+      0|  205|            blurView.frame = self.blurredHeaderImage.bounds
+      0|  206|            self.blurredHeaderImage.addSubview(blurView)
+      0|  207|        }
+      0|  208|    }
+       |  209|    
+       |  210|    /// Function for setup the Controller
+      0|  211|    public func setupController() {
+      0|  212|        /* Call other setup functions that are privates. Allows to have only this function to public. */
+      0|  213|        if self.needsToSetBlurredImage {
+      0|  214|            self.setHeaderImage(image: self.headerImage)
+      0|  215|        }
+      0|  216|        self.setupDetailsPageView()
+      0|  217|        self.setupNavbarButtons()
+      0|  218|    }
+       |  219|    
+       |  220|    /// Function for setup the Loading View
+      0|  221|    func setupLoadingView() {
+      0|  222|        /* Setup loading view information */
+      0|  223|        self.navBar.alpha = 0
+      0|  224|        self.statusBarHidden = true
+      0|  225|        self.navBar.backgroundColor = self.primaryColor
+      0|  226|        
+      0|  227|        self.loadingView.frame = UIScreen.main.bounds
+      0|  228|        self.loadingView.backgroundColor = self.primaryColor
+      0|  229|        
+      0|  230|        /* Create activity indicator */
+      0|  231|        let activity = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+      0|  232|        activity.center = self.loadingView.center
+      0|  233|        activity.isHidden = false
+      0|  234|        activity.startAnimating()
+      0|  235|        self.loadingView.insertSubview(activity, aboveSubview: self.loadingView)
+      0|  236|        
+      0|  237|        /* Create label */
+      0|  238|        let label = UILabel(frame: CGRect(x: 10, y: 10, width: self.view.frame.width, height: 20))
+      0|  239|        label.textAlignment = .center
+      0|  240|        label.center = self.loadingView.center
+      0|  241|        label.frame.origin.y -= 50
+      0|  242|        label.text = "Chargement"
+      0|  243|        label.textColor = UIColor.white
+      0|  244|        self.loadingView.insertSubview(label, aboveSubview: self.loadingView)
+      0|  245|        
+      0|  246|        /* Add to subview */
+      0|  247|        self.view.addSubview(self.loadingView)
+      0|  248|    }
+       |  249|    
+       |  250|    /// Function for setup the Details Page View
+      0|  251|    func setupDetailsPageView() {
+      0|  252|        /* Setup scrolling header view properties */
+      0|  253|        self.scrollingHeaderView.tableView.dataSource = self
+      0|  254|        self.scrollingHeaderView.tableView.delegate = self
+      0|  255|        self.scrollingHeaderView.delegate = self
+      0|  256|        self.scrollingHeaderView.headerImageViewContentMode = .top
+      0|  257|        
+      0|  258|        self.navBarTitleLabel.text = self.navbarTitle
+      0|  259|        
+      0|  260|        /* Remove Loading view */
+      0|  261|        UIView.animate(withDuration: 1, animations: {() -> Void in
+      0|  262|            self.loadingView.alpha = 0
+      0|  263|        }, completion: { (boolean) -> Void in
+      0|  264|            self.loadingView.removeFromSuperview()
+      0|  265|        })
+      0|  266|        
+      0|  267|        /* Reload scrolling header in case of modification. */
+      0|  268|        self.scrollingHeaderView.reloadScrollingHeader()
+      0|  269|    }
+       |  270|    
+       |  271|    /// Function for setup the Navbar buttons
+      0|  272|    func setupNavbarButtons() {
+      0|  273|        /* Setup the cross back button */
+      0|  274|        let buttonBack = UIButton(type: .custom)
+      0|  275|        
+      0|  276|        buttonBack.frame = CGRect(x: 20, y: 31, width: 22, height: 22)
+      0|  277|        buttonBack.setImage(UIImage(named: "multiply"), for: UIControlState.normal)
+      0|  278|        buttonBack.addTarget(self, action: #selector(DKDetailsParallaxViewController.backButton), for: .touchUpInside)
+      0|  279|        
+      0|  280|        self.view.addSubview(buttonBack)
+      0|  281|    }
+       |  282|}
+       |  283|
+       |  284|/// MARK: - Extension for personal methods
+       |  285|extension DKDetailsParallaxViewController {
+       |  286|    /// Function for dismiss the Controller
+      0|  287|    func backButton() {
+      0|  288|        /* Dismiss the view controller */
+      0|  289|        self.dismiss(animated: true, completion: nil)
+      0|  290|    }
+       |  291|    
+       |  292|    /// Personal function to know if the first a cell is visible
+       |  293|    ///
+       |  294|    /// - Returns: Bool - If the first cell is visible or not
+      0|  295|    func isRowVisible() -> Bool {
+      0|  296|        /* Personal method to check is a row is currently visible */
+      0|  297|        guard let indexes = self.scrollingHeaderView.tableView.indexPathsForVisibleRows else {
+      0|  298|            return false
+      0|  299|        }
+      0|  300|        
+      0|  301|        for index in indexes {
+      0|  302|            if index.row == 0 {
+      0|  303|                return true
+      0|  304|            }
+      0|  305|        }
+      0|  306|        
+      0|  307|        return false
+      0|  308|    }
+       |  309|    
+       |  310|    /// Function executed when the user's scrolling through the table view
+       |  311|    ///
+       |  312|    /// - Parameter scrollView: UIScrollView - The scroll view
+      0|  313|    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+      0|  314|        /* Personal method to do things when the view did scroll. */
+      0|  315|        if !isRowVisible() {
+      0|  316|            UIView.animate(withDuration: 0.2, animations: {() -> Void in
+      0|  317|                self.navBar.alpha = 1
+      0|  318|                self.statusBarHidden = false
+      0|  319|            }, completion: nil)
+      0|  320|        } else {
+      0|  321|            UIView.animate(withDuration: 0.2, animations: {() -> Void in
+      0|  322|                self.navBar.alpha = 0
+      0|  323|                self.statusBarHidden = true
+      0|  324|            }, completion: nil)
+      0|  325|        }
+      0|  326|        
+      0|  327|        var fixedButtonFrame = self.buttonBack.frame
+      0|  328|        fixedButtonFrame.origin.y = 31 + scrollView.contentOffset.y
+      0|  329|        self.buttonBack.frame = fixedButtonFrame
+      0|  330|    }
+       |  331|}
+
+/Users/Pierre/Documents/Git/GitHub/DKDetailsParallax/DKDetailsParallax/Views/DKScrollingHeaderView.swift:
+       |    1|//
+       |    2|//  DKScrollingHeaderView.swift
+       |    3|//  DKDetailsParallax
+       |    4|//
+       |    5|//  Created by Pierre on 12/01/2017.
+       |    6|//  Copyright © 2017 Pierre BOUDON. All rights reserved.
+       |    7|//
+       |    8|
+       |    9|import UIKit
+       |   10|
+       |   11|/// Scrolling HeaderView
+       |   12|open class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
+       |   13|    
+       |   14|    /* Constants */
+       |   15|    /// Static constant for image pager height
+       |   16|    static let kDefaultImagePagerHeight: CGFloat = 375
+       |   17|    /// Static constant for table view header margin
+       |   18|    static let kDefaultTableViewHeaderMargin: CGFloat = 95
+       |   19|    /// Static constant for image scaling factor
+       |   20|    static let kDefaultImageScalingFactor: CGFloat = 450
+       |   21|    
+       |   22|    /* Variables */
+       |   23|    /// Height for the header image view
+       |   24|    var headerImageViewHeight: CGFloat = 0
+       |   25|    /// Scaling factor for image view
+       |   26|    var headerImageViewScalingFactor: CGFloat = 0
+       |   27|    /// Fading offset for navbar
+       |   28|    var navbarViewFadingOffset: CGFloat = 0
+       |   29|    /// Public table view to be custom
+       |   30|    public var tableView: UITableView!
+       |   31|    /// The navbar
+       |   32|    var navBarView: UIView = UIView()
+       |   33|    /// Content mode for the header image view
+       |   34|    var headerImageViewContentMode: UIViewContentMode = .scaleAspectFit
+       |   35|    /// Delegate for the header view
+       |   36|    public var delegate: DKScrollingHeaderViewDelegate?
+       |   37|    
+       |   38|    /// Image view for the header
+       |   39|    var imageView: UIImageView?
+       |   40|    /// Same image view with blur effect
+       |   41|    var blurredImageView: UIImageView?
+       |   42|    /// Image button
+       |   43|    var imageButton: UIButton?
+       |   44|    
+       |   45|    /* Constructors */
+       |   46|    /// Override constructor to initialize the view
+       |   47|    ///
+       |   48|    /// - Parameter frame: CGRect - The frame of the view
+      0|   49|    override init(frame: CGRect) {
+      0|   50|        super.init(frame: frame)
+      0|   51|        /* Call initialize function */
+      0|   52|        self.initialize()
+      0|   53|        
+      0|   54|    }
+       |   55|    
+       |   56|    /// Constructor from NSCoder
+      0|   57|    required public init?(coder aDecoder: NSCoder) {
+      0|   58|        super.init(coder: aDecoder)
+      0|   59|        /* Call initialize function */
+      0|   60|        self.initialize()
+      0|   61|        
+      0|   62|    }
+       |   63|    
+       |   64|    /// Initialize the view
+      0|   65|    func initialize() {
+      0|   66|        /* Set headerImageView */
+      0|   67|        self.headerImageViewHeight = DKScrollingHeaderView.kDefaultImagePagerHeight
+      0|   68|        self.headerImageViewScalingFactor = DKScrollingHeaderView.kDefaultImageScalingFactor;
+      0|   69|        self.headerImageViewContentMode = .scaleAspectFit
+      0|   70|        
+      0|   71|        /* Call all the setup functions */
+      0|   72|        self.setupTableView()
+      0|   73|        self.setupTableHeaderView()
+      0|   74|        self.setupImageView()
+      0|   75|        
+      0|   76|        /* Add some properties to the variables */
+      0|   77|        self.autoresizesSubviews = true
+      0|   78|        self.tableView?.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleLeftMargin, .flexibleTopMargin]
+      0|   79|        self.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleLeftMargin, .flexibleTopMargin]
+      0|   80|    }
+       |   81|    
+       |   82|    
+       |   83|    /// Function to reload the scrolling header
+      0|   84|    open func reloadScrollingHeader() {
+      0|   85|        /* Reload scrolling header and tableview */
+      0|   86|        if let d = self.delegate {
+      0|   87|            DispatchQueue.main.async { /* Need to execute in main thread */
+      0|   88|                d.detailsPage(scrollingHeaderView: self, headerImageView: self.imageView!, blurredImageView: self.blurredImageView!)
+      0|   89|            }
+      0|   90|        }
+      0|   91|        
+      0|   92|        self.tableView?.reloadData()
+      0|   93|    }
+       |   94|}
+       |   95|
+       |   96|// MARK: - Extension for view layout
+       |   97|extension DKScrollingHeaderView {
+       |   98|    /// Override LayoutSubviews function
+      0|   99|    override open func layoutSubviews() {
+      0|  100|        super.layoutSubviews()
+      0|  101|        
+      0|  102|        /* Set properties for the headerView */
+      0|  103|        self.navbarViewFadingOffset = self.headerImageViewHeight - (self.navBarView.frame.height + DKScrollingHeaderView.kDefaultTableViewHeaderMargin)
+      0|  104|        
+      0|  105|        /* Check for tableView and imageView and set up */
+      0|  106|        if self.tableView == nil {
+      0|  107|            self.setupTableView()
+      0|  108|        }
+      0|  109|        if self.tableView?.tableHeaderView == nil {
+      0|  110|            self.setupTableHeaderView()
+      0|  111|        }
+      0|  112|        if self.imageView == nil {
+      0|  113|            self.setupImageView()
+      0|  114|        }
+      0|  115|        
+      0|  116|        /* Call other setup functions */
+      0|  117|        self.setupBackgroundColor()
+      0|  118|        self.setupImageButton()
+      0|  119|    }
+       |  120|}
+       |  121|
+       |  122|// MARK: - Extension for setup methods
+       |  123|extension DKScrollingHeaderView {
+       |  124|    /// Function to setup the UITableView
+      0|  125|    func setupTableView() {
+      0|  126|        /* Setup properties for the tableView */
+      0|  127|        self.tableView = UITableView(frame: self.bounds)
+      0|  128|        
+      0|  129|        self.tableView?.backgroundColor = UIColor.clear
+      0|  130|        self.tableView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      0|  131|        
+      0|  132|        self.tableView?.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
+      0|  133|        
+      0|  134|        self.addSubview(self.tableView!)
+      0|  135|    }
+       |  136|    
+       |  137|    /// Function to setup the TableHeaderView
+      0|  138|    func setupTableHeaderView() {
+      0|  139|        /* Setup properties for the tableHeaderView */
+      0|  140|        let tableHeaderViewFrame = CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: self.headerImageViewHeight - DKScrollingHeaderView.kDefaultTableViewHeaderMargin)
+      0|  141|        let tableHeaderView = UIView(frame: tableHeaderViewFrame)
+      0|  142|        tableHeaderView.backgroundColor = UIColor.clear
+      0|  143|        self.tableView?.tableHeaderView = tableHeaderView
+      0|  144|    }
+       |  145|    
+       |  146|    /// Function to setup Image Button
+      0|  147|    func setupImageButton() {
+      0|  148|        /* Setup Image Button */
+      0|  149|        if self.imageButton == nil {
+      0|  150|            self.imageButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: self.headerImageViewHeight))
+      0|  151|        }
+      0|  152|        
+      0|  153|        self.imageButton?.addTarget(self, action: #selector(DKScrollingHeaderView.imageButtonPressed(button:)), for: .touchUpInside)
+      0|  154|    }
+       |  155|    
+       |  156|    /// Function to setup ImageView
+      0|  157|    func setupImageView() {
+      0|  158|        /* Setup properties for ImageView*/
+      0|  159|        self.imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: self.headerImageViewHeight))
+      0|  160|        self.imageView?.backgroundColor = UIColor.black
+      0|  161|        self.imageView?.autoresizingMask = .flexibleWidth
+      0|  162|        self.imageView?.clipsToBounds = true
+      0|  163|        self.imageView?.contentMode = self.headerImageViewContentMode
+      0|  164|        
+      0|  165|        self.blurredImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: self.headerImageViewHeight))
+      0|  166|        self.blurredImageView?.backgroundColor = UIColor.black
+      0|  167|        self.blurredImageView?.autoresizingMask = .flexibleWidth
+      0|  168|        self.blurredImageView?.clipsToBounds = true
+      0|  169|        self.blurredImageView?.contentMode = self.headerImageViewContentMode
+      0|  170|        
+      0|  171|        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+      0|  172|        let blurView = UIVisualEffectView(effect: darkBlur)
+      0|  173|        blurView.frame = self.blurredImageView!.bounds
+      0|  174|        blurView.frame.size.width += 50
+      0|  175|        self.blurredImageView?.addSubview(blurView)
+      0|  176|        
+      0|  177|        self.insertSubview(self.imageView!, belowSubview: self.tableView!)
+      0|  178|        self.insertSubview(self.blurredImageView!, belowSubview: self.tableView!)
+      0|  179|        
+      0|  180|        if let d = self.delegate {
+      0|  181|            d.detailsPage(scrollingHeaderView: self, headerImageView: self.imageView!, blurredImageView: self.blurredImageView!)
+      0|  182|        }
+      0|  183|    }
+       |  184|    
+       |  185|    /// Function to setup Background Color
+      0|  186|    func setupBackgroundColor() {
+      0|  187|        /* Setup the backgrounds colors */
+      0|  188|        self.backgroundColor = UIColor.clear
+      0|  189|        self.tableView?.backgroundColor = UIColor.clear
+      0|  190|    }
+       |  191|    
+       |  192|    /// Function to setup Image View Gradient
+      0|  193|    func setupImageViewGradient() {
+      0|  194|        /* Setup the image view gradient */
+      0|  195|        let gradientLayer = CAGradientLayer()
+      0|  196|        gradientLayer.frame = self.imageView!.bounds
+      0|  197|        gradientLayer.colors = [(UIColor(red: CGFloat(0), green: CGFloat(0), blue: CGFloat(0), alpha: CGFloat(1)).cgColor as Any), (UIColor(red: CGFloat(0), green: CGFloat(0), blue: CGFloat(0), alpha: CGFloat(0)) as Any)]
+      0|  198|        
+      0|  199|        gradientLayer.startPoint = CGPoint(x: 0.6, y: 0.6)
+      0|  200|        gradientLayer.endPoint = CGPoint(x: 0.6, y: 1)
+      0|  201|        
+      0|  202|        self.imageView?.layer.mask = gradientLayer
+      0|  203|    }
+       |  204|}
+       |  205|
+       |  206|// MARK: - Extension for personal methods
+       |  207|extension DKScrollingHeaderView {
+       |  208|    /// Delegate function when imageButton is pressed
+       |  209|    ///
+       |  210|    /// - Parameter button: UIButton - The pressed button
+      0|  211|    func imageButtonPressed(button: UIButton) {
+      0|  212|        /* Delegate for header image view tapped */
+      0|  213|        if let d = self.delegate {
+      0|  214|            d.detailsPage!(scrollingHeaderView: self, headerImageWasSelected: self.imageView!)
+      0|  215|        }
+      0|  216|    }
+       |  217|}
+       |  218|
+       |  219|// MARK: - Extension for setters
+       |  220|extension DKScrollingHeaderView {
+       |  221|    /// Function to set the Navbar view
+       |  222|    ///
+       |  223|    /// - Parameter navbarView: UIView - The navbar view
+      0|  224|    func setNavbarView(navbarView: UIView) {
+      0|  225|        /* Setup properties for navBarView */
+      0|  226|        if self.navBarView == navbarView {
+      0|  227|            return
+      0|  228|        }
+      0|  229|        
+      0|  230|        self.navBarView = navbarView
+      0|  231|        
+      0|  232|        self.navBarView.alpha = 0
+      0|  233|        self.navBarView.isHidden = true
+      0|  234|    }
+       |  235|    
+       |  236|    /// Function to set the HeaderImage view content mode
+       |  237|    ///
+       |  238|    /// - Parameter headerImageViewContentMode: UIViewContentMode - The content mode
+      0|  239|    func setHeaderImageViewContentMode(headerImageViewContentMode: UIViewContentMode) {
+      0|  240|        /* Set header image view content mode */
+      0|  241|        if self.headerImageViewContentMode == headerImageViewContentMode {
+      0|  242|            return
+      0|  243|        }
+      0|  244|        
+      0|  245|        self.headerImageViewContentMode = headerImageViewContentMode
+      0|  246|        self.imageView!.contentMode = self.headerImageViewContentMode
+      0|  247|    }
+       |  248|}
+       |  249|
+       |  250|// MARK: - Extension for KVO methods
+       |  251|extension DKScrollingHeaderView {
+       |  252|    /// Override observeValue for image when table view is scrolled
+       |  253|    ///
+       |  254|    /// - Parameters:
+       |  255|    ///   - keyPath: String? - The key path
+       |  256|    ///   - object: Any? - The object
+       |  257|    ///   - change: [NSKeyValueChangeKey : Any]? - The change
+       |  258|    ///   - context: UnsageMutableRawPointer? - The context
+      0|  259|    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+      0|  260|        /* Observe value for scrolling */
+      0|  261|        if (object as! UITableView == self.tableView) && ((keyPath == "contentOffset") == true) {
+      0|  262|            self.scrollViewDidScroll(withOffset: self.tableView.contentOffset.y)
+      0|  263|            return
+      0|  264|        }
+      0|  265|    }
+       |  266|}
+       |  267|
+       |  268|// MARK: - Extension for ScrollView methods
+       |  269|extension DKScrollingHeaderView {
+       |  270|    /// Function called when the view is scrolling
+       |  271|    ///
+       |  272|    /// - Parameter scrollOffset: CGFloat - Current scroll offset
+      0|  273|    func scrollViewDidScroll(withOffset scrollOffset: CGFloat) {
+      0|  274|        /* Execute when scrolling */
+      0|  275|        let scrollViewDragPoint = self.tableView?.contentOffset
+      0|  276|        
+      0|  277|        /* During pull */
+      0|  278|        if scrollOffset < 0 {
+      0|  279|            self.imageView!.transform = CGAffineTransform(scaleX: 1 - (scrollOffset / self.headerImageViewScalingFactor), y: 1 - (scrollOffset / self.headerImageViewScalingFactor))
+      0|  280|        }
+      0|  281|        else {
+      0|  282|            /* During push */
+      0|  283|            self.imageView?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+      0|  284|            self.blurredImageView?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+      0|  285|            self.blurredImageView?.alpha = scrollOffset / 100
+      0|  286|        }
+      0|  287|        
+      0|  288|        /* Call animateNavigation to Show / Hide navbar */
+      0|  289|        self.animateNavigationBar(scrollOffset, dragging: scrollViewDragPoint!)
+      0|  290|    }
+       |  291|    
+       |  292|    /// Function to animate the navbar
+       |  293|    ///
+       |  294|    /// - Parameters:
+       |  295|    ///   - scrollOffset: CGFloat - Current scroll offset
+       |  296|    ///   - scrollViewDragPoint: CGPoint - Current scroll drag point
+      0|  297|    func animateNavigationBar(_ scrollOffset: CGFloat, dragging scrollViewDragPoint: CGPoint) {
+      0|  298|        /* Hide / Show navigation bar when scrolling */
+      0|  299|        if scrollOffset > navbarViewFadingOffset && self.navBarView.alpha == 0.0 {
+      0|  300|            /* Show the navbar */
+      0|  301|            self.navBarView.alpha = 0
+      0|  302|            self.navBarView.isHidden = false
+      0|  303|            UIView.animate(withDuration: 0.3, animations: {() -> Void in
+      0|  304|                self.navBarView.alpha = 1
+      0|  305|            })
+      0|  306|        }
+      0|  307|        else if scrollOffset < navbarViewFadingOffset && self.navBarView.alpha == 1.0 {
+      0|  308|            /* Hide the navbar */
+      0|  309|            UIView.animate(withDuration: 0.3, animations: {() -> Void in
+      0|  310|                self.navBarView.alpha = 0
+      0|  311|            }, completion: {(_ finished: Bool) -> Void in
+      0|  312|                self.navBarView.isHidden = true
+      0|  313|            })
+      0|  314|        }
+      0|  315|        
+      0|  316|    }
+       |  317|}
+
