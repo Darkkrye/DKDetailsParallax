@@ -34,6 +34,10 @@
 		8F39BB7D1E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib */; };
 		8F39BB891E27F9080096D869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F39BB881E27F9080096D869 /* Assets.xcassets */; };
 		8F39BBC11E280AAF0096D869 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39BBC01E280AAF0096D869 /* Bundle.swift */; };
+		8F3D9CD51E3CBF5900A3E77C /* DKDetailsParallaxViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D9CD41E3CBF5900A3E77C /* DKDetailsParallaxViewControllerTest.swift */; };
+		8F3D9CD71E3CC40500A3E77C /* DKScrollingHeaderViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D9CD61E3CC40500A3E77C /* DKScrollingHeaderViewTest.swift */; };
+		8F3D9CD91E3CC9BC00A3E77C /* SwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D9CD81E3CC9BC00A3E77C /* SwitchTests.swift */; };
+		8F3D9CDB1E3CCA6C00A3E77C /* DKDetailsParallaxCellsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D9CDA1E3CCA6C00A3E77C /* DKDetailsParallaxCellsTest.swift */; };
 		8FEF7BF51E269D08000412EB /* DKDetailsParallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEF7BEB1E269D08000412EB /* DKDetailsParallax.framework */; };
 		8FEF7BFA1E269D08000412EB /* DKDetailsParallaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF7BF91E269D08000412EB /* DKDetailsParallaxTests.swift */; };
 		8FEF7BFC1E269D08000412EB /* DKDetailsParallax.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEF7BEE1E269D08000412EB /* DKDetailsParallax.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,6 +81,10 @@
 		8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedDetailsRectangleProfileCell.xib; sourceTree = "<group>"; };
 		8F39BB881E27F9080096D869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F39BBC01E280AAF0096D869 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		8F3D9CD41E3CBF5900A3E77C /* DKDetailsParallaxViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKDetailsParallaxViewControllerTest.swift; sourceTree = "<group>"; };
+		8F3D9CD61E3CC40500A3E77C /* DKScrollingHeaderViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKScrollingHeaderViewTest.swift; sourceTree = "<group>"; };
+		8F3D9CD81E3CC9BC00A3E77C /* SwitchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTests.swift; sourceTree = "<group>"; };
+		8F3D9CDA1E3CCA6C00A3E77C /* DKDetailsParallaxCellsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKDetailsParallaxCellsTest.swift; sourceTree = "<group>"; };
 		8FEF7BEB1E269D08000412EB /* DKDetailsParallax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKDetailsParallax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEF7BEE1E269D08000412EB /* DKDetailsParallax.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKDetailsParallax.h; sourceTree = "<group>"; };
 		8FEF7BEF1E269D08000412EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,8 +249,12 @@
 		8FEF7BF81E269D08000412EB /* DKDetailsParallaxTests */ = {
 			isa = PBXGroup;
 			children = (
+				8F3D9CD81E3CC9BC00A3E77C /* SwitchTests.swift */,
 				8FEF7BF91E269D08000412EB /* DKDetailsParallaxTests.swift */,
+				8F3D9CD61E3CC40500A3E77C /* DKScrollingHeaderViewTest.swift */,
+				8F3D9CD41E3CBF5900A3E77C /* DKDetailsParallaxViewControllerTest.swift */,
 				8FEF7BFB1E269D08000412EB /* Info.plist */,
+				8F3D9CDA1E3CCA6C00A3E77C /* DKDetailsParallaxCellsTest.swift */,
 			);
 			path = DKDetailsParallaxTests;
 			sourceTree = "<group>";
@@ -394,6 +406,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3D9CDB1E3CCA6C00A3E77C /* DKDetailsParallaxCellsTest.swift in Sources */,
+				8F3D9CD51E3CBF5900A3E77C /* DKDetailsParallaxViewControllerTest.swift in Sources */,
+				8F3D9CD91E3CC9BC00A3E77C /* SwitchTests.swift in Sources */,
+				8F3D9CD71E3CC40500A3E77C /* DKScrollingHeaderViewTest.swift in Sources */,
 				8FEF7BFA1E269D08000412EB /* DKDetailsParallaxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,15 +1,15 @@
 //
-//  DKDetailsParallaxTests.swift
-//  DKDetailsParallaxTests
+//  DKScrollingHeaderViewTest.swift
+//  DKDetailsParallax
 //
-//  Created by Pierre on 11/01/2017.
+//  Created by Pierre on 28/01/2017.
 //  Copyright © 2017 Pierre BOUDON. All rights reserved.
 //
 
 import XCTest
 @testable import DKDetailsParallax
 
-class DKDetailsParallaxTests: XCTestCase {
+class DKDetailsParallaxViewControllerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -33,8 +33,16 @@ class DKDetailsParallaxTests: XCTestCase {
         }
     }
     
-    func testBundle() {
-        XCTAssertNil(DKDetailsParallax.bundle())
-        XCTAssertEqual(DKDetailsParallax.bundle(), nil)
+    func testInit() {
+        let vc = DKDetailsParallaxViewController(primaryColor: UIColor.blue, secondaryColor: UIColor.orange, title: "Title", headerImage: nil, idObject: 3, object: nil, withBlurredNavbar: true)
+        
+        XCTAssertEqual(vc.primaryColor, UIColor.blue)
+        XCTAssertEqual(vc.secondaryColor, UIColor.orange)
+        XCTAssertEqual(vc.navbarTitle, "Title")
+        XCTAssertNil(vc.headerImage)
+        XCTAssertEqual(vc.idObject, 3)
+        XCTAssertNil(vc.object)
+        XCTAssertEqual(vc.wantsBlurredNavbar, true)
+        XCTAssertEqual(vc.needsToSetBlurredImage, false)
     }
 }

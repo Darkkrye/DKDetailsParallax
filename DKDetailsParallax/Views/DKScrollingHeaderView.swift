@@ -53,6 +53,7 @@ open class DKScrollingHeaderView: UIView, UIScrollViewDelegate {
         
     }
     
+    /// Constructor from NSCoder
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         /* Call initialize function */

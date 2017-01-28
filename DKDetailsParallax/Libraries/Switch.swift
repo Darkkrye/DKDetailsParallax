@@ -9,13 +9,19 @@ import UIKit
 /// A switch control
 @IBDesignable open class Switch: UIControl {
 
+    /// Background layer
     let backgroundLayer = RoundLayer()
+    /// Switch layer
     let switchLayer = RoundLayer()
 
+    /// The previous point
     var previousPoint: CGPoint?
+    /// The switch layer left position
     var switchLayerLeftPosition: CGPoint?
+    /// The switch layer right position
     var switchLayerRightPosition: CGPoint?
 
+    /// The label factory
     static let labelFactory: () -> UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -82,8 +88,11 @@ import UIKit
         }
     }
 
+    /// If touches began property
     var touchBegan = false
+    /// If touches began in the switch layer property
     var touchBeganInSwitchLayer = false
+    /// If the touch moved property
     var touchMoved = false
 
     /// Init with coder.
@@ -92,11 +101,15 @@ import UIKit
         setup()
     }
 
+    /// Override constructor with frame
+    ///
+    /// - Parameter frame: CGRect - The frame
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
+    /// Setup function
     func setup() {
         backgroundLayer.backgroundColor = UIColor.white.cgColor
         backgroundLayer.borderColor = disabledColor.cgColor
@@ -196,16 +209,24 @@ import UIKit
         return desiredSizeForLeftSize(leftLabel.intrinsicContentSize, rightSize: rightLabel.intrinsicContentSize)
     }
 
+    /// Function for desired CGSize for left size
+    ///
+    /// - Parameters:
+    ///   - leftSize: CGSize - The left size
+    ///   - rightSize: CGSize - The right size
+    /// - Returns: CGSize - The desired size for the left size
     func desiredSizeForLeftSize(_ leftSize: CGSize, rightSize: CGSize) -> CGSize {
         let height = max(leftSize.height, rightSize.height)
         return CGSize(width: max(leftSize.width, rightSize.width) * 2 + 3 * height / 2, height: height)
     }
 
+    /// Function to reload labels text color
     func reloadLabelsTextColor() {
         leftLabel.textColor = rightSelected ? disabledColor : tintColor
         rightLabel.textColor = rightSelected ? tintColor : disabledColor
     }
 
+    /// Function to reload switch layer position
     func reloadSwitchLayerPosition() {
         guard let switchLayerLeftPosition = switchLayerLeftPosition, let switchLayerRightPosition = switchLayerRightPosition else {
             return
@@ -216,6 +237,7 @@ import UIKit
 
 class RoundLayer: CALayer {
 
+    /// Override function layoutSublayers
     override func layoutSublayers() {
         super.layoutSublayers()
         cornerRadius = bounds.size.height / 2
