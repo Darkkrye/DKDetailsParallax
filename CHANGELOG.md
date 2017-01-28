@@ -1,3 +1,10 @@
+## 2.0.6 (January 28, 2017)
+
+Features :
+
+- Added code coverage.
+
+
 ## 2.0.5 (January 28, 2017)
 
 Features :
