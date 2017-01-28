@@ -1,15 +1,18 @@
 //
-//  DKDetailsParallaxTests.swift
-//  DKDetailsParallaxTests
+//  DKDetailsParallaxCellsTest.swift
+//  DKDetailsParallax
 //
-//  Created by Pierre on 11/01/2017.
+//  Created by Pierre on 28/01/2017.
 //  Copyright © 2017 Pierre BOUDON. All rights reserved.
 //
 
 import XCTest
 @testable import DKDetailsParallax
 
-class DKDetailsParallaxTests: XCTestCase {
+class DKDetailsParallaxCellsTest: XCTestCase {
+    
+    let primaryColor = UIColor.black
+    let secondaryColor = UIColor.orange
     
     override func setUp() {
         super.setUp()
@@ -33,8 +36,6 @@ class DKDetailsParallaxTests: XCTestCase {
         }
     }
     
-    func testBundle() {
-        XCTAssertNil(DKDetailsParallax.bundle())
-        XCTAssertEqual(DKDetailsParallax.bundle(), nil)
+    func testRoundedSquareTest() {
     }
 }

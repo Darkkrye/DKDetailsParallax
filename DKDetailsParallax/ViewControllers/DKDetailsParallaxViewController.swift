@@ -90,6 +90,7 @@ open class DKDetailsParallaxViewController: UIViewController {
         }
     }
     
+    /// Constructor from NSCoder
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         /* Init coder */

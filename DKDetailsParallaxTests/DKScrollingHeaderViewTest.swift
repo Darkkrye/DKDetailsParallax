@@ -1,19 +1,22 @@
 //
-//  DKDetailsParallaxTests.swift
-//  DKDetailsParallaxTests
+//  DKScrollingHeaderViewTest.swift
+//  DKDetailsParallax
 //
-//  Created by Pierre on 11/01/2017.
+//  Created by Pierre on 28/01/2017.
 //  Copyright © 2017 Pierre BOUDON. All rights reserved.
 //
 
 import XCTest
 @testable import DKDetailsParallax
 
-class DKDetailsParallaxTests: XCTestCase {
+class DKScrollingHeaderViewTest: XCTestCase {
+    
+    var controller: DKDetailsParallaxViewController!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.controller = DKDetailsParallaxViewController(primaryColor: UIColor.black, secondaryColor: UIColor.orange, title: "Title", headerImage: nil, idObject: 3, object: nil, withBlurredNavbar: true)
     }
     
     override func tearDown() {
@@ -33,8 +36,6 @@ class DKDetailsParallaxTests: XCTestCase {
         }
     }
     
-    func testBundle() {
-        XCTAssertNil(DKDetailsParallax.bundle())
-        XCTAssertEqual(DKDetailsParallax.bundle(), nil)
+    func testInitFromFrame() {
     }
 }

@@ -12,6 +12,9 @@
 [![CocoaPods](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org/pods/DKDetailsParallax)
 [![CocoaPods downloads](https://img.shields.io/cocoapods/dt/DKDetailsParallax.svg?style=flat)](https://cocoapods.org/pods/DKDetailsParallax)
 
+## Why small code coverage
+I'm trying to do more code coverage but I have some problems when I test code with xib files. I'm searching how to do it but meanwhile, I cannot test a lot of code. It's the same thing for graphical functions.
+
 ## Installation
 DKDetailsParallax is a framework available in Cocoapods.
 
@@ -317,7 +320,7 @@ UIImage(named: "defaultProfile", in: DKDetailsParallax.bundle(), compatibleWith:
 
 
 ## Version
-Current stable version `2.0.4`
+Current stable version `2.0.5`
 
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)
