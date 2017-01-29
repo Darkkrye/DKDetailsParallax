@@ -35,7 +35,8 @@ Cells are grouped by theme :
 - Rounded Theme :
   - RoundedDetailsProfileCell,
   - RoundedDetailsRectangleProfileCell,
-  - RoundedButtonCell;
+  - RoundedButtonCell,
+  - RoundedDescriptionCell;
 - Flat Light Theme :
   - FlatLightSimpleDescriptionCell,
   - FlatLightSimpleLabelCell,
@@ -320,7 +321,7 @@ UIImage(named: "defaultProfile", in: DKDetailsParallax.bundle(), compatibleWith:
 
 
 ## Version
-Current stable version `2.0.6`
+Current stable version `2.1.0`
 
 ## Continuous Integration
 ### Master [![Build Status](https://travis-ci.com/Darkkrye/DKDetailsParallax.svg?token=p53aoPs64tosEd87hUrw&branch=master)](https://travis-ci.com/Darkkrye/DKDetailsParallax)

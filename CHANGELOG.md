@@ -1,3 +1,16 @@
+## 2.1.0 (January 27, 2017)
+
+Features :
+
+- New cell which allows you to do lot of things.
+
+Improvements:
+
+- You now have the choice for the dismiss icon,
+- Enhancement for the blur system,
+- Bug fixes.
+
+
 ## 2.0.6 (January 28, 2017)
 
 Features :
