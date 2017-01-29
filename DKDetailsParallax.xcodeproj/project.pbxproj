@@ -41,6 +41,8 @@
 		8FEF7BF51E269D08000412EB /* DKDetailsParallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEF7BEB1E269D08000412EB /* DKDetailsParallax.framework */; };
 		8FEF7BFA1E269D08000412EB /* DKDetailsParallaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF7BF91E269D08000412EB /* DKDetailsParallaxTests.swift */; };
 		8FEF7BFC1E269D08000412EB /* DKDetailsParallax.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEF7BEE1E269D08000412EB /* DKDetailsParallax.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FFB11131E3D39A300B21DDC /* RoundedDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB11111E3D39A300B21DDC /* RoundedDescriptionCell.swift */; };
+		8FFB11141E3D39A300B21DDC /* RoundedDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FFB11121E3D39A300B21DDC /* RoundedDescriptionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		8FEF7BF41E269D08000412EB /* DKDetailsParallaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DKDetailsParallaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEF7BF91E269D08000412EB /* DKDetailsParallaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKDetailsParallaxTests.swift; sourceTree = "<group>"; };
 		8FEF7BFB1E269D08000412EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FFB11111E3D39A300B21DDC /* RoundedDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDescriptionCell.swift; sourceTree = "<group>"; };
+		8FFB11121E3D39A300B21DDC /* RoundedDescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedDescriptionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +126,7 @@
 				8F2082A51E2E904700738480 /* FlatLightSwitchCell.swift */,
 				8F2082A61E2E904700738480 /* FlatLightSwitchCell.xib */,
 			);
-			name = FlatLightTheme;
+			path = FlatLightTheme;
 			sourceTree = "<group>";
 		};
 		8F20829C1E2E8FC500738480 /* FlatDarkTheme */ = {
@@ -135,7 +139,7 @@
 				8F2082B51E2E90DF00738480 /* FlatDarkSwitchCell.swift */,
 				8F2082B61E2E90DF00738480 /* FlatDarkSwitchCell.xib */,
 			);
-			name = FlatDarkTheme;
+			path = FlatDarkTheme;
 			sourceTree = "<group>";
 		};
 		8F2082AE1E2E907D00738480 /* Libraries */ = {
@@ -191,6 +195,8 @@
 				8F39BB791E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib */,
 				8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */,
 				8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */,
+				8FFB11111E3D39A300B21DDC /* RoundedDescriptionCell.swift */,
+				8FFB11121E3D39A300B21DDC /* RoundedDescriptionCell.xib */,
 			);
 			path = RoundedTheme;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				8F39BB7B1E27F6AB0096D869 /* RoundedDetailsProfileCell.xib in Resources */,
 				8F2082BA1E2E90DF00738480 /* FlatDarkSimpleLabelCell.xib in Resources */,
 				8F39BB741E27F5850096D869 /* DKDetailsParallaxViewController.xib in Resources */,
+				8FFB11141E3D39A300B21DDC /* RoundedDescriptionCell.xib in Resources */,
 				8F2082BC1E2E90DF00738480 /* FlatDarkSwitchCell.xib in Resources */,
 				8F39BB891E27F9080096D869 /* Assets.xcassets in Resources */,
 			);
@@ -396,6 +403,7 @@
 				8F2082BB1E2E90DF00738480 /* FlatDarkSwitchCell.swift in Sources */,
 				8F2082AB1E2E904700738480 /* FlatLightSwitchCell.swift in Sources */,
 				8F39BB6E1E27F43B0096D869 /* DKScrollingHeaderView.swift in Sources */,
+				8FFB11131E3D39A300B21DDC /* RoundedDescriptionCell.swift in Sources */,
 				8F2082A91E2E904700738480 /* FlatLightSimpleLabelCell.swift in Sources */,
 				8F39BB7A1E27F6AB0096D869 /* RoundedDetailsProfileCell.swift in Sources */,
 				8F39BB701E27F4950096D869 /* DKScrollingHeaderViewDelegate.swift in Sources */,
