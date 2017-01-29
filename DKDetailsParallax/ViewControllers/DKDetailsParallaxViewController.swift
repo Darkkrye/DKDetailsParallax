@@ -34,7 +34,7 @@ open class DKDetailsParallaxViewController: UIViewController {
     /// Controller loading view
     public var loadingView = UIView()
     /// The dismiss button - Default Cross
-    public var dismissButton = DKDetailsParallaxDismissButton.cross.rawValue
+    public var dismissIcon = DKDetailsParallaxDismissButton.cross.rawValue
     
     /// Navbar title with default value
     public var navbarTitle = "Title"
@@ -65,7 +65,7 @@ open class DKDetailsParallaxViewController: UIViewController {
     ///   - idObject: Int? - The id of the object (You could need it for some reasons)
     ///   - object: Any? - The object you want to details in case you already have it. You have to cast it in your subclass
     ///   - withConfettiDismiss: Bool - If you want the confetti dismiss
-    public init(primaryColor: UIColor?, secondaryColor: UIColor?, title: String, headerImage: UIImage?, idObject: Int?, object: Any?, dismissButton: DKDetailsParallaxDismissButton, withBlurredNavbar: Bool) {
+    public init(primaryColor: UIColor?, secondaryColor: UIColor?, title: String, headerImage: UIImage?, idObject: Int?, object: Any?, dismissIcon: DKDetailsParallaxDismissButton, withBlurredNavbar: Bool) {
         /* Super init with the DKDetailsParallaxViewController xib */
         super.init(nibName: "DKDetailsParallaxViewController", bundle: DKDetailsParallax.bundle())
         
@@ -85,7 +85,7 @@ open class DKDetailsParallaxViewController: UIViewController {
         self.navbarTitle = title
         self.idObject = idObject
         self.object = object
-        self.dismissButton = dismissButton.rawValue
+        self.dismissIcon = dismissIcon.rawValue
         self.wantsBlurredNavbar = withBlurredNavbar
         
         if headerImage != nil && withBlurredNavbar == true {
@@ -276,8 +276,8 @@ extension DKDetailsParallaxViewController {
         /* Setup the cross back button */
         let buttonBack = UIButton(type: .custom)
         
-        buttonBack.frame = CGRect(x: 20, y: 31, width: 22, height: 22)
-        buttonBack.setImage(UIImage(named: self.dismissButton), for: UIControlState.normal)
+        buttonBack.frame = CGRect(x: 10, y: 31, width: 22, height: 22)
+        buttonBack.setImage(UIImage(named: self.dismissIcon, in: DKDetailsParallax.bundle(), compatibleWith: nil), for: UIControlState.normal)
         buttonBack.addTarget(self, action: #selector(DKDetailsParallaxViewController.backButton), for: .touchUpInside)
         
         self.view.addSubview(buttonBack)
@@ -333,7 +333,11 @@ extension DKDetailsParallaxViewController {
     }
 }
 
+/// The enum for the icon of the dismiss button
+///
+/// - cross: Looks like a Cross Button "X"
+/// - back: Looks like a Left Chevron Button "<"
 public enum DKDetailsParallaxDismissButton: String {
     case cross = "multiply"
-    case back = "back_icon"
+    case back = "backIcon"
 }
