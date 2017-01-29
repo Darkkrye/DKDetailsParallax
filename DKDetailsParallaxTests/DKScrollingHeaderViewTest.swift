@@ -16,7 +16,7 @@ class DKScrollingHeaderViewTest: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        self.controller = DKDetailsParallaxViewController(primaryColor: UIColor.black, secondaryColor: UIColor.orange, title: "Title", headerImage: nil, idObject: 3, object: nil, withBlurredNavbar: true)
+        self.controller = DKDetailsParallaxViewController(primaryColor: UIColor.black, secondaryColor: UIColor.orange, title: "Title", headerImage: nil, idObject: 3, object: nil, dismissIcon: .cross, withBlurredNavbar: true)
     }
     
     override func tearDown() {
