@@ -34,7 +34,7 @@ class DKDetailsParallaxViewControllerTest: XCTestCase {
     }
     
     func testInit() {
-        let vc = DKDetailsParallaxViewController(primaryColor: UIColor.blue, secondaryColor: UIColor.orange, title: "Title", headerImage: nil, idObject: 3, object: nil, withBlurredNavbar: true)
+        let vc = DKDetailsParallaxViewController(primaryColor: UIColor.blue, secondaryColor: UIColor.orange, title: "Title", headerImage: nil, idObject: 3, object: nil, dismissIcon: .back, withBlurredNavbar: true)
         
         XCTAssertEqual(vc.primaryColor, UIColor.blue)
         XCTAssertEqual(vc.secondaryColor, UIColor.orange)
@@ -44,5 +44,6 @@ class DKDetailsParallaxViewControllerTest: XCTestCase {
         XCTAssertNil(vc.object)
         XCTAssertEqual(vc.wantsBlurredNavbar, true)
         XCTAssertEqual(vc.needsToSetBlurredImage, false)
+        XCTAssertEqual(vc.dismissIcon, "backIcon")
     }
 }
