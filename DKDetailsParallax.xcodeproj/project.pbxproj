@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1519E41E54BBBB001824DD /* RoundedComposantAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1519E21E54BBBB001824DD /* RoundedComposantAnimation.swift */; };
+		6D1519E51E54BBBB001824DD /* RoundedComposantAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1519E31E54BBBB001824DD /* RoundedComposantAnimation.xib */; };
 		8F0A70C41E31388B006D2666 /* GothaProReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2082AD1E2E906200738480 /* GothaProReg.otf */; };
 		8F20829F1E2E8FFD00738480 /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */; };
 		8F2082A01E2E8FFD00738480 /* RoundedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D1519E21E54BBBB001824DD /* RoundedComposantAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedComposantAnimation.swift; sourceTree = "<group>"; };
+		6D1519E31E54BBBB001824DD /* RoundedComposantAnimation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedComposantAnimation.xib; sourceTree = "<group>"; };
 		8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButtonCell.swift; sourceTree = "<group>"; };
 		8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedButtonCell.xib; sourceTree = "<group>"; };
 		8F2082A11E2E904700738480 /* FlatLightSimpleDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatLightSimpleDescriptionCell.swift; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 				8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */,
 				8FFB11111E3D39A300B21DDC /* RoundedDescriptionCell.swift */,
 				8FFB11121E3D39A300B21DDC /* RoundedDescriptionCell.xib */,
+				6D1519E21E54BBBB001824DD /* RoundedComposantAnimation.swift */,
+				6D1519E31E54BBBB001824DD /* RoundedComposantAnimation.xib */,
 			);
 			path = RoundedTheme;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				8F2082BA1E2E90DF00738480 /* FlatDarkSimpleLabelCell.xib in Resources */,
 				8F39BB741E27F5850096D869 /* DKDetailsParallaxViewController.xib in Resources */,
 				8FFB11141E3D39A300B21DDC /* RoundedDescriptionCell.xib in Resources */,
+				6D1519E51E54BBBB001824DD /* RoundedComposantAnimation.xib in Resources */,
 				8F2082BC1E2E90DF00738480 /* FlatDarkSwitchCell.xib in Resources */,
 				8F39BB891E27F9080096D869 /* Assets.xcassets in Resources */,
 			);
@@ -394,6 +401,7 @@
 				8F39BB7C1E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.swift in Sources */,
 				8F2082BE1E2E91A200738480 /* DKDetailsParallaxCellDelegate.swift in Sources */,
 				8F2082B71E2E90DF00738480 /* FlatDarkSimpleDescriptionCell.swift in Sources */,
+				6D1519E41E54BBBB001824DD /* RoundedComposantAnimation.swift in Sources */,
 				8F39BBC11E280AAF0096D869 /* Bundle.swift in Sources */,
 				8F2082B91E2E90DF00738480 /* FlatDarkSimpleLabelCell.swift in Sources */,
 				8F20829F1E2E8FFD00738480 /* RoundedButtonCell.swift in Sources */,
