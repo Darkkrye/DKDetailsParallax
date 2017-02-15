@@ -334,10 +334,9 @@ extension DKDetailsParallaxViewController {
 }
 
 /// The enum for the icon of the dismiss button
-///
-/// - cross: Looks like a Cross Button "X"
-/// - back: Looks like a Left Chevron Button "<"
 public enum DKDetailsParallaxDismissButton: String {
+    /// - cross: Looks like a Cross Button "X"
     case cross = "multiply"
+    /// - back: Looks like a Left Chevron Button "<"
     case back = "backIcon"
 }
