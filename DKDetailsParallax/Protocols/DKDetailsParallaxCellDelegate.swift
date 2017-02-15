@@ -60,6 +60,27 @@ import Foundation
     ///   - forButton: UIButton - The button
     @objc optional func roundedButtonCellCallback(cell: RoundedButtonCell, forButton: UIButton)
     
+    
+    /// MARK: RoundedDetailsProfileCell
+    /// Callback when circle button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: RoundedComposantAnimation - The cell
+    ///   - forCircleButton: UIButton - The button
+    @objc optional func roundedComposantAnimationCellCallback(cell: RoundedComposantAnimation, forCircleButton: UIButton)
+    /// Callback when outlined button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: RoundedComposantAnimation - The cell
+    ///   - forOutlinedButton: UIButton - The button
+    @objc optional func roundedComposantAnimationCellCallback(cell: RoundedComposantAnimation, forOutlinedButton: UIButton)
+    /// Callback when plain button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: RoundedComposantAnimation - The cell
+    ///   - forPlainButton: UIButton - The button
+    @objc optional func roundedComposantAnimationCellCallback(cell: RoundedComposantAnimation, forPlainButton: UIButton)
+    
     /* ------------------------------------------------------------------------------------------------------------------------------------------ */
     
     /* MARK: - Flat Light Theme */
