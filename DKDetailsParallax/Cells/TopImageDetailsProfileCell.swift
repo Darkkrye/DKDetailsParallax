@@ -1,15 +1,15 @@
 //
-//  CenterImageDetailsProfileCell.swift
+//  TopImageDetailsProfileCell.swift
 //  DKDetailsParallax
 //
-//  Created by Thomas on 15/02/2017.
+//  Created by Keena on 15/02/2017.
 //  Copyright © 2017 Pierre BOUDON. All rights reserved.
 //
 
 import UIKit
 
-/// CenterImageDetailsProfile class
-open class CenterImageDetailsProfileCell: UITableViewCell {
+/// TopImageDetailsProfileCell class
+open class TopImageDetailsProfileCell: UITableViewCell {
 
     /// MARK: - Private Constants
     /// Cell default height
@@ -46,7 +46,7 @@ open class CenterImageDetailsProfileCell: UITableViewCell {
     @IBAction func plainButtonTapped(_ sender: Any) {
         /* Execute when plain button is tapped */
         if let d = self.delegate {
-            d.centerImageDetailsProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
+            d.topImageDetailsProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
         }
     }
     /// IBAction for outlined button
@@ -55,7 +55,7 @@ open class CenterImageDetailsProfileCell: UITableViewCell {
     @IBAction func outlinedButtonTapped(_ sender: Any) {
         /* Execute when outlined button is tapped */
         if let d = self.delegate {
-            d.centerImageDetailsProfileCellCallback!(cell: self, forOutlinedButton: self.outlinedButton)
+            d.topImageDetailsProfileCellCallback!(cell: self, forOutlinedButton: self.outlinedButton)
         }
     }
     /// IBAction for circle button
@@ -64,7 +64,7 @@ open class CenterImageDetailsProfileCell: UITableViewCell {
     @IBAction func circleButtonTapped(_ sender: Any) {
         /* Execute when circle button is tapped */
         if let d = self.delegate {
-            d.centerImageDetailsProfileCellCallback!(cell: self, forCircleButton: self.circleButton)
+            d.topImageDetailsProfileCellCallback!(cell: self, forCircleButton: self.circleButton)
         }
     }
     
@@ -90,8 +90,8 @@ open class CenterImageDetailsProfileCell: UITableViewCell {
     /// - Parameters:
     ///   - withPrimaryColor: UIColor? - The primary color
     ///   - andSecondaryColor: UIColor ? - The secondary color
-    /// - Returns: CenterImageDetailsProfileCell - The created cell
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> CenterImageDetailsProfileCell {
+    /// - Returns: TopImageDetailsProfileCell - The created cell
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> TopImageDetailsProfileCell {
         /* Call other constructor with default value */
         return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptSquareImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
     }
@@ -107,11 +107,11 @@ open class CenterImageDetailsProfileCell: UITableViewCell {
     ///   - exceptCircleButton: Bool - If you don't want this item
     ///   - exceptOutlinedButton: Bool - If you don't want this item
     ///   - exceptPlainButton: Bool - If you don't want this item
-    /// - Returns: CenterImageDetailsProfileCell - The created cell
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> CenterImageDetailsProfileCell {
+    /// - Returns: TopImageDetailsProfileCell - The created cell
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> TopImageDetailsProfileCell {
         /* Retrieve cell */
-        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("CenterImageDetailsProfileCell", owner: self, options: nil)
-        let cell: CenterImageDetailsProfileCell = nibs![0] as! CenterImageDetailsProfileCell
+        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("TopImageDetailsProfileCell", owner: self, options: nil)
+        let cell: TopImageDetailsProfileCell = nibs![0] as! TopImageDetailsProfileCell
         cell.selectionStyle = .none
         
         if exceptSquareImage {
@@ -161,8 +161,8 @@ open class CenterImageDetailsProfileCell: UITableViewCell {
     
     /// Initialize function
     ///
-    /// - Parameter cell: CenterImageDetailsProfileCell - The cell
-    private static func initialize(cell: CenterImageDetailsProfileCell) {
+    /// - Parameter cell: TopImageDetailsProfileCell - The cell
+    private static func initialize(cell: TopImageDetailsProfileCell) {
         /* Set cell properties for variables */
         cell.titleLabel.textColor = cell.primaryColor
         cell.subtitleLabel.textColor = cell.secondaryColor

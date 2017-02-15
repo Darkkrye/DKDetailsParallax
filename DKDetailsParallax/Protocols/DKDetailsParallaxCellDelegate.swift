@@ -11,6 +11,27 @@ import Foundation
 /// DKDetailsParallaxCell Delegate
 @objc public protocol DKDetailsParallaxCellDelegate: NSObjectProtocol {
     
+    /* MARK: - TopImage Theme */
+    /// MARK: TopImageProfileCell
+    /// Callback when circle button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: TopImageProfileCell - The cell
+    ///   - forCircleButton: UIButton - The button
+    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forCircleButton: UIButton)
+    /// Callback when outlined button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: CenterImageDetailsProfileCell - The cell
+    ///   - forOutlinedButton: UIButton - The button
+    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forOutlinedButton: UIButton)
+    /// Callback when plain button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: CenterImageDetailsProfileCell - The cell
+    ///   - forPlainButton: UIButton - The button
+    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forPlainButton: UIButton)
+    
     /* MARK: - CenterImage Theme */
     /// MARK: CenterImageProfileCell
     /// Callback when circle button is selected

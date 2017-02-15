@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C0F4EB41E53CED9006207C6 /* CenterImageDetailsProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F4EB21E53CED9006207C6 /* CenterImageDetailsProfileCell.swift */; };
 		1C0F4EB51E53CED9006207C6 /* CenterImageDetailsProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F4EB31E53CED9006207C6 /* CenterImageDetailsProfileCell.xib */; };
+		1C0F4EB91E53E631006207C6 /* TopImageDetailsProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F4EB71E53E631006207C6 /* TopImageDetailsProfileCell.swift */; };
+		1C0F4EBA1E53E631006207C6 /* TopImageDetailsProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F4EB81E53E631006207C6 /* TopImageDetailsProfileCell.xib */; };
 		8F0A70C41E31388B006D2666 /* GothaProReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2082AD1E2E906200738480 /* GothaProReg.otf */; };
 		8F20829F1E2E8FFD00738480 /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */; };
 		8F2082A01E2E8FFD00738480 /* RoundedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */; };
@@ -60,6 +62,8 @@
 /* Begin PBXFileReference section */
 		1C0F4EB21E53CED9006207C6 /* CenterImageDetailsProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterImageDetailsProfileCell.swift; sourceTree = "<group>"; };
 		1C0F4EB31E53CED9006207C6 /* CenterImageDetailsProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenterImageDetailsProfileCell.xib; sourceTree = "<group>"; };
+		1C0F4EB71E53E631006207C6 /* TopImageDetailsProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopImageDetailsProfileCell.swift; sourceTree = "<group>"; };
+		1C0F4EB81E53E631006207C6 /* TopImageDetailsProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopImageDetailsProfileCell.xib; sourceTree = "<group>"; };
 		8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButtonCell.swift; sourceTree = "<group>"; };
 		8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedButtonCell.xib; sourceTree = "<group>"; };
 		8F2082A11E2E904700738480 /* FlatLightSimpleDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatLightSimpleDescriptionCell.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 			name = ImageCenterTheme;
 			sourceTree = "<group>";
 		};
+		1C0F4EB61E53E3DF006207C6 /* TopImageTheme */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F4EB71E53E631006207C6 /* TopImageDetailsProfileCell.swift */,
+				1C0F4EB81E53E631006207C6 /* TopImageDetailsProfileCell.xib */,
+			);
+			name = TopImageTheme;
+			sourceTree = "<group>";
+		};
 		8F20829B1E2E8FBA00738480 /* FlatLightTheme */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +188,7 @@
 		8F39BB6A1E27F3600096D869 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1C0F4EB61E53E3DF006207C6 /* TopImageTheme */,
 				1C09A21D1E4FBCD1009D60D7 /* ImageCenterTheme */,
 				8F39BB751E27F6760096D869 /* RoundedTheme */,
 				8F20829B1E2E8FBA00738480 /* FlatLightTheme */,
@@ -377,6 +391,7 @@
 			files = (
 				8F0A70C41E31388B006D2666 /* GothaProReg.otf in Resources */,
 				8F2082A81E2E904700738480 /* FlatLightSimpleDescriptionCell.xib in Resources */,
+				1C0F4EBA1E53E631006207C6 /* TopImageDetailsProfileCell.xib in Resources */,
 				8F2082AC1E2E904700738480 /* FlatLightSwitchCell.xib in Resources */,
 				8F2082AA1E2E904700738480 /* FlatLightSimpleLabelCell.xib in Resources */,
 				8F2082A01E2E8FFD00738480 /* RoundedButtonCell.xib in Resources */,
@@ -418,6 +433,7 @@
 				8F2082A71E2E904700738480 /* FlatLightSimpleDescriptionCell.swift in Sources */,
 				8F2082BB1E2E90DF00738480 /* FlatDarkSwitchCell.swift in Sources */,
 				8F2082AB1E2E904700738480 /* FlatLightSwitchCell.swift in Sources */,
+				1C0F4EB91E53E631006207C6 /* TopImageDetailsProfileCell.swift in Sources */,
 				8F39BB6E1E27F43B0096D869 /* DKScrollingHeaderView.swift in Sources */,
 				8FFB11131E3D39A300B21DDC /* RoundedDescriptionCell.swift in Sources */,
 				8F2082A91E2E904700738480 /* FlatLightSimpleLabelCell.swift in Sources */,
