@@ -12,66 +12,48 @@ import Foundation
     
     /* MARK: - TopImage Theme */
     /// MARK: TopImageProfileCell
-    /// Callback when circle button is selected
-    ///
-    /// - Parameters:
-    ///   - cell: TopImageProfileCell - The cell
-    ///   - forCircleButton: UIButton - The button
-    @objc optional func topImageDetailsTextProfileCellCallback(cell: TopImageDetailsTextProfileCell, forCircleButton: UIButton)
     /// Callback when outlined button is selected
     ///
     /// - Parameters:
     ///   - cell: CenterImageDetailsProfileCell - The cell
     ///   - forOutlinedButton: UIButton - The button
-    @objc optional func topImageDetailsTextProfileCellCallback(cell: TopImageDetailsTextProfileCell, forOutlinedButton: UIButton)
+    @objc optional func topImageDetailsTextProfileCellCallback(cell: TopImageDetailsTextProfileCell, forLeftButton: UIButton)
     /// Callback when plain button is selected
     ///
     /// - Parameters:
     ///   - cell: CenterImageDetailsProfileCell - The cell
     ///   - forPlainButton: UIButton - The button
-    @objc optional func topImageDetailsTextProfileCellCallback(cell: TopImageDetailsTextProfileCell, forPlainButton: UIButton)
+    @objc optional func topImageDetailsTextProfileCellCallback(cell: TopImageDetailsTextProfileCell, forRightButton: UIButton)
     
     /* MARK: - TopImage Theme */
     /// MARK: TopImageProfileCell
-    /// Callback when circle button is selected
-    ///
-    /// - Parameters:
-    ///   - cell: TopImageProfileCell - The cell
-    ///   - forCircleButton: UIButton - The button
-    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forCircleButton: UIButton)
     /// Callback when outlined button is selected
     ///
     /// - Parameters:
     ///   - cell: CenterImageDetailsProfileCell - The cell
     ///   - forOutlinedButton: UIButton - The button
-    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forOutlinedButton: UIButton)
+    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forRightButton: UIButton)
     /// Callback when plain button is selected
     ///
     /// - Parameters:
     ///   - cell: CenterImageDetailsProfileCell - The cell
     ///   - forPlainButton: UIButton - The button
-    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forPlainButton: UIButton)
+    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forLeftButton: UIButton)
     
     /* MARK: - CenterImage Theme */
     /// MARK: CenterImageProfileCell
-    /// Callback when circle button is selected
-    ///
-    /// - Parameters:
-    ///   - cell: CenterImageProfileCell - The cell
-    ///   - forCircleButton: UIButton - The button
-    @objc optional func centerImageDetailsProfileCellCallback(cell: CenterImageDetailsProfileCell, forCircleButton: UIButton)
     /// Callback when outlined button is selected
     ///
     /// - Parameters:
     ///   - cell: CenterImageDetailsProfileCell - The cell
     ///   - forOutlinedButton: UIButton - The button
-    @objc optional func centerImageDetailsProfileCellCallback(cell: CenterImageDetailsProfileCell, forOutlinedButton: UIButton)
+    @objc optional func centerImageDetailsProfileCellCallback(cell: CenterImageDetailsProfileCell, forLeftButton: UIButton)
     /// Callback when plain button is selected
     ///
     /// - Parameters:
     ///   - cell: CenterImageDetailsProfileCell - The cell
     ///   - forPlainButton: UIButton - The button
-    @objc optional func centerImageDetailsProfileCellCallback(cell: CenterImageDetailsProfileCell, forPlainButton: UIButton)
+    @objc optional func centerImageDetailsProfileCellCallback(cell: CenterImageDetailsProfileCell, forRightButton: UIButton)
     
     /* MARK: - Rounded Theme */
     /// MARK: RoundedDetailsProfileCell

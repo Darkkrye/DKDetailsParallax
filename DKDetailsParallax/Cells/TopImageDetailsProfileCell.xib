@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="KGk-i7-Jjw" customClass="TopImageDetailsProfileCell" customModule="DKDetailsParallax" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopImageDetailsProfileCell" rowHeight="110" id="KGk-i7-Jjw" customClass="TopImageDetailsProfileCell" customModule="DKDetailsParallax" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="424" height="110"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="424" height="110"/>
+                <rect key="frame" x="0.0" y="0.0" width="424" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Upi-ZN-CAu">
@@ -23,17 +23,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEh-N3-mQE">
-                        <rect key="frame" x="312" y="66" width="46" height="30"/>
+                        <rect key="frame" x="212" y="66" width="212" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.18372441449999999" green="0.74869109950000001" blue="0.3630494125" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <state key="normal" title="Button"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClC-ma-hAw">
-                        <rect key="frame" x="55" y="66" width="46" height="30"/>
+                        <rect key="frame" x="0.0" y="66" width="210" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="tintColor" red="0.18372441449999999" green="0.74869109950000001" blue="0.3630494125" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Button"/>
                     </button>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="outlinedButton" destination="ClC-ma-hAw" id="r4H-4z-UwP"/>
+                <outlet property="plainButton" destination="lEh-N3-mQE" id="Bwg-r9-aoq"/>
+                <outlet property="squareImageView" destination="Upi-ZN-CAu" id="cy7-B6-Emp"/>
+            </connections>
             <point key="canvasLocation" x="77" y="85"/>
         </tableViewCell>
     </objects>

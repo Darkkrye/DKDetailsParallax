@@ -28,25 +28,19 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     /// MARK: - IBOutlets
     /// Square ImageView
     @IBOutlet public weak var squareImageView: UIImageView!
-    /// Title Label
-    @IBOutlet public weak var titleLabel: UILabel!
-    /// Subtitle Label
-    @IBOutlet public weak var subtitleLabel: UILabel!
-    /// Circle Button
-    @IBOutlet public weak var circleButton: UIButton!
     /// Outlined Button
-    @IBOutlet public weak var outlinedButton: UIButton!
-    /// Plain Button
-    @IBOutlet public weak var plainButton: UIButton!
+    @IBOutlet public weak var leftButton: UIButton!
+    /// Right Button
+    @IBOutlet public weak var rightButton: UIButton!
     
     /// MARK: - IBActions
-    /// IBAction for plain button
+    /// IBAction for right button
     ///
     /// - Parameter sender: Any - The button
-    @IBAction func plainButtonTapped(_ sender: Any) {
-        /* Execute when plain button is tapped */
+    @IBAction func rightButtonTapped(_ sender: Any) {
+        /* Execute when right button is tapped */
         if let d = self.delegate {
-            d.topImageDetailsProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
+            d.topImageDetailsProfileCellCallback!(cell: self, forLeftButton: self.leftButton)
         }
     }
     /// IBAction for outlined button
@@ -55,16 +49,7 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     @IBAction func outlinedButtonTapped(_ sender: Any) {
         /* Execute when outlined button is tapped */
         if let d = self.delegate {
-            d.topImageDetailsProfileCellCallback!(cell: self, forOutlinedButton: self.outlinedButton)
-        }
-    }
-    /// IBAction for circle button
-    ///
-    /// - Parameter sender: Any - The button
-    @IBAction func circleButtonTapped(_ sender: Any) {
-        /* Execute when circle button is tapped */
-        if let d = self.delegate {
-            d.topImageDetailsProfileCellCallback!(cell: self, forCircleButton: self.circleButton)
+            d.topImageDetailsProfileCellCallback!(cell: self, forRightButton: self.rightButton)
         }
     }
     
@@ -93,7 +78,7 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     /// - Returns: TopImageDetailsProfileCell - The created cell
     open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> TopImageDetailsProfileCell {
         /* Call other constructor with default value */
-        return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptSquareImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
+        return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptSquareImage: false, exceptLeftButton: false, exceptRightButton: false)
     }
     
     /// Complex constructor for the cell
@@ -108,7 +93,7 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     ///   - exceptOutlinedButton: Bool - If you don't want this item
     ///   - exceptPlainButton: Bool - If you don't want this item
     /// - Returns: TopImageDetailsProfileCell - The created cell
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> TopImageDetailsProfileCell {
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool,  exceptLeftButton: Bool, exceptRightButton: Bool) -> TopImageDetailsProfileCell {
         /* Retrieve cell */
         let nibs = DKDetailsParallax.bundle()?.loadNibNamed("TopImageDetailsProfileCell", owner: self, options: nil)
         let cell: TopImageDetailsProfileCell = nibs![0] as! TopImageDetailsProfileCell
@@ -117,31 +102,6 @@ open class TopImageDetailsProfileCell: UITableViewCell {
         if exceptSquareImage {
             /* Hide square image */
             cell.squareImageView.isHidden = true
-        }
-        
-        if exceptTitleLabel {
-            /* Hide title label */
-            cell.titleLabel.isHidden = true
-        }
-        
-        if exceptSubtitleLabel {
-            /* Hide subtitle label */
-            cell.subtitleLabel.isHidden = true
-        }
-        
-        if exceptCircleButton {
-            /* Hide circle button */
-            cell.circleButton.isHidden = true
-        }
-        
-        if exceptOutlinedButton {
-            /* Hide outlined button */
-            cell.outlinedButton.isHidden = true
-        }
-        
-        if exceptPlainButton {
-            /* Hide plain button */
-            cell.plainButton.isHidden = true
         }
         
         /* Set colors */
@@ -163,24 +123,21 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     ///
     /// - Parameter cell: TopImageDetailsProfileCell - The cell
     private static func initialize(cell: TopImageDetailsProfileCell) {
-        /* Set cell properties for variables */
-        cell.titleLabel.textColor = cell.primaryColor
-        cell.subtitleLabel.textColor = cell.secondaryColor
         
         /* Set cell square image properties */
         cell.squareImageView.layer.cornerRadius = cell.squareImageView.frame.size.width/2
         cell.squareImageView.layer.masksToBounds = true
         
         /* Set plain button properties */
-        cell.plainButton.layer.borderColor = cell.primaryColor.cgColor
-        cell.plainButton.backgroundColor = cell.primaryColor
-        cell.plainButton.layer.cornerRadius = 15.0
-        cell.plainButton.setTitleColor(UIColor.white, for: .normal)
+        cell.leftButton.layer.borderColor = cell.primaryColor.cgColor
+        cell.leftButton.backgroundColor = cell.primaryColor
+        cell.leftButton.layer.cornerRadius = 15.0
+        cell.leftButton.setTitleColor(UIColor.white, for: .normal)
         
         /* Set outlined button properties */
-        cell.outlinedButton.layer.borderColor =  cell.primaryColor.cgColor
-        cell.outlinedButton.setTitleColor(cell.primaryColor, for: .normal)
-        cell.outlinedButton.layer.borderWidth = 1.0
-        cell.outlinedButton.layer.cornerRadius = 15.0
+        cell.rightButton.layer.borderColor =  cell.primaryColor.cgColor
+        cell.rightButton.setTitleColor(cell.primaryColor, for: .normal)
+        cell.rightButton.layer.borderWidth = 1.0
+        cell.rightButton.layer.cornerRadius = 15.0
     }
 }
