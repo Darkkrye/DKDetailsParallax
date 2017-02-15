@@ -1,5 +1,5 @@
 //
-//  TopImageDetailsProfileCell.swift
+//  TopImageDetailsTextProfileCell.swift
 //  DKDetailsParallax
 //
 //  Created by Thomas on 15/02/2017.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-/// TopImageDetailsProfileCell class
-open class TopImageDetailsProfileCell: UITableViewCell {
+/// TopImageDetailsTextProfileCell class
+open class TopImageDetailsTextProfileCell: UITableViewCell {
 
     /// MARK: - Private Constants
     /// Cell default height
@@ -26,8 +26,8 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     
     
     /// MARK: - IBOutlets
-    /// Square ImageView
-    @IBOutlet public weak var squareImageView: UIImageView!
+    /// Rectangle ImageView
+    @IBOutlet public weak var rectangleImageView: UIImageView!
     /// Title Label
     @IBOutlet public weak var titleLabel: UILabel!
     /// Subtitle Label
@@ -39,6 +39,7 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     /// Plain Button
     @IBOutlet public weak var plainButton: UIButton!
     
+    
     /// MARK: - IBActions
     /// IBAction for plain button
     ///
@@ -46,7 +47,7 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     @IBAction func plainButtonTapped(_ sender: Any) {
         /* Execute when plain button is tapped */
         if let d = self.delegate {
-            d.topImageDetailsProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
+            d.topImageDetailsTextProfileCellCallback!(cell: self, forPlainButton: self.plainButton)
         }
     }
     /// IBAction for outlined button
@@ -55,7 +56,7 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     @IBAction func outlinedButtonTapped(_ sender: Any) {
         /* Execute when outlined button is tapped */
         if let d = self.delegate {
-            d.topImageDetailsProfileCellCallback!(cell: self, forOutlinedButton: self.outlinedButton)
+            d.topImageDetailsTextProfileCellCallback!(cell: self, forOutlinedButton: self.plainButton)
         }
     }
     /// IBAction for circle button
@@ -64,19 +65,31 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     @IBAction func circleButtonTapped(_ sender: Any) {
         /* Execute when circle button is tapped */
         if let d = self.delegate {
-            d.topImageDetailsProfileCellCallback!(cell: self, forCircleButton: self.circleButton)
+            d.topImageDetailsTextProfileCellCallback!(cell: self, forCircleButton: self.plainButton)
         }
     }
+    
     
     
     /// MARK: - "Default" Methods
     /// Override function awakeFromNib
     override open func awakeFromNib() {
         super.awakeFromNib()
-        
-        
+        /* Initialization code */
+        self.rectangleImageView.layer.cornerRadius = 2
+        self.rectangleImageView.layer.masksToBounds = true
     }
     
+    /// Override function setSelected
+    ///
+    /// - Parameters:
+    ///   - selected: Bool - Selected value
+    ///   - animated: Bool - Animated value
+    override open func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        /* Configure the view for the selected state */
+    }
     
     /// MARK: - Delegates
     
@@ -89,11 +102,11 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     ///
     /// - Parameters:
     ///   - withPrimaryColor: UIColor? - The primary color
-    ///   - andSecondaryColor: UIColor ? - The secondary color
-    /// - Returns: TopImageDetailsProfileCell - The created cell
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> TopImageDetailsProfileCell {
+    ///   - andSecondaryColor: UIColor? - The secondary color
+    /// - Returns: TopImageDetailsTextProfileCell - The created cell
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?) -> TopImageDetailsTextProfileCell {
         /* Call other constructor with default value */
-        return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptSquareImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
+        return detailsProfile(withPrimaryColor: withPrimaryColor, andSecondaryColor: andSecondaryColor, exceptRectangleImage: false, exceptTitleLabel: false, exceptSubtitleLabel: false, exceptCircleButton: false, exceptOutlinedButton: false, exceptPlainButton: false)
     }
     
     /// Complex constructor for the cell
@@ -101,22 +114,22 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     /// - Parameters:
     ///   - withPrimaryColor: UIColor? - The primary color
     ///   - andSecondaryColor: UIColor? - The secondary color
-    ///   - exceptSquareImage: Bool - If you don't want this item
+    ///   - exceptRectangleImage: Bool - If you don't want this item
     ///   - exceptTitleLabel: Bool - If you don't want this item
     ///   - exceptSubtitleLabel: Bool - If you don't want this item
     ///   - exceptCircleButton: Bool - If you don't want this item
     ///   - exceptOutlinedButton: Bool - If you don't want this item
     ///   - exceptPlainButton: Bool - If you don't want this item
-    /// - Returns: TopImageDetailsProfileCell - The created cell
-    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptSquareImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> TopImageDetailsProfileCell {
+    /// - Returns: TopImageDetailsTextProfileCell - The created cell
+    open static func detailsProfile(withPrimaryColor: UIColor?, andSecondaryColor: UIColor?, exceptRectangleImage: Bool, exceptTitleLabel: Bool, exceptSubtitleLabel: Bool, exceptCircleButton: Bool, exceptOutlinedButton: Bool, exceptPlainButton: Bool) -> TopImageDetailsTextProfileCell {
         /* Retrieve cell */
-        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("TopImageDetailsProfileCell", owner: self, options: nil)
-        let cell: TopImageDetailsProfileCell = nibs![0] as! TopImageDetailsProfileCell
+        let nibs = DKDetailsParallax.bundle()?.loadNibNamed("TopImageDetailsTextProfileCell", owner: self, options: nil)
+        let cell: TopImageDetailsTextProfileCell = nibs![0] as! TopImageDetailsTextProfileCell
         cell.selectionStyle = .none
         
-        if exceptSquareImage {
-            /* Hide square image */
-            cell.squareImageView.isHidden = true
+        if exceptRectangleImage {
+            /* Hide rectangle image */
+            cell.rectangleImageView.isHidden = true
         }
         
         if exceptTitleLabel {
@@ -126,7 +139,7 @@ open class TopImageDetailsProfileCell: UITableViewCell {
         
         if exceptSubtitleLabel {
             /* Hide subtitle label */
-            cell.subtitleLabel.isHidden = true
+            cell.subtitleLabel.removeFromSuperview()
         }
         
         if exceptCircleButton {
@@ -161,15 +174,11 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     
     /// Initialize function
     ///
-    /// - Parameter cell: TopImageDetailsProfileCell - The cell
-    private static func initialize(cell: TopImageDetailsProfileCell) {
+    /// - Parameter cell: TopImageDetailsTextProfileCell - The cell
+    private static func initialize(cell: TopImageDetailsTextProfileCell) {
         /* Set cell properties for variables */
         cell.titleLabel.textColor = cell.primaryColor
         cell.subtitleLabel.textColor = cell.secondaryColor
-        
-        /* Set cell square image properties */
-        cell.squareImageView.layer.cornerRadius = cell.squareImageView.frame.size.width/2
-        cell.squareImageView.layer.masksToBounds = true
         
         /* Set plain button properties */
         cell.plainButton.layer.borderColor = cell.primaryColor.cgColor

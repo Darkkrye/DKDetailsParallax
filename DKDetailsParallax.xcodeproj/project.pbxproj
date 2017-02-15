@@ -11,6 +11,8 @@
 		1C0F4EB51E53CED9006207C6 /* CenterImageDetailsProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F4EB31E53CED9006207C6 /* CenterImageDetailsProfileCell.xib */; };
 		1C0F4EB91E53E631006207C6 /* TopImageDetailsProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F4EB71E53E631006207C6 /* TopImageDetailsProfileCell.swift */; };
 		1C0F4EBA1E53E631006207C6 /* TopImageDetailsProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F4EB81E53E631006207C6 /* TopImageDetailsProfileCell.xib */; };
+		1C0F4EBD1E53EC47006207C6 /* TopImageDetailsTextProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F4EBB1E53EC47006207C6 /* TopImageDetailsTextProfileCell.swift */; };
+		1C0F4EBE1E53EC47006207C6 /* TopImageDetailsTextProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F4EBC1E53EC47006207C6 /* TopImageDetailsTextProfileCell.xib */; };
 		8F0A70C41E31388B006D2666 /* GothaProReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2082AD1E2E906200738480 /* GothaProReg.otf */; };
 		8F20829F1E2E8FFD00738480 /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */; };
 		8F2082A01E2E8FFD00738480 /* RoundedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */; };
@@ -64,6 +66,8 @@
 		1C0F4EB31E53CED9006207C6 /* CenterImageDetailsProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenterImageDetailsProfileCell.xib; sourceTree = "<group>"; };
 		1C0F4EB71E53E631006207C6 /* TopImageDetailsProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopImageDetailsProfileCell.swift; sourceTree = "<group>"; };
 		1C0F4EB81E53E631006207C6 /* TopImageDetailsProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopImageDetailsProfileCell.xib; sourceTree = "<group>"; };
+		1C0F4EBB1E53EC47006207C6 /* TopImageDetailsTextProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopImageDetailsTextProfileCell.swift; sourceTree = "<group>"; };
+		1C0F4EBC1E53EC47006207C6 /* TopImageDetailsTextProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopImageDetailsTextProfileCell.xib; sourceTree = "<group>"; };
 		8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButtonCell.swift; sourceTree = "<group>"; };
 		8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedButtonCell.xib; sourceTree = "<group>"; };
 		8F2082A11E2E904700738480 /* FlatLightSimpleDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatLightSimpleDescriptionCell.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 			children = (
 				1C0F4EB71E53E631006207C6 /* TopImageDetailsProfileCell.swift */,
 				1C0F4EB81E53E631006207C6 /* TopImageDetailsProfileCell.xib */,
+				1C0F4EBB1E53EC47006207C6 /* TopImageDetailsTextProfileCell.swift */,
+				1C0F4EBC1E53EC47006207C6 /* TopImageDetailsTextProfileCell.xib */,
 			);
 			name = TopImageTheme;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				8F2082B81E2E90DF00738480 /* FlatDarkSimpleDescriptionCell.xib in Resources */,
 				8F39BB7D1E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.xib in Resources */,
 				8F39BB7B1E27F6AB0096D869 /* RoundedDetailsProfileCell.xib in Resources */,
+				1C0F4EBE1E53EC47006207C6 /* TopImageDetailsTextProfileCell.xib in Resources */,
 				8F2082BA1E2E90DF00738480 /* FlatDarkSimpleLabelCell.xib in Resources */,
 				1C0F4EB51E53CED9006207C6 /* CenterImageDetailsProfileCell.xib in Resources */,
 				8F39BB741E27F5850096D869 /* DKDetailsParallaxViewController.xib in Resources */,
@@ -431,6 +438,7 @@
 				8F2082B01E2E90AB00738480 /* Switch.swift in Sources */,
 				8F39BB731E27F5850096D869 /* DKDetailsParallaxViewController.swift in Sources */,
 				8F2082A71E2E904700738480 /* FlatLightSimpleDescriptionCell.swift in Sources */,
+				1C0F4EBD1E53EC47006207C6 /* TopImageDetailsTextProfileCell.swift in Sources */,
 				8F2082BB1E2E90DF00738480 /* FlatDarkSwitchCell.swift in Sources */,
 				8F2082AB1E2E904700738480 /* FlatLightSwitchCell.swift in Sources */,
 				1C0F4EB91E53E631006207C6 /* TopImageDetailsProfileCell.swift in Sources */,
