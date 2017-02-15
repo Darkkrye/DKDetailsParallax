@@ -34,19 +34,20 @@ open class CenterImageDetailsProfileCell: UITableViewCell {
     @IBOutlet public weak var rightButton: UIButton!
     
     /// MARK: - IBActions
-    /// IBAction for plain button
+    /// IBAction for right button
     ///
     /// - Parameter sender: Any - The button
-    @IBAction func plainButtonTapped(_ sender: Any) {
+    @IBAction func rightButtonTapped(_ sender: Any) {
         /* Execute when plain button is tapped */
         if let d = self.delegate {
             d.centerImageDetailsProfileCellCallback!(cell: self, forRightButton: self.rightButton)
         }
     }
-    /// IBAction for outlined button
+    
+    /// IBAction for left button
     ///
     /// - Parameter sender: Any - The button
-    @IBAction func leftButton(_ sender: Any) {
+    @IBAction func leftButtonTapped(_ sender: Any) {
         /* Execute when outlined button is tapped */
         if let d = self.delegate {
             d.centerImageDetailsProfileCellCallback!(cell: self, forLeftButton: self.leftButton)
@@ -134,7 +135,7 @@ open class CenterImageDetailsProfileCell: UITableViewCell {
     private static func initialize(cell: CenterImageDetailsProfileCell) {
         
         /* Set cell square image properties */
-        cell.squareImageView.layer.cornerRadius = cell.squareImageView.frame.size.width/2
+        cell.squareImageView.layer.cornerRadius = 15.0
         cell.squareImageView.layer.masksToBounds = true
         
         /* Set plain button properties */

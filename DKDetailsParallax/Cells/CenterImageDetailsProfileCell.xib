@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,12 +30,17 @@
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="rightButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PJD-Qf-7jr"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjn-Dm-eab">
                         <rect key="frame" x="8" y="8" width="68" height="87"/>
-                        <color key="backgroundColor" red="0.92146596858638741" green="0.23769026600505205" blue="0.1994543992152325" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.63016081199999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="leftButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CUt-zC-XKd"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -54,7 +59,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="leftButton" destination="Gjn-Dm-eab" id="ZSw-I7-5I7"/>
-                <outlet property="plainButton" destination="zyr-Lc-gg4" id="5ys-t0-Oct"/>
+                <outlet property="rightButton" destination="zyr-Lc-gg4" id="rvZ-f2-g9M"/>
                 <outlet property="squareImageView" destination="1Kj-YZ-xKZ" id="PhV-RH-r1q"/>
             </connections>
             <point key="canvasLocation" x="42" y="66"/>

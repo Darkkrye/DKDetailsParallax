@@ -125,8 +125,8 @@ open class TopImageDetailsProfileCell: UITableViewCell {
     private static func initialize(cell: TopImageDetailsProfileCell) {
         
         /* Set cell square image properties */
-        cell.squareImageView.layer.cornerRadius = cell.squareImageView.frame.size.width/2
-        cell.squareImageView.layer.masksToBounds = true
+//        cell.squareImageView.layer.cornerRadius = 15.0
+//        cell.squareImageView.layer.masksToBounds = true
         
         /* Set plain button properties */
         cell.leftButton.layer.borderColor = cell.primaryColor.cgColor
@@ -139,5 +139,6 @@ open class TopImageDetailsProfileCell: UITableViewCell {
         cell.rightButton.setTitleColor(cell.primaryColor, for: .normal)
         cell.rightButton.layer.borderWidth = 1.0
         cell.rightButton.layer.cornerRadius = 15.0
+        cell.rightButton.backgroundColor = UIColor.white
     }
 }

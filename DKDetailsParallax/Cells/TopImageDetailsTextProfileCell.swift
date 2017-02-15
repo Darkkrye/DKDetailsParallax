@@ -40,7 +40,7 @@ open class TopImageDetailsTextProfileCell: UITableViewCell {
     /// IBAction for plain button
     ///
     /// - Parameter sender: Any - The button
-    @IBAction func plainButtonTapped(_ sender: Any) {
+    @IBAction func rightButtonTapped(_ sender: Any) {
         /* Execute when plain button is tapped */
         if let d = self.delegate {
             d.topImageDetailsTextProfileCellCallback!(cell: self, forLeftButton: self.leftButton)
@@ -49,7 +49,7 @@ open class TopImageDetailsTextProfileCell: UITableViewCell {
     /// IBAction for outlined button
     ///
     /// - Parameter sender: Any - The button
-    @IBAction func outlinedButtonTapped(_ sender: Any) {
+    @IBAction func leftButtonTapped(_ sender: Any) {
         /* Execute when outlined button is tapped */
         if let d = self.delegate {
             d.topImageDetailsTextProfileCellCallback!(cell: self, forRightButton: self.rightButton)
@@ -63,8 +63,8 @@ open class TopImageDetailsTextProfileCell: UITableViewCell {
     override open func awakeFromNib() {
         super.awakeFromNib()
         /* Initialization code */
-        self.rectangleImageView.layer.cornerRadius = 2
-        self.rectangleImageView.layer.masksToBounds = true
+//        self.rectangleImageView.layer.cornerRadius = 2
+//        self.rectangleImageView.layer.masksToBounds = true
     }
     
     /// Override function setSelected
@@ -154,13 +154,13 @@ open class TopImageDetailsTextProfileCell: UITableViewCell {
         /* Set plain button properties */
         cell.rightButton.layer.borderColor = cell.primaryColor.cgColor
         cell.rightButton.backgroundColor = cell.primaryColor
-        cell.rightButton.layer.cornerRadius = 15.0
+        cell.rightButton.layer.cornerRadius = cell.rightButton.frame.height / 2 - 2
         cell.rightButton.setTitleColor(UIColor.white, for: .normal)
         
         /* Set outlined button properties */
         cell.leftButton.layer.borderColor =  cell.primaryColor.cgColor
         cell.leftButton.setTitleColor(cell.primaryColor, for: .normal)
         cell.leftButton.layer.borderWidth = 1.0
-        cell.leftButton.layer.cornerRadius = 15.0
+        cell.leftButton.layer.cornerRadius = cell.leftButton.frame.height / 2 - 2
     }
 }
