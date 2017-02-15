@@ -9,7 +9,7 @@
 import UIKit
 
 /// CenterImageDetailsProfile class
-class CenterImageDetailsProfileCell: UITableViewCell {
+open class CenterImageDetailsProfileCell: UITableViewCell {
 
     /// MARK: - Private Constants
     /// Cell default height
