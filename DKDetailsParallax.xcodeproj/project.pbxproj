@@ -13,6 +13,8 @@
 		1C0F4EBA1E53E631006207C6 /* TopImageDetailsProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F4EB81E53E631006207C6 /* TopImageDetailsProfileCell.xib */; };
 		1C0F4EBD1E53EC47006207C6 /* TopImageDetailsTextProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F4EBB1E53EC47006207C6 /* TopImageDetailsTextProfileCell.swift */; };
 		1C0F4EBE1E53EC47006207C6 /* TopImageDetailsTextProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F4EBC1E53EC47006207C6 /* TopImageDetailsTextProfileCell.xib */; };
+		6D1519E41E54BBBB001824DD /* RoundedComposantAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1519E21E54BBBB001824DD /* RoundedComposantAnimation.swift */; };
+		6D1519E51E54BBBB001824DD /* RoundedComposantAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1519E31E54BBBB001824DD /* RoundedComposantAnimation.xib */; };
 		8F0A70C41E31388B006D2666 /* GothaProReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2082AD1E2E906200738480 /* GothaProReg.otf */; };
 		8F20829F1E2E8FFD00738480 /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */; };
 		8F2082A01E2E8FFD00738480 /* RoundedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */; };
@@ -47,6 +49,11 @@
 		8FEF7BF51E269D08000412EB /* DKDetailsParallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEF7BEB1E269D08000412EB /* DKDetailsParallax.framework */; };
 		8FEF7BFA1E269D08000412EB /* DKDetailsParallaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF7BF91E269D08000412EB /* DKDetailsParallaxTests.swift */; };
 		8FEF7BFC1E269D08000412EB /* DKDetailsParallax.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEF7BEE1E269D08000412EB /* DKDetailsParallax.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FF8B04A1E4C9B5300250169 /* RoundedRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF8B0481E4C9B5300250169 /* RoundedRatingCell.swift */; };
+		8FF8B04B1E4C9B5300250169 /* RoundedRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FF8B0491E4C9B5300250169 /* RoundedRatingCell.xib */; };
+		8FF8B04D1E4C9C8600250169 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF8B04C1E4C9C8600250169 /* CosmosDistrib.swift */; };
+		8FF8B0521E4DDC5500250169 /* RoundedDetailsNumbersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF8B0501E4DDC5500250169 /* RoundedDetailsNumbersCell.swift */; };
+		8FF8B0531E4DDC5500250169 /* RoundedDetailsNumbersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FF8B0511E4DDC5500250169 /* RoundedDetailsNumbersCell.xib */; };
 		8FFB11131E3D39A300B21DDC /* RoundedDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB11111E3D39A300B21DDC /* RoundedDescriptionCell.swift */; };
 		8FFB11141E3D39A300B21DDC /* RoundedDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FFB11121E3D39A300B21DDC /* RoundedDescriptionCell.xib */; };
 /* End PBXBuildFile section */
@@ -68,6 +75,8 @@
 		1C0F4EB81E53E631006207C6 /* TopImageDetailsProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopImageDetailsProfileCell.xib; sourceTree = "<group>"; };
 		1C0F4EBB1E53EC47006207C6 /* TopImageDetailsTextProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopImageDetailsTextProfileCell.swift; sourceTree = "<group>"; };
 		1C0F4EBC1E53EC47006207C6 /* TopImageDetailsTextProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopImageDetailsTextProfileCell.xib; sourceTree = "<group>"; };
+		6D1519E21E54BBBB001824DD /* RoundedComposantAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedComposantAnimation.swift; sourceTree = "<group>"; };
+		6D1519E31E54BBBB001824DD /* RoundedComposantAnimation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedComposantAnimation.xib; sourceTree = "<group>"; };
 		8F20829D1E2E8FFD00738480 /* RoundedButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButtonCell.swift; sourceTree = "<group>"; };
 		8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedButtonCell.xib; sourceTree = "<group>"; };
 		8F2082A11E2E904700738480 /* FlatLightSimpleDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatLightSimpleDescriptionCell.swift; sourceTree = "<group>"; };
@@ -105,6 +114,11 @@
 		8FEF7BF41E269D08000412EB /* DKDetailsParallaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DKDetailsParallaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEF7BF91E269D08000412EB /* DKDetailsParallaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKDetailsParallaxTests.swift; sourceTree = "<group>"; };
 		8FEF7BFB1E269D08000412EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FF8B0481E4C9B5300250169 /* RoundedRatingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRatingCell.swift; sourceTree = "<group>"; };
+		8FF8B0491E4C9B5300250169 /* RoundedRatingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedRatingCell.xib; sourceTree = "<group>"; };
+		8FF8B04C1E4C9C8600250169 /* CosmosDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
+		8FF8B0501E4DDC5500250169 /* RoundedDetailsNumbersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDetailsNumbersCell.swift; sourceTree = "<group>"; };
+		8FF8B0511E4DDC5500250169 /* RoundedDetailsNumbersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedDetailsNumbersCell.xib; sourceTree = "<group>"; };
 		8FFB11111E3D39A300B21DDC /* RoundedDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDescriptionCell.swift; sourceTree = "<group>"; };
 		8FFB11121E3D39A300B21DDC /* RoundedDescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedDescriptionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +191,7 @@
 		8F2082AE1E2E907D00738480 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				8FF8B04C1E4C9C8600250169 /* CosmosDistrib.swift */,
 				8F2082AF1E2E90AB00738480 /* Switch.swift */,
 			);
 			name = Libraries;
@@ -231,6 +246,12 @@
 				8F20829E1E2E8FFD00738480 /* RoundedButtonCell.xib */,
 				8FFB11111E3D39A300B21DDC /* RoundedDescriptionCell.swift */,
 				8FFB11121E3D39A300B21DDC /* RoundedDescriptionCell.xib */,
+				8FF8B0481E4C9B5300250169 /* RoundedRatingCell.swift */,
+				8FF8B0491E4C9B5300250169 /* RoundedRatingCell.xib */,
+				8FF8B0501E4DDC5500250169 /* RoundedDetailsNumbersCell.swift */,
+				8FF8B0511E4DDC5500250169 /* RoundedDetailsNumbersCell.xib */,
+				6D1519E21E54BBBB001824DD /* RoundedComposantAnimation.swift */,
+				6D1519E31E54BBBB001824DD /* RoundedComposantAnimation.xib */,
 			);
 			path = RoundedTheme;
 			sourceTree = "<group>";
@@ -409,7 +430,10 @@
 				1C0F4EB51E53CED9006207C6 /* CenterImageDetailsProfileCell.xib in Resources */,
 				8F39BB741E27F5850096D869 /* DKDetailsParallaxViewController.xib in Resources */,
 				8FFB11141E3D39A300B21DDC /* RoundedDescriptionCell.xib in Resources */,
+				6D1519E51E54BBBB001824DD /* RoundedComposantAnimation.xib in Resources */,
 				8F2082BC1E2E90DF00738480 /* FlatDarkSwitchCell.xib in Resources */,
+				8FF8B0531E4DDC5500250169 /* RoundedDetailsNumbersCell.xib in Resources */,
+				8FF8B04B1E4C9B5300250169 /* RoundedRatingCell.xib in Resources */,
 				8F39BB891E27F9080096D869 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,8 +456,11 @@
 				8F39BB7C1E27F6AB0096D869 /* RoundedDetailsRectangleProfileCell.swift in Sources */,
 				8F2082BE1E2E91A200738480 /* DKDetailsParallaxCellDelegate.swift in Sources */,
 				8F2082B71E2E90DF00738480 /* FlatDarkSimpleDescriptionCell.swift in Sources */,
+				6D1519E41E54BBBB001824DD /* RoundedComposantAnimation.swift in Sources */,
 				8F39BBC11E280AAF0096D869 /* Bundle.swift in Sources */,
 				8F2082B91E2E90DF00738480 /* FlatDarkSimpleLabelCell.swift in Sources */,
+				8FF8B0521E4DDC5500250169 /* RoundedDetailsNumbersCell.swift in Sources */,
+				8FF8B04D1E4C9C8600250169 /* CosmosDistrib.swift in Sources */,
 				8F20829F1E2E8FFD00738480 /* RoundedButtonCell.swift in Sources */,
 				8F2082B01E2E90AB00738480 /* Switch.swift in Sources */,
 				8F39BB731E27F5850096D869 /* DKDetailsParallaxViewController.swift in Sources */,
@@ -443,6 +470,7 @@
 				8F2082AB1E2E904700738480 /* FlatLightSwitchCell.swift in Sources */,
 				1C0F4EB91E53E631006207C6 /* TopImageDetailsProfileCell.swift in Sources */,
 				8F39BB6E1E27F43B0096D869 /* DKScrollingHeaderView.swift in Sources */,
+				8FF8B04A1E4C9B5300250169 /* RoundedRatingCell.swift in Sources */,
 				8FFB11131E3D39A300B21DDC /* RoundedDescriptionCell.swift in Sources */,
 				8F2082A91E2E904700738480 /* FlatLightSimpleLabelCell.swift in Sources */,
 				8F39BB7A1E27F6AB0096D869 /* RoundedDetailsProfileCell.swift in Sources */,
