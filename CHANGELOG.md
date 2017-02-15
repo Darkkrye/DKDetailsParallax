@@ -1,3 +1,14 @@
+## 2.2.0 (February 15, 2017)
+
+Features :
+
+- New cell which allows you to do lot of things.
+
+Improvements:
+
+- Bug fixes.
+
+
 ## 2.1.0 (January 27, 2017)
 
 Features :

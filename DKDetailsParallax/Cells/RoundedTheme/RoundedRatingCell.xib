@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoundedRatingCell" id="KGk-i7-Jjw" customClass="RoundedRatingCell" customModule="DKDetailsParallax" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecA-9W-qtg">
+                        <rect key="frame" x="160" y="14" width="1" height="36"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="Xlv-bK-7Kg"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3P-Fm-tsV">
+                        <rect key="frame" x="169" y="22" width="55" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMw-3e-Kql">
+                        <rect key="frame" x="232" y="20" width="76" height="23"/>
+                        <color key="backgroundColor" red="0.0" green="0.63016081199999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="76" id="YMR-iZ-rN0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLE-y0-3qq" customClass="CosmosView" customModule="DKDetailsParallax" customModuleProvider="target">
+                        <rect key="frame" x="35" y="23" width="117" height="19"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iLE-y0-3qq" firstAttribute="centerY" secondItem="i3P-Fm-tsV" secondAttribute="centerY" id="3BB-PH-fj8"/>
+                    <constraint firstItem="ecA-9W-qtg" firstAttribute="centerY" secondItem="MMw-3e-Kql" secondAttribute="centerY" id="6S1-tA-1s4"/>
+                    <constraint firstItem="ecA-9W-qtg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="71x-Dw-RRl"/>
+                    <constraint firstItem="MMw-3e-Kql" firstAttribute="baseline" secondItem="i3P-Fm-tsV" secondAttribute="baseline" id="73H-70-M2m"/>
+                    <constraint firstItem="iLE-y0-3qq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="27" id="99Q-zO-9E6"/>
+                    <constraint firstItem="ecA-9W-qtg" firstAttribute="leading" secondItem="iLE-y0-3qq" secondAttribute="trailing" constant="8" id="AWV-vU-Eay"/>
+                    <constraint firstItem="iLE-y0-3qq" firstAttribute="centerY" secondItem="ecA-9W-qtg" secondAttribute="centerY" id="IkK-Ji-KCR"/>
+                    <constraint firstItem="i3P-Fm-tsV" firstAttribute="leading" secondItem="ecA-9W-qtg" secondAttribute="trailing" constant="8" symbolic="YES" id="d1x-lA-lrX"/>
+                    <constraint firstItem="MMw-3e-Kql" firstAttribute="leading" secondItem="i3P-Fm-tsV" secondAttribute="trailing" constant="8" symbolic="YES" id="dAF-OO-j7A"/>
+                    <constraint firstItem="ecA-9W-qtg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dXK-hj-LTH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="MMw-3e-Kql" secondAttribute="trailing" constant="4" id="g75-Mr-Kdw"/>
+                    <constraint firstItem="iLE-y0-3qq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="vpp-VS-3Ez"/>
+                    <constraint firstItem="ecA-9W-qtg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="zbJ-VQ-PVj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ratingCosmosView" destination="iLE-y0-3qq" id="7ao-to-i2h"/>
+                <outlet property="votesLabel" destination="MMw-3e-Kql" id="wVN-5a-1Ft"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="54.5"/>
+        </tableViewCell>
+    </objects>
+</document>

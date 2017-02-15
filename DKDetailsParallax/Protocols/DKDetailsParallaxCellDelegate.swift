@@ -7,9 +7,53 @@
 //
 
 import Foundation
-
 /// DKDetailsParallaxCell Delegate
 @objc public protocol DKDetailsParallaxCellDelegate: NSObjectProtocol {
+    
+    /* MARK: - TopImage Theme */
+    /// MARK: TopImageProfileCell
+    /// Callback when outlined button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: CenterImageDetailsProfileCell - The cell
+    ///   - forOutlinedButton: UIButton - The button
+    @objc optional func topImageDetailsTextProfileCellCallback(cell: TopImageDetailsTextProfileCell, forLeftButton: UIButton)
+    /// Callback when plain button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: CenterImageDetailsProfileCell - The cell
+    ///   - forPlainButton: UIButton - The button
+    @objc optional func topImageDetailsTextProfileCellCallback(cell: TopImageDetailsTextProfileCell, forRightButton: UIButton)
+    
+    /* MARK: - TopImage Theme */
+    /// MARK: TopImageProfileCell
+    /// Callback when outlined button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: CenterImageDetailsProfileCell - The cell
+    ///   - forOutlinedButton: UIButton - The button
+    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forRightButton: UIButton)
+    /// Callback when plain button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: CenterImageDetailsProfileCell - The cell
+    ///   - forPlainButton: UIButton - The button
+    @objc optional func topImageDetailsProfileCellCallback(cell: TopImageDetailsProfileCell, forLeftButton: UIButton)
+    
+    /* MARK: - CenterImage Theme */
+    /// MARK: CenterImageProfileCell
+    /// Callback when outlined button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: CenterImageDetailsProfileCell - The cell
+    ///   - forOutlinedButton: UIButton - The button
+    @objc optional func centerImageDetailsProfileCellCallback(cell: CenterImageDetailsProfileCell, forLeftButton: UIButton)
+    /// Callback when plain button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: CenterImageDetailsProfileCell - The cell
+    ///   - forPlainButton: UIButton - The button
+    @objc optional func centerImageDetailsProfileCellCallback(cell: CenterImageDetailsProfileCell, forRightButton: UIButton)
     
     /* MARK: - Rounded Theme */
     /// MARK: RoundedDetailsProfileCell
@@ -59,6 +103,27 @@ import Foundation
     ///   - cell: RoundedButtonCell - The cell
     ///   - forButton: UIButton - The button
     @objc optional func roundedButtonCellCallback(cell: RoundedButtonCell, forButton: UIButton)
+    
+    
+    /// MARK: RoundedDetailsProfileCell
+    /// Callback when circle button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: RoundedComposantAnimation - The cell
+    ///   - forCircleButton: UIButton - The button
+    @objc optional func roundedComposantAnimationCellCallback(cell: RoundedComposantAnimation, forCircleButton: UIButton)
+    /// Callback when outlined button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: RoundedComposantAnimation - The cell
+    ///   - forOutlinedButton: UIButton - The button
+    @objc optional func roundedComposantAnimationCellCallback(cell: RoundedComposantAnimation, forOutlinedButton: UIButton)
+    /// Callback when plain button is selected
+    ///
+    /// - Parameters:
+    ///   - cell: RoundedComposantAnimation - The cell
+    ///   - forPlainButton: UIButton - The button
+    @objc optional func roundedComposantAnimationCellCallback(cell: RoundedComposantAnimation, forPlainButton: UIButton)
     
     /* ------------------------------------------------------------------------------------------------------------------------------------------ */
     
